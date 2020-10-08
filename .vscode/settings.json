@@ -1,0 +1,9 @@
+{
+	"editor.formatOnSave": true,
+	"eslint.packageManager": "yarn",
+	"eslint.validate": ["typescript", "typescriptreact"],
+	"files.eol": "\n",
+	"files.exclude": {
+		"node_modules": true
+	}
+}
