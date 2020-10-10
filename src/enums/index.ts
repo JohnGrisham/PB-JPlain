@@ -1,1 +1,1 @@
-export { Bias } from "./bias"
+export { Bias } from './bias'
