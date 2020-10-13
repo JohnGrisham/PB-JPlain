@@ -11,18 +11,17 @@ const firebaseConfig = {
 	projectId: process.env.GATSBY_FIREBASE_PROJECTID,
 	storageBucket: process.env.GATSBY_FIREBASE_STORAGEBUCKET
 }
-
 export interface FirebaseContextData {
 	isInitialized: boolean
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	firebase: any
+	firebase: typeof firebase
 	authToken: string | null
 	setAuthToken: (authToken: string) => void
 }
 
 export const FirebaseContext = React.createContext<FirebaseContextData>({
 	authToken: null,
-	firebase: null,
+	firebase,
 	isInitialized: false,
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	setAuthToken: () => {}
