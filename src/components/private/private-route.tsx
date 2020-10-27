@@ -1,8 +1,8 @@
-import { FirebaseContext } from '../services/firebase-provider'
+import { FirebaseContext } from '../../services/firebase-provider'
 import React from 'react'
 import { navigate } from 'gatsby'
 
-interface PrivateRouteProps {
+export interface PrivateRouteProps {
 	path: string
 }
 

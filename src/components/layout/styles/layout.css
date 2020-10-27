@@ -1,0 +1,9 @@
+.layoutWrapper {
+	padding: 0 1.0875rem 1.45rem;
+	position: relative;
+}
+
+.content {
+	height: 1000px;
+	display: flex;
+}

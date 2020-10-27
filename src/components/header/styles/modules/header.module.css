@@ -1,0 +1,37 @@
+:local(.loginButton) {
+	width: 100%;
+}
+
+:local(.mobileMenu) {
+	top: 50px !important;
+}
+
+:local(.siteHeader) {
+	align-items: center;
+	background: #4e2378;
+	color: white;
+	display: grid;
+	grid-template-columns: 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+	padding: 1.45rem 1.0875rem;
+}
+
+:local(.siteContext) {
+	align-items: inherit;
+	display: flex;
+}
+
+:local(.siteLogo) {
+	margin-right: 5px;
+}
+
+:local(.siteLink) {
+	color: white;
+	margin: 0;
+	text-decoration: none;
+}
+
+@media all and (max-width: 700px) {
+	.siteHeader {
+		grid-template-columns: 3fr 0.5fr;
+	}
+}

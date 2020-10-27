@@ -1,4 +1,4 @@
-import { AuthError, FirebaseContext } from '../services'
+import { AuthError, FirebaseContext } from '../../services'
 import { Button, FormControl, FormHelperText, Input, InputLabel } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'

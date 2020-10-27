@@ -1,12 +1,14 @@
+/* eslint-disable sort-keys */
 /* eslint-disable @typescript-eslint/naming-convention */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config()
 
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
+		title: `Echo Breaking News`,
 		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`
+		author: `@gatsbyjs`,
+		logo: 'gatsby-icon.png'
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -19,7 +21,9 @@ module.exports = {
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-typescript`,
+		`gatsby-plugin-css-modules-typings`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
