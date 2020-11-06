@@ -1,0 +1,31 @@
+:local(.benefitWrapper) {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin-bottom: 100px;
+}
+
+:local(.benefitMotion) {
+	display: flex;
+	flex: 1;
+}
+
+:local(.benefitMotionImage) {
+	margin-right: auto;
+	transform: translateX(-50%);
+}
+
+:local(.benefitMotionText) {
+	color: #383838;
+	font-size: 2em;
+	margin-left: 50%;
+	width: 60%;
+}
+
+@media all and (max-width: 700px) {
+	.benefitMotionText {
+		font-size: 1.5em;
+		width: 75%;
+	}
+}

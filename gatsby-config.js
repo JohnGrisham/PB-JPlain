@@ -11,6 +11,14 @@ module.exports = {
 		logo: 'gatsby-icon.png'
 	},
 	plugins: [
+		{
+			resolve: 'gatsby-plugin-web-font-loader',
+			options: {
+				google: {
+					families: ['Open Sans', 'Libre Baskerville']
+				}
+			}
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,

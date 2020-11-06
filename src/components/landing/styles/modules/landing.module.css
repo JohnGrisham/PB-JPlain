@@ -1,5 +1,12 @@
+:local(.benefits) {
+	background-color: #fff0cc;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
 :local(.callToAction) {
-	bottom: 20%;
+	bottom: 15%;
 	z-index: 2;
 }
 
@@ -14,10 +21,15 @@
 }
 
 :local(.heading) {
-	font-size: 5vw;
+	font-size: 5.5vw;
 	position: absolute;
-	top: 10%;
+	top: 15%;
 	z-index: 2;
+}
+
+:local(.intersection) {
+	display: flex;
+	flex: 1;
 }
 
 :local(.landingWrapper) {
@@ -38,21 +50,25 @@
 	width: 100%;
 }
 
+:local(.sources) {
+	background-color: white;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
 :local(.step) {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	grid-column: span 2;
 	padding: 1rem;
 	text-align: center;
-}
-
-:local(.stepDescription) {
 }
 
 :local(.stepGrid) {
 	display: grid;
 	gap: 2rem;
+	grid-template-columns: 1fr;
 }
 
 :local(.stepHeading) {
@@ -72,19 +88,28 @@
 }
 
 :local(.subHeading) {
-	font-size: 3vw;
+	font-size: 4vw;
 	position: absolute;
-	top: 30%;
+	top: 35%;
 	z-index: 2;
 }
 
-@media all and (max-width: 700px) {
-	.stepGrid {
-		grid-template-columns: 1fr !important;
+@media all and (min-width: 700px) {
+	.step {
+		grid-column: span 2;
 	}
 
-	.step {
-		grid-column: span 1 !important;
-		grid-column-end: auto !important;
+	/* Dealing with 2 orphan items */
+	.step:last-child:nth-child(3n - 1) {
+		grid-column-end: -2;
+	}
+
+	.step:nth-last-child(2):nth-child(3n + 1) {
+		grid-column-end: 4;
+	}
+
+	/* Dealing with single orphan */
+	.step:last-child:nth-child(3n - 2) {
+		grid-column-end: 5;
 	}
 }

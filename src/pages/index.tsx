@@ -1,7 +1,7 @@
 import * as React from 'react'
+import { BenefitOptions, Step } from '../interfaces'
 import { Landing, Layout, PrivateRoute, SEO } from '../components'
 import { faBaseballBall, faBath, faBed, faBell, faBolt } from '@fortawesome/free-solid-svg-icons'
-import { Step } from '../interfaces'
 
 const steps: Step[] = [
 	{
@@ -35,11 +35,30 @@ const steps: Step[] = [
 	}
 ]
 
+const benefits: BenefitOptions[] = [
+	{
+		description:
+			'There are so many different viewpoints when it comes to political news online and at times it can be overwhelming. Most people only follow the news sources that confirm their bias. We bring the news that challenges your perspective to one place.',
+		image: { height: 350, src: 'press-release.png', width: 350 }
+	},
+	{
+		description:
+			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours seaching through partisan and bipartisan news or you could come here. Never miss an article and get a wide range of views to make the best possible decision come election day.',
+		image: { height: 350, src: 'vote.png', width: 350 }
+	},
+	{
+		description:
+			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours seaching through partisan and bipartisan news or you could come here. Never miss an article and get a wide range of views to make the best possible decision come election day.',
+		image: { height: 350, src: 'divide.png', width: 350 }
+	}
+]
+
 const HomePage: React.FC = () => (
 	<Layout>
 		<SEO title="Home" />
 		<PrivateRoute path="/login">
 			<Landing
+				benefits={benefits}
 				heading="News that doesn't care how you feel"
 				subHeading="Sign up to get early access"
 				callToAction="Get started"

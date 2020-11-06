@@ -1,3 +1,4 @@
+export { BenefitOptions } from './benefit-options'
 export { Description } from './description'
 export { Source } from './source'
 export { Step } from './step'

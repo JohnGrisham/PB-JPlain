@@ -1,3 +1,4 @@
+export * from './intersection-observer'
 export { Header, HeaderProps } from './header'
 export { Layout, LayoutProps } from './layout'
 export { PrivateRoute, PrivateRouteProps } from './private'

@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 			<Styled.SiteLink to="/pricing">Pricing</Styled.SiteLink>
 			<Styled.SiteLink to="/blog">Blog</Styled.SiteLink>
 			<Styled.LoginButton type="button" variant="contained" color="primary">
-				Login
+				<h4>Login</h4>
 			</Styled.LoginButton>
 		</>
 	)
@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 			</MenuItem>
 			<MenuItem>
 				<Styled.LoginButton type="button" variant="contained" color="primary">
-					Login
+					<h3>Login</h3>
 				</Styled.LoginButton>
 			</MenuItem>
 		</Styled.MobileMenu>
