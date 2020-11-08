@@ -1,6 +1,6 @@
-import { sample, shuffle } from 'lodash'
 import { Bias } from '../enums'
 import { Source } from '../interfaces'
+import { shuffle } from 'lodash'
 import { sources } from '../data/sources'
 
 export function getLandingSources() {
