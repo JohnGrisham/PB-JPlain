@@ -15,7 +15,6 @@ export interface LandingProps {
 }
 
 const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, heading, subHeading }) => {
-	const sourcesRef = React.createRef<HTMLDivElement>()
 	const { width } = useWindowSize()
 
 	const stepColumns = React.useMemo(() => {
@@ -65,9 +64,8 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 					))}
 				</Styled.Benefits>
 			)}
-			<Styled.Sources ref={sourcesRef}>
-				<SourcesDrag parentRef={sourcesRef} pageWidth={width} />
-			</Styled.Sources>
+
+			<SourcesDrag pageWidth={width} />
 		</Styled.Landing>
 	)
 }

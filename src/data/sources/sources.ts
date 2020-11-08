@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 import { Bias } from '../../enums'
 import { Source } from '../../interfaces'
 
