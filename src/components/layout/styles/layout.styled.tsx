@@ -10,4 +10,8 @@ export const Content = styled.main.attrs(() => ({
 
 export const Layout = styled.div.attrs(() => ({
 	className: layout.layoutWrapper
-}))``
+}))`
+	footer {
+		color: white;
+	}
+`

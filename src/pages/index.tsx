@@ -1,37 +1,26 @@
 import * as React from 'react'
 import { BenefitOptions, Step } from '../interfaces'
 import { Landing, Layout, PrivateRoute, SEO } from '../components'
-import { faBaseballBall, faBath, faBed, faBell, faBolt } from '@fortawesome/free-solid-svg-icons'
+import { faDoorOpen, faEye, faNewspaper } from '@fortawesome/free-solid-svg-icons'
 
 const steps: Step[] = [
 	{
 		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		heading: 'Feugiat in ante',
-		icon: faBath
+			'Tell us your political leaning and some basic information about the type of news you prefer to see. Are you more liberal or conservative? Do you prefer news from CNN, Fox news or somewhere else?',
+		heading: 'Tell us your viewpoint',
+		icon: faEye
 	},
 	{
 		description:
-			'Lacus laoreet non curabitur gravida arcu ac tortor dignissim convallis. Ridiculus mus mauris vitae ultricies. Volutpat diam ut venenatis tellus in metus vulputate eu.',
-		heading: 'Pellentesque habitant morbi',
-		icon: faBaseballBall
+			"Find news sources that you typically wouldn't follow and read articles on topics you already have an opinion on but through a different set of eyes. Discover topics you've never heard of from pundits across the political spectrum.",
+		heading: 'Discover new perspectives',
+		icon: faNewspaper
 	},
 	{
 		description:
-			'Dignissim sodales ut eu sem. Id donec ultrices tincidunt arcu non sodales. Quis ipsum suspendisse ultrices gravida dictum fusce.',
-		heading: 'Feugiat in ante metus',
-		icon: faBed
-	},
-	{
-		description:
-			'Cursus eget nunc scelerisque viverra. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum. Morbi non arcu risus quis varius quam quisque id.',
-		heading: 'Nec feugiat',
-		icon: faBell
-	},
-	{
-		description: 'Nec feugiat in fermentum posuere urna. Aliquet nibh praesent tristique magna sit amet purus gravida.',
-		heading: 'Quam id leo in vitae',
-		icon: faBolt
+			"Prepare to leave your personal bubble. News outlets you've avoided in the past start to make a little more sense and you're ready to give a different viewpoint a shot. You now have a deeper understanding of the news everyone else is reading and not just your own.",
+		heading: 'Leave your echo chamber',
+		icon: faDoorOpen
 	}
 ]
 
@@ -43,12 +32,12 @@ const benefits: BenefitOptions[] = [
 	},
 	{
 		description:
-			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours seaching through partisan and bipartisan news or you could come here. Never miss an article and get a wide range of views to make the best possible decision come election day.',
+			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours searching through partisan and bipartisan news or you could come here. Never miss an article and get a wide range of views to make the best possible decision come election day.',
 		image: { height: 350, src: 'vote.png', width: 350 }
 	},
 	{
 		description:
-			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours seaching through partisan and bipartisan news or you could come here. Never miss an article and get a wide range of views to make the best possible decision come election day.',
+			"As political division continues to grow it's even more important that we have access to different viewpoints. Stay up to date with conflicting viewpoints and thoughts on relevant news and start making better arguements for the things you care about.",
 		image: { height: 350, src: 'divide.png', width: 350 }
 	}
 ]
@@ -61,7 +50,7 @@ const HomePage: React.FC = () => (
 				benefits={benefits}
 				heading="News that doesn't care how you feel"
 				subHeading="Sign up to get early access"
-				callToAction="Get started"
+				callToAction="Sign up"
 				description={{ heading: 'You have a bias', steps, subHeading: "It's time to break it!" }}
 			/>
 		</PrivateRoute>

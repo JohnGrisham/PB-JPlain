@@ -8,7 +8,7 @@ module.exports = {
 		title: `Echo Breaking News`,
 		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
 		author: `@gatsbyjs`,
-		logo: 'gatsby-icon.png'
+		logo: ''
 	},
 	plugins: [
 		{
