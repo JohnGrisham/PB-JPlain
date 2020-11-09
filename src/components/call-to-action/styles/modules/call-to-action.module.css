@@ -1,7 +1,25 @@
+:local(.callToActionError) {
+	color: red;
+}
+
+:local(.callToActionForm) {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	margin-bottom: 50px;
+	margin-top: 15px;
+	width: 100%;
+}
+
 :local(.callToActionInput) {
 	background-color: white;
 	display: flex;
-	margin-top: 15px;
+	position: relative;
+}
+
+:local(.callToActionSuccess) {
+	color: green;
 }
 
 :local(.callToActionWrapper) {

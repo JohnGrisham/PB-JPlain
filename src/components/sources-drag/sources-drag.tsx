@@ -3,7 +3,6 @@ import * as React from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Bias } from '../../enums'
 import { getLandingSources } from '../../logic/get-landing-sources'
-
 interface ISourcesDragProps {
 	pageWidth?: number
 }
@@ -12,17 +11,21 @@ export const SourcesDrag: React.FC<ISourcesDragProps> = ({ pageWidth }) => {
 	const sourcesRef = React.createRef<HTMLDivElement>()
 	const x = useMotionValue(0)
 	const xInput = React.useMemo(() => {
-		if (!pageWidth || pageWidth <= 700) {
+		if (!pageWidth || (pageWidth >= 500 && pageWidth <= 700)) {
 			return [-100, 0, 100]
+		} else if (pageWidth <= 500) {
+			return [-50, 0, 50]
 		}
 		return [-(pageWidth / 3), 0, pageWidth / 3]
 	}, [pageWidth])
 
 	const background = useTransform(x, xInput, ['#001aff', '#ffffff', '#ff0000'])
 
-	const republicanPath = useTransform(x, [0, xInput[xInput.length - 1]], [0, 1])
-	const democratPath = useTransform(x, [-50, xInput[0]], [0, 1])
-	const questionMarkPath = useTransform(x, [-50, 0, 50], [0, 1, 0])
+	const republicanPath = useTransform(x, [xInput[xInput.length - 1] / 2, xInput[xInput.length - 1]], [0, 1])
+	const democratPath = useTransform(x, [xInput[0] / 2, xInput[0]], [0, 1])
+	const questionMarkPath = useTransform(x, [xInput[0] / 2, 0, xInput[xInput.length - 1] / 2], [0, 1, 0])
+
+	const sourcesSample = React.useMemo(() => getLandingSources(), [])
 
 	React.useEffect(() => {
 		x.set(0)
@@ -66,7 +69,7 @@ export const SourcesDrag: React.FC<ISourcesDragProps> = ({ pageWidth }) => {
 				</motion.div>
 				<h4>Drag the ballot box to see more...</h4>
 				<motion.ul className="sources-list">
-					{getLandingSources().map(({ bias, name }, i) => {
+					{sourcesSample.map(({ bias, name }, i) => {
 						const isLeaning = bias !== 0
 
 						return (
