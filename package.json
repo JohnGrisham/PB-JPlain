@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "echo-breaking-news",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Echo breaking news aggregate",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "John Grisham",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -26,7 +26,6 @@
     "gatsby-plugin-typescript": "^2.4.21",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.30",
-    "gatsby-source-newsapi": "https://github.com/JohnGrisham/gatsby-source-newsapi.git",
     "gatsby-transformer-sharp": "^2.5.15",
     "lodash": "^4.17.20",
     "minireset.css": "^0.0.6",
@@ -66,7 +65,6 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "postinstall": "cd ./node_modules/gatsby-source-newsapi && yarn install && yarn run build",
     "develop": "gatsby develop -H 0.0.0.0 -p 8001",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
@@ -77,9 +75,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/JohnGrisham/echo-break"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/JohnGrisham/echo-break/issues"
   }
 }

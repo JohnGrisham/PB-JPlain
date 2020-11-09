@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { BenefitOptions, Step } from '../interfaces'
-import { Landing, Layout, PrivateRoute, SEO } from '../components'
+import { Landing, Layout, SEO } from '../components'
 import { faDoorOpen, faEye, faNewspaper } from '@fortawesome/free-solid-svg-icons'
 
 const steps: Step[] = [
@@ -45,15 +45,13 @@ const benefits: BenefitOptions[] = [
 const HomePage: React.FC = () => (
 	<Layout>
 		<SEO title="Home" />
-		<PrivateRoute path="/login">
-			<Landing
-				benefits={benefits}
-				heading="News that doesn't care how you feel"
-				subHeading="Sign up to get early access"
-				callToAction="Sign up"
-				description={{ heading: 'You have a bias', steps, subHeading: "It's time to break it!" }}
-			/>
-		</PrivateRoute>
+		<Landing
+			benefits={benefits}
+			heading="News that doesn't care how you feel"
+			subHeading="Sign up to get early access"
+			callToAction="Sign up"
+			description={{ heading: 'You have a bias', steps, subHeading: "It's time to break it!" }}
+		/>
 	</Layout>
 )
 

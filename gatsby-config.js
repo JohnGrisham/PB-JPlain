@@ -6,8 +6,8 @@ require('dotenv').config()
 module.exports = {
 	siteMetadata: {
 		title: `Echo Breaking News`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `@gatsbyjs`,
+		description: `Break out of your echo chamber and discover new news sources.`,
+		author: `John Grisham`,
 		logo: ''
 	},
 	plugins: [
@@ -42,30 +42,6 @@ module.exports = {
 				theme_color: `#663399`,
 				display: `minimal-ui`,
 				icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
-			}
-		},
-		{
-			resolve: `gatsby-source-newsapi`,
-			options: {
-				apiKey: `1f358602ba2f4842a88b039de45502c8`,
-				variables: {
-					sources: ['bbc-news', 'cnn'],
-					queries: [
-						'politics',
-						'political',
-						'president',
-						'republican',
-						'democrat',
-						'congress',
-						'senate',
-						'governor',
-						'mayor',
-						'congress man',
-						'congress woman',
-						'house majority leader',
-						'house minority leader'
-					]
-				}
 			}
 		}
 		// this (optional) plugin enables Progressive Web App + Offline functionality
