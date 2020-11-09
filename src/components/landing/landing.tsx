@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as Styled from './styles'
 import { BenefitOptions, Description } from '../../interfaces'
 import { Benefit } from '../benefit'
+import { CallToAction } from '../call-to-action'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SourcesDrag } from '../sources-drag'
 import { useWindowSize } from '../../utils'
@@ -31,7 +32,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 				{heading && <Styled.Heading>{heading}</Styled.Heading>}
 				{subHeading && <Styled.SubHeading>{subHeading}</Styled.SubHeading>}
 				{callToAction && (
-					<Styled.CallToAction type="button" variant="contained" color="primary" style={{ position: 'absolute' }}>
+					<Styled.CallToAction type="button" variant="contained" color="primary" href="#CTA">
 						<h4>{callToAction}</h4>
 					</Styled.CallToAction>
 				)}
@@ -64,8 +65,8 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 					))}
 				</Styled.Benefits>
 			)}
-
 			<SourcesDrag pageWidth={width} />
+			<CallToAction />
 		</Styled.Landing>
 	)
 }
