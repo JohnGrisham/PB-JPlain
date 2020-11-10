@@ -1,4 +1,5 @@
 import React from 'react'
+import { checkIsClient } from '../utils'
 import firebase from 'firebase'
 
 const firebaseConfig = {
@@ -33,7 +34,7 @@ export const FirebaseProvider: React.FC = ({ children }) => {
 		typeof window === 'object' ? window.localStorage.getItem('authToken') : null
 	)
 
-	if (!firebase.apps.length) {
+	if (!firebase.apps.length && checkIsClient()) {
 		firebase.initializeApp(firebaseConfig)
 		setIsInitialized(true)
 	}
