@@ -47,7 +47,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 					{description.heading && <h2>{description.heading}</h2>}
 					{description.subHeading && <h3>{description.subHeading}</h3>}
 					{description.steps && (
-						<Styled.StepGrid style={stepGridStyle}>
+						<Styled.StepGrid key={stepGridStyle ? 'column-display' : 'row-display'} style={stepGridStyle}>
 							{description.steps.map(({ description, heading, icon }, i) => (
 								<Styled.Step key={`description-step-${i}`}>
 									<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
