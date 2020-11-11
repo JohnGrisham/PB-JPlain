@@ -5,7 +5,7 @@ import { Benefit } from '../benefit'
 import { CallToAction } from '../call-to-action'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SourcesDrag } from '../sources-drag'
-import { useWindowSize } from '../../utils'
+import { WindowContext } from '../../services'
 
 export interface LandingProps {
 	callToAction?: string
@@ -16,7 +16,7 @@ export interface LandingProps {
 }
 
 const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, heading, subHeading }) => {
-	const { width } = useWindowSize()
+	const { width } = React.useContext(WindowContext)
 
 	const stepColumns = React.useMemo(() => {
 		if (!description?.steps) {

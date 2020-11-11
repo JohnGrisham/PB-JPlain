@@ -1,4 +1,8 @@
 import * as React from 'react'
-import { FirebaseProvider } from './src/services'
+import { FirebaseProvider, WindowProvider } from './src/services'
 
-export const wrapRootElement = ({ element }) => <FirebaseProvider>{element}</FirebaseProvider>
+export const wrapRootElement = ({ element }) => (
+	<FirebaseProvider>
+		<WindowProvider>{element}</WindowProvider>
+	</FirebaseProvider>
+)
