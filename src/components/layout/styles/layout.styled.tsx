@@ -13,5 +13,9 @@ export const Layout = styled.div.attrs(() => ({
 }))`
 	footer {
 		color: white;
+
+		a {
+			color: white;
+		}
 	}
 `

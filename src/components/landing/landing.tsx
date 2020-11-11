@@ -3,6 +3,7 @@ import * as Styled from './styles'
 import { BenefitOptions, Description } from '../../interfaces'
 import { Benefit } from '../benefit'
 import { CallToAction } from '../call-to-action'
+import { FirebaseContext } from '../../services'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SourcesDrag } from '../sources-drag'
 
@@ -15,6 +16,14 @@ export interface LandingProps {
 }
 
 const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, heading, subHeading }) => {
+	const { firebase } = React.useContext(FirebaseContext)
+
+	React.useEffect(() => {
+		if (firebase) {
+			firebase.analytics().logEvent('We have landed!')
+		}
+	}, [firebase])
+
 	const stepColumns = React.useMemo(() => {
 		if (!description?.steps) {
 			return null
