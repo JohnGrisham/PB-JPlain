@@ -1,3 +1,4 @@
-import 'firebase/analytics'
-import 'firebase/firestore'
-import 'firebase/functions'
+import * as React from 'react'
+import { FirebaseProvider } from './src/services'
+
+export const wrapRootElement = ({ element }) => <FirebaseProvider>{element}</FirebaseProvider>

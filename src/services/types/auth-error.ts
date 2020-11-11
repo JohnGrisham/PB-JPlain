@@ -1,3 +1,5 @@
 import { FirebaseError as FBError } from 'firebase'
 
-export type AuthError = FBError & Error
+type AuthError = FBError & Error
+
+export default AuthError

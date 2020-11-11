@@ -1,1 +1,1 @@
-export { AuthError } from './auth-error'
+export { default as AuthError } from './auth-error'

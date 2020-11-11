@@ -1,2 +1,2 @@
-export { FirebaseContext, FirebaseProvider } from './firebase-provider'
+export { FirebaseContext, FirebaseProvider } from './firebase'
 export { AuthError } from './types'

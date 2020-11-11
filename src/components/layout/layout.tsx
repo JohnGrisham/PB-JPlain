@@ -4,8 +4,7 @@ import 'normalize.css'
 // import './styles/modules/global.module.css'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
-import { FirebaseProvider } from '../../services'
-import Header from '../header/header'
+import { Header } from '../header'
 import React from 'react'
 
 export interface LayoutProps {
@@ -26,7 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, logo }) => {
 	`)
 
 	return (
-		<FirebaseProvider>
+		<>
 			<Styled.GlobalStyle />
 			<Header siteTitle={data.site.siteMetadata?.title || title} logo={data.site.siteMetadata?.logo || logo} />
 			<Styled.Layout>
@@ -40,7 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, logo }) => {
 					<a href="https://www.gatsbyjs.com">Gatsby</a>
 				</footer>
 			</Styled.Layout>
-		</FirebaseProvider>
+		</>
 	)
 }
 

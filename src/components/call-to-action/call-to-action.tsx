@@ -19,6 +19,10 @@ export const CallToAction: React.FC = () => {
 	const onSubmitCTA = React.useCallback(
 		async ({ email }: CTAValue, actions: FormikHelpers<CTAValue>) => {
 			try {
+				if (!firebase) {
+					return
+				}
+
 				const db = firebase.firestore()
 
 				const emailDoc = await db.collection('signups').doc(email).get()
