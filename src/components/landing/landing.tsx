@@ -26,6 +26,10 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 		return description.steps.length < 3 ? description.steps.length : 6
 	}, [description])
 
+	const stepGridStyle = React.useMemo(() => {
+		return width && width > 700 ? { gridTemplateColumns: `repeat(${stepColumns}, 1fr)` } : undefined
+	}, [stepColumns, width])
+
 	return (
 		<Styled.Landing>
 			<Styled.LandingImageWrapper>
@@ -43,8 +47,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 					{description.heading && <h2>{description.heading}</h2>}
 					{description.subHeading && <h3>{description.subHeading}</h3>}
 					{description.steps && (
-						<Styled.StepGrid
-							style={width && width > 700 ? { gridTemplateColumns: `repeat(${stepColumns}, 1fr)` } : undefined}>
+						<Styled.StepGrid style={stepGridStyle}>
 							{description.steps.map(({ description, heading, icon }, i) => (
 								<Styled.Step key={`description-step-${i}`}>
 									<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
