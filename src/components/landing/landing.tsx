@@ -34,7 +34,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 		<Styled.Landing>
 			<Styled.LandingImageWrapper>
 				{heading && <Styled.Heading>{heading}</Styled.Heading>}
-				{subHeading && <Styled.SubHeading>{subHeading}</Styled.SubHeading>}
+				{subHeading && <Styled.SubHeading>{width}</Styled.SubHeading>}
 				{callToAction && (
 					<Styled.CallToAction type="button" variant="contained" color="primary" href="#CTA">
 						<h4>{callToAction}</h4>
