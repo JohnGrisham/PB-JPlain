@@ -2,22 +2,21 @@ import './styles.css'
 import * as React from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Bias } from '../../enums'
+import { WindowContext } from '../../services'
 import { getLandingSources } from '../../logic/get-landing-sources'
-interface ISourcesDragProps {
-	pageWidth?: number
-}
 
-export const SourcesDrag: React.FC<ISourcesDragProps> = ({ pageWidth }) => {
+export const SourcesDrag: React.FC = () => {
+	const { width } = React.useContext(WindowContext)
 	const sourcesRef = React.createRef<HTMLDivElement>()
 	const x = useMotionValue(0)
 	const xInput = React.useMemo(() => {
-		if (!pageWidth || (pageWidth >= 500 && pageWidth <= 700)) {
+		if (width >= 500 && width <= 700) {
 			return [-100, 0, 100]
-		} else if (pageWidth <= 500) {
+		} else if (width <= 500) {
 			return [-50, 0, 50]
 		}
-		return [-(pageWidth / 3), 0, pageWidth / 3]
-	}, [pageWidth])
+		return [-(width / 3), 0, width / 3]
+	}, [width])
 
 	const background = useTransform(x, xInput, ['#001aff', '#ffffff', '#ff0000'])
 
@@ -29,7 +28,7 @@ export const SourcesDrag: React.FC<ISourcesDragProps> = ({ pageWidth }) => {
 
 	React.useEffect(() => {
 		x.set(0)
-	}, [pageWidth, x])
+	}, [width, x])
 
 	return (
 		<div className="sources" ref={sourcesRef}>

@@ -5,8 +5,6 @@ import { Benefit } from '../benefit'
 import { CallToAction } from '../call-to-action'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SourcesDrag } from '../sources-drag'
-import { WindowContext } from '../../services'
-import { checkIsClient } from '../../utils'
 
 export interface LandingProps {
 	callToAction?: string
@@ -17,9 +15,6 @@ export interface LandingProps {
 }
 
 const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, heading, subHeading }) => {
-	const { width } = React.useContext(WindowContext)
-	const isClient = React.useMemo(() => checkIsClient(), [])
-
 	const stepColumns = React.useMemo(() => {
 		if (!description?.steps) {
 			return null
@@ -28,15 +23,11 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 		return description.steps.length < 3 ? description.steps.length : 6
 	}, [description])
 
-	const stepGridStyle = React.useMemo(() => {
-		return width > 700 ? { gridTemplateColumns: `repeat(${stepColumns}, 1fr)` } : undefined
-	}, [stepColumns, width])
-
 	return (
 		<Styled.Landing>
 			<Styled.LandingImageWrapper>
 				{heading && <Styled.Heading>{heading}</Styled.Heading>}
-				{subHeading && <Styled.SubHeading>{width}</Styled.SubHeading>}
+				{subHeading && <Styled.SubHeading>{subHeading}</Styled.SubHeading>}
 				{callToAction && (
 					<Styled.CallToAction type="button" variant="contained" color="primary" href="#CTA">
 						<h4>{callToAction}</h4>
@@ -49,7 +40,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 					{description.heading && <h2>{description.heading}</h2>}
 					{description.subHeading && <h3>{description.subHeading}</h3>}
 					{description.steps && (
-						<Styled.StepGrid key={isClient ? 'grid-on-client' : 'grid-on-server'} style={stepGridStyle}>
+						<Styled.StepGrid style={{ gridTemplateColumns: `repeat(${stepColumns}, 1fr)` }}>
 							{description.steps.map(({ description, heading, icon }, i) => (
 								<Styled.Step key={`description-step-${i}`}>
 									<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
@@ -70,7 +61,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 					))}
 				</Styled.Benefits>
 			)}
-			<SourcesDrag pageWidth={width} />
+			<SourcesDrag />
 			<CallToAction />
 		</Styled.Landing>
 	)
