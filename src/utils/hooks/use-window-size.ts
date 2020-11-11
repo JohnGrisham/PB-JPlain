@@ -6,7 +6,7 @@ export default function useWindowSize(): {
 	height: number | undefined
 	width: number | undefined
 } {
-	const isClient = checkIsClient()
+	const isClient = React.useMemo(() => checkIsClient(), [])
 
 	const getSize = React.useCallback(() => {
 		return {
