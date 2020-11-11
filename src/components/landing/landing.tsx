@@ -27,7 +27,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 	}, [description])
 
 	const stepGridStyle = React.useMemo(() => {
-		return width && width > 700 ? { gridTemplateColumns: `repeat(${stepColumns}, 1fr)` } : undefined
+		return width > 700 ? { gridTemplateColumns: `repeat(${stepColumns}, 1fr)` } : undefined
 	}, [stepColumns, width])
 
 	return (
