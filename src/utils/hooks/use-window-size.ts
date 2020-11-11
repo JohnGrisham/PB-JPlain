@@ -1,18 +1,19 @@
 import * as React from 'react'
+import { checkIsClient } from '../check-is-client'
 
 // Source: https://usehooks.com/useWindowSize/
 export default function useWindowSize(): {
 	height: number | undefined
 	width: number | undefined
 } {
-	const isClient = typeof window === 'object'
+	const isClient = checkIsClient()
 
-	function getSize() {
+	const getSize = React.useCallback(() => {
 		return {
 			height: isClient ? window.innerHeight : undefined,
 			width: isClient ? window.innerWidth : undefined
 		}
-	}
+	}, [isClient])
 
 	const [windowSize, setWindowSize] = React.useState(getSize)
 
@@ -31,7 +32,7 @@ export default function useWindowSize(): {
 			window.removeEventListener('resize', handleResize)
 			window.removeEventListener('orientationchange', handleResize)
 		}
-	})
+	}, [getSize, isClient])
 
 	return windowSize
 }
