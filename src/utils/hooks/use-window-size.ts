@@ -22,15 +22,14 @@ export default function useWindowSize(): {
 			return
 		}
 
-		function handleResize() {
-			setWindowSize(getSize())
-		}
+		const handleSetSize = () => setWindowSize(getSize())
+		handleSetSize()
 
-		window.addEventListener('resize', handleResize)
-		window.addEventListener('orientationchange', handleResize)
+		window.addEventListener('resize', handleSetSize)
+		window.addEventListener('orientationchange', handleSetSize)
 		return () => {
-			window.removeEventListener('resize', handleResize)
-			window.removeEventListener('orientationchange', handleResize)
+			window.removeEventListener('resize', handleSetSize)
+			window.removeEventListener('orientationchange', handleSetSize)
 		}
 	}, [getSize, isClient])
 
