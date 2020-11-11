@@ -6,6 +6,7 @@ import { CallToAction } from '../call-to-action'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SourcesDrag } from '../sources-drag'
 import { WindowContext } from '../../services'
+import { checkIsClient } from '../../utils'
 
 export interface LandingProps {
 	callToAction?: string
@@ -17,6 +18,7 @@ export interface LandingProps {
 
 const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, heading, subHeading }) => {
 	const { width } = React.useContext(WindowContext)
+	const isClient = React.useMemo(() => checkIsClient(), [])
 
 	const stepColumns = React.useMemo(() => {
 		if (!description?.steps) {
@@ -47,7 +49,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 					{description.heading && <h2>{description.heading}</h2>}
 					{description.subHeading && <h3>{description.subHeading}</h3>}
 					{description.steps && (
-						<Styled.StepGrid key={stepGridStyle ? 'column-display' : 'row-display'} style={stepGridStyle}>
+						<Styled.StepGrid key={isClient ? 'grid-on-client' : 'grid-on-server'} style={stepGridStyle}>
 							{description.steps.map(({ description, heading, icon }, i) => (
 								<Styled.Step key={`description-step-${i}`}>
 									<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
