@@ -6,7 +6,7 @@ require('dotenv').config()
 module.exports = {
 	siteMetadata: {
 		title: `Echo Breaking News`,
-		description: `Break out of your echo chamber and discover new news sources.`,
+		description: `Sign up today to break the bias of your echo chamber and discover political news from both sides. News sources can be politically biased but you don't have to be!`,
 		author: `John Grisham`,
 		logo: ''
 	},
@@ -35,17 +35,14 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `gatsby-starter-default`,
-				short_name: `starter`,
+				name: `echo-breaking-news`,
+				short_name: `echo-breaking`,
 				start_url: `/`,
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+				include_favicon: false
 			}
 		}
-		// this (optional) plugin enables Progressive Web App + Offline functionality
-		// To learn more, visit: https://gatsby.dev/offline
-		// `gatsby-plugin-offline`,
 	]
 }
