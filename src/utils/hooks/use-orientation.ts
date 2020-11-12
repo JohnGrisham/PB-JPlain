@@ -1,5 +1,6 @@
 // Source: https://github.com/streamich/react-use/blob/master/docs/useOrientation.md
 import { off, on } from '../helpers'
+import { checkIsClient } from '../check-is-client
 import { useEffect, useState } from 'react'
 
 export interface OrientationState {
@@ -13,14 +14,15 @@ const defaultState: OrientationState = {
 }
 
 const useOrientation = (initialState: OrientationState = defaultState) => {
-	const screen = window.screen
+    const isClient = checkIsClient()
+	const screen = isClient ? window.screen : undefined
 	const [state, setState] = useState(initialState)
 
 	useEffect(() => {
 		let mounted = true
 
 		const onChange = () => {
-			if (mounted) {
+			if (mounted && screen) {
 				const { orientation } = screen
 
 				if (orientation) {
