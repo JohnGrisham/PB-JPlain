@@ -1,6 +1,7 @@
-import * as React from 'react'
-
 // Source: https://usehooks.com/useWindowSize/
+import * as React from 'react'
+import { off, on } from '../helpers'
+
 export default function useWindowSize(): {
 	height: number
 	width: number
@@ -17,11 +18,11 @@ export default function useWindowSize(): {
 	React.useEffect(() => {
 		const handleSetSize = () => setWindowSize(getSize())
 
-		window.addEventListener('resize', handleSetSize)
-		window.addEventListener('orientationchange', handleSetSize)
+		on(window, 'resize', handleSetSize)
+		on(window, 'orientationchange', handleSetSize)
 		return () => {
-			window.removeEventListener('resize', handleSetSize)
-			window.removeEventListener('orientationchange', handleSetSize)
+			off(window, 'resize', handleSetSize)
+			off(window, 'orientationchange', handleSetSize)
 		}
 	}, [getSize])
 
