@@ -1,7 +1,7 @@
 // Source: https://github.com/streamich/react-use/blob/master/docs/useOrientation.md
 import { off, on } from '../helpers'
-import { checkIsClient } from '../check-is-client
 import { useEffect, useState } from 'react'
+import { checkIsClient } from '../check-is-client'
 
 export interface OrientationState {
 	angle: number
@@ -14,7 +14,7 @@ const defaultState: OrientationState = {
 }
 
 const useOrientation = (initialState: OrientationState = defaultState) => {
-    const isClient = checkIsClient()
+	const isClient = checkIsClient()
 	const screen = isClient ? window.screen : undefined
 	const [state, setState] = useState(initialState)
 
