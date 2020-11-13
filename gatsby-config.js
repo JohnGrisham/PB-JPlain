@@ -5,6 +5,7 @@ require('dotenv').config()
 
 module.exports = {
 	siteMetadata: {
+		siteUrl: `https://echo-breaking-news.com`,
 		title: `Echo Breaking News`,
 		description: `Sign up today to break the bias of your echo chamber and discover political news from both sides. News sources can be politically biased but you don't have to be!`,
 		author: `John Grisham`,
@@ -29,6 +30,7 @@ module.exports = {
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		`gatsby-plugin-sitemap`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-css-modules-typings`,
