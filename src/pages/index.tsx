@@ -12,7 +12,7 @@ const steps: Step[] = [
 	},
 	{
 		description:
-			"Find news sources that you typically wouldn't follow and read articles on topics you already have an opinion on but through a different set of eyes. Discover topics you've never heard of from pundits across the political spectrum.",
+			"Find news sources that you typically wouldn't follow and read articles on topics you already have an opinion on but through a different set of eyes. Discover topics you've never heard of from pundits across the political spectrum as well as news from traditionally less biased sources.",
 		heading: 'Discover new perspectives',
 		icon: faNewspaper
 	},

@@ -4,10 +4,12 @@ import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Bias } from '../../enums'
 import { WindowContext } from '../../services'
 import { getLandingSources } from '../../logic/get-landing-sources'
+import { useLockBodyScroll } from '../../utils'
 
 export const SourcesDrag: React.FC = () => {
+	const [isBeingDragged, setIsBeingDragged] = React.useState(false)
 	const { width } = React.useContext(WindowContext)
-	const sourcesRef = React.createRef<HTMLDivElement>()
+	const sourcesRef = React.useRef(null)
 	const x = useMotionValue(0)
 	const xInput = React.useMemo(() => {
 		if (width >= 500 && width <= 700) {
@@ -26,8 +28,11 @@ export const SourcesDrag: React.FC = () => {
 
 	const sourcesSample = React.useMemo(() => getLandingSources(), [])
 
+	useLockBodyScroll(isBeingDragged)
+
 	React.useEffect(() => {
 		x.set(0)
+		setIsBeingDragged(false)
 	}, [width, x])
 
 	return (
@@ -40,7 +45,11 @@ export const SourcesDrag: React.FC = () => {
 					drag="x"
 					dragConstraints={sourcesRef}
 					dragElastic={0}
-					onDragEnd={() => x.stop()}>
+					onDragCapture={() => setIsBeingDragged(true)}
+					onDragEnd={() => {
+						x.stop()
+						setIsBeingDragged(false)
+					}}>
 					<svg className="progress-icon" viewBox="-440 -460 1480 1224">
 						<motion.path
 							fill="currentColor"
