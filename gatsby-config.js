@@ -9,7 +9,7 @@ module.exports = {
 		title: `Echo Breaking News`,
 		description: `Sign up today to break the bias of your echo chamber and discover political news from both sides. News sources can be politically biased but you don't have to be!`,
 		author: `John Grisham`,
-		logo: ''
+		logo: 'echo-breaking-logo.png'
 	},
 	plugins: [
 		{
@@ -43,7 +43,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				include_favicon: false
+				icon: `src/images/echo-breaking-logo.png`
 			}
 		}
 	]

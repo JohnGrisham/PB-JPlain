@@ -3,6 +3,8 @@ import * as Styled from './styles'
 import { BenefitOptions, Description } from '../../interfaces'
 import { Benefit } from '../benefit'
 import { CallToAction } from '../call-to-action'
+import { ConvertContext } from '../../contexts'
+import { ConvertModal } from '../convert-modal'
 import { FirebaseContext } from '../../services'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SourcesDrag } from '../sources-drag'
@@ -17,6 +19,7 @@ export interface LandingProps {
 
 const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, heading, subHeading }) => {
 	const { firebase } = React.useContext(FirebaseContext)
+	const { isOpen, setHasBeenDismissed, setIsOpen } = React.useContext(ConvertContext)
 
 	React.useEffect(() => {
 		if (firebase) {
@@ -31,6 +34,11 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 
 		return description.steps.length < 3 ? description.steps.length : 6
 	}, [description])
+
+	const onCloseConvertModal = React.useCallback(() => {
+		setIsOpen(false)
+		setHasBeenDismissed(true)
+	}, [setHasBeenDismissed, setIsOpen])
 
 	return (
 		<Styled.Landing>
@@ -72,6 +80,7 @@ const Landing: React.FC<LandingProps> = ({ benefits, callToAction, description, 
 			)}
 			<SourcesDrag />
 			<CallToAction />
+			<ConvertModal open={isOpen} onClose={onCloseConvertModal} />
 		</Styled.Landing>
 	)
 }
