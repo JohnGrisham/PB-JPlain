@@ -7,7 +7,7 @@ module.exports = {
 	siteMetadata: {
 		siteUrl: `https://echo-breaking-news.com`,
 		title: `Echo Breaking News`,
-		description: `Sign up today to break the bias of your echo chamber and discover political news from both sides. News sources can be politically biased but you don't have to be!`,
+		description: `Echo breaking news helps you break the bias of your echo chamber and discover breaking news from another perspective. News sources can be politically biased but you don't have to be!`,
 		author: `John Grisham`,
 		logo: 'echo-breaking-logo.png'
 	},
@@ -16,7 +16,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-web-font-loader',
 			options: {
 				google: {
-					families: ['Open Sans', 'Libre Baskerville']
+					families: ['Roboto', 'Open Sans', 'Libre Baskerville']
 				}
 			}
 		},

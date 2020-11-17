@@ -1,8 +1,7 @@
 import 'firebase/analytics'
 import 'firebase/firestore'
-import 'firebase/functions'
 import { checkIsClient } from '../../utils'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 
 const config = {
 	apiKey: process.env.GATSBY_FIREBASE_APIKEY,
