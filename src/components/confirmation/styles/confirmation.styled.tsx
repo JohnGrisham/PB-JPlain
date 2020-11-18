@@ -19,6 +19,10 @@ export const Confirmation = styled.div`
 			margin-bottom: 1em;
 		}
 
+		a {
+			color: #4e2378;
+		}
+
 		h2 {
 			font-size: 3.5vw;
 		}
