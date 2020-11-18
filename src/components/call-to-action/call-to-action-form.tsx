@@ -36,6 +36,7 @@ const CallToActionForm: React.FC = () => {
 					email
 				})
 				actions.setStatus({ errors: [], success: true })
+				window.location.replace('/confirmation')
 			} catch (error) {
 				actions.setStatus({ errors: [error] })
 			} finally {
