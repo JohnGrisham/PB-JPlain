@@ -53,7 +53,7 @@ template {
 }
 a {
 	background-color: transparent;
-	color: #4e2378;
+	color: #4e2378 !important;
 	-webkit-text-decoration-skip: objects;
 }
 a:active,
