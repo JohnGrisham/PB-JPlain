@@ -44,7 +44,7 @@ const benefits: BenefitOptions[] = [
 
 const HomePage: React.FC = () => (
 	<Layout>
-		<SEO title="Signup to break your news echo chamber" />
+		<SEO title="Break your echo chamber in social media" />
 		<Landing
 			benefits={benefits}
 			heading="News that doesn't care how you feel"
