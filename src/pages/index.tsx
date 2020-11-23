@@ -6,7 +6,7 @@ import { faDoorOpen, faEye, faNewspaper } from '@fortawesome/free-solid-svg-icon
 const steps: Step[] = [
 	{
 		description:
-			'Tell us your political leaning and some basic information about the type of news you prefer to see. Are you more liberal or conservative? Do you prefer news from CNN, Fox news or somewhere else?',
+			'Tell us your political leaning and some basic information about the type of news you see on your social media feed. Are you more liberal or conservative? Do you prefer news from CNN, Fox news or somewhere else?',
 		heading: 'Tell us your viewpoint',
 		icon: faEye
 	},
@@ -18,7 +18,7 @@ const steps: Step[] = [
 	},
 	{
 		description:
-			"Prepare to leave your personal bubble. News outlets you've avoided in the past start to make a little more sense and you're ready to give a different viewpoint a shot. You now have a deeper understanding of the news everyone else is reading and not just your own.",
+			"Prepare to leave your social media filter bubble. News outlets you've avoided in the past start to make a little more sense and you're ready to give a different viewpoint a shot. You now have a deeper understanding of the news everyone else is reading and not just your own.",
 		heading: 'Leave your echo chamber',
 		icon: faDoorOpen
 	}
@@ -32,12 +32,12 @@ const benefits: BenefitOptions[] = [
 	},
 	{
 		description:
-			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours searching through partisan and bipartisan news or you could come here. Never miss an article and get a wide range of views to make the best possible decision come election day.',
+			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours searching news sources or you could come here. Get a wide range of views and not just the ones on your social media feed to make the best possible decision come election day.',
 		image: { height: 350, src: 'vote.png', width: 350 }
 	},
 	{
 		description:
-			"As political division continues to grow it's even more important that we have access to different viewpoints. Stay up to date with conflicting viewpoints and thoughts on relevant news and start making better arguements for the things you care about.",
+			"As political polarisation continues to grow it's even more important that we have access to different viewpoints. Stay up to date with conflicting viewpoints and thoughts on relevant news and start making better arguements for the things you care about.",
 		image: { height: 350, src: 'divide.png', width: 350 }
 	}
 ]
