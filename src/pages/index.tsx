@@ -6,13 +6,13 @@ import { faDoorOpen, faEye, faNewspaper } from '@fortawesome/free-solid-svg-icon
 const steps: Step[] = [
 	{
 		description:
-			'Tell us your political leaning and some basic information about the type of news you see on your social media feed. Are you more liberal or conservative? Do you prefer news from CNN, Fox news or somewhere else?',
+			'Tell us your political leaning and some basic information about the type of content you see on your social media feed. Are you more liberal or conservative? Do you prefer CNN, Fox news or somewhere else?',
 		heading: 'Tell us your viewpoint',
 		icon: faEye
 	},
 	{
 		description:
-			"Find news sources that you typically wouldn't follow and read articles on topics you already have an opinion on but through a different set of eyes. Discover topics you've never heard of from pundits across the political spectrum as well as news from traditionally less biased sources.",
+			"Find sources that you typically wouldn't follow and read articles on topics you already have an opinion on but through a different set of eyes. Discover topics you've never heard of from pundits across the political spectrum as well as news from traditionally less biased sources.",
 		heading: 'Discover new perspectives',
 		icon: faNewspaper
 	},
@@ -27,12 +27,12 @@ const steps: Step[] = [
 const benefits: BenefitOptions[] = [
 	{
 		description:
-			'There are so many different viewpoints when it comes to political news online and at times it can be overwhelming. Most people only follow the news sources that confirm their bias. We bring the news that challenges your perspective to one place.',
+			'There are so many different viewpoints when it comes to political artlcles online and at times it can be overwhelming. Most people only follow the sources that confirm their bias. We bring the news that challenges your perspective to one place.',
 		image: { height: 350, src: 'press-release.png', width: 350 }
 	},
 	{
 		description:
-			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours searching news sources or you could come here. Get a wide range of views and not just the ones on your social media feed to make the best possible decision come election day.',
+			'Regardless of how you vote staying informed on political news and topics is important. You could spend hours searching articles or you could come here. Get a wide range of views and not just the ones on your social media feed to make the best possible decision come election day.',
 		image: { height: 350, src: 'vote.png', width: 350 }
 	},
 	{
