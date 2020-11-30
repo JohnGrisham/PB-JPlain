@@ -1,0 +1,64 @@
+:local(.descriptionWrapper) {
+	align-items: center;
+	background-color: white;
+	color: #10152d;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1rem;
+}
+
+:local(.step) {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	text-align: center;
+}
+
+:local(.stepGrid) {
+	display: grid;
+	gap: 2rem;
+}
+
+:local(.stepHeading) {
+	margin-bottom: 1rem;
+}
+
+:local(.stepIcon) {
+	align-items: center;
+	background-color: #10152d !important;
+	border-radius: 50% !important;
+	color: white !important;
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	margin-bottom: 1rem;
+	width: 50px;
+}
+
+@media all and (max-width: 700px) {
+	.stepGrid {
+		grid-template-columns: 1fr !important;
+	}
+}
+
+@media all and (min-width: 700px) {
+	.step {
+		grid-column: span 2;
+	}
+
+	/* Dealing with 2 orphan items */
+	.step:last-child:nth-child(3n - 1) {
+		grid-column-end: -2;
+	}
+
+	.step:nth-last-child(2):nth-child(3n + 1) {
+		grid-column-end: 4;
+	}
+
+	/* Dealing with single orphan */
+	.step:last-child:nth-child(3n - 2) {
+		grid-column-end: 5;
+	}
+}

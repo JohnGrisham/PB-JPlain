@@ -1,5 +1,6 @@
 export { BenefitOptions } from './benefit-options'
-export { Description } from './description'
+export { DescriptionOptions } from './description-options'
+export { Post } from './post'
 export { Source } from './source'
 export { Step } from './step'
 export { User } from './user'

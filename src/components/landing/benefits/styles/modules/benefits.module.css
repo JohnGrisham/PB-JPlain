@@ -1,0 +1,11 @@
+:local(.benefitsWrapper) {
+	background-color: #fff0cc;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+:local(.intersection) {
+	display: flex;
+	flex: 1;
+}

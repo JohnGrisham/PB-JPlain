@@ -1,7 +1,7 @@
-import { IconDefinition } from '@fortawesome/fontawesome-common-types'
+import { IconName, IconPrefix } from '@fortawesome/fontawesome-common-types'
 
 export interface Step {
-	icon?: IconDefinition
+	icon?: IconName | [prefix: IconPrefix, name: IconName]
 	heading?: string
 	description?: string
 }
