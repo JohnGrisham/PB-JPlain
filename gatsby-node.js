@@ -12,3 +12,39 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 		})
 	}
 }
+
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+	const {
+		data: { allMarkdownRemark, errors }
+	} = await graphql(`
+		{
+			allMarkdownRemark {
+				edges {
+					node {
+						frontmatter {
+							slug
+						}
+					}
+				}
+			}
+		}
+	`)
+
+	if (errors) {
+		// eslint-disable-next-line no-console
+		console.log('Error retrieving data', errors)
+		return
+	}
+
+	const articleTemplate = require.resolve('./src/templates/article-template.tsx')
+
+	allMarkdownRemark.edges.forEach((edge) => {
+		createPage({
+			component: articleTemplate,
+			context: {
+				slug: edge.node.frontmatter.slug
+			},
+			path: `/blog/${edge.node.frontmatter.slug}/`
+		})
+	})
+}

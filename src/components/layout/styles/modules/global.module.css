@@ -600,6 +600,10 @@ pre tt:after {
 	content: '';
 }
 
+:global(.fluid) {
+	width: 100%;
+}
+
 :global(.MuiMenu-list) {
 	background-color: #4e2378;
 }

@@ -37,7 +37,7 @@ const ImageFluid: React.FC<ImageFluidProps> = ({ aspectRatio = 4 / 3, src, style
 		return <div>Image not found</div>
 	}
 
-	return <Img fluid={{ ...image, aspectRatio }} style={style} className={className} />
+	return <Img fluid={{ ...image, aspectRatio }} style={style} className={`fluid${className ? ` ${className}` : ''}`} />
 }
 
 export default ImageFluid

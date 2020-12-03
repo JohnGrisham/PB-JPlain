@@ -42,9 +42,11 @@ const Description: React.FC = () => {
 			{description.heading && <h2>{description.heading}</h2>}
 			{description.subHeading && <h3>{description.subHeading}</h3>}
 			{description.steps && (
-				<Styled.StepGrid style={{ gridTemplateColumns: `repeat(${stepColumns}, 1fr)` }}>
+				<Styled.StepGrid style={stepColumns ? { gridTemplateColumns: `repeat(${stepColumns}, 1fr)` } : undefined}>
 					{description.steps.map(({ description, heading, icon }, i) => (
-						<Styled.Step key={`step-${i}`}>
+						<Styled.Step
+							key={`step-${i}`}
+							style={stepColumns === 2 ? { gridColumn: 'span 1', gridColumnEnd: 'auto' } : undefined}>
 							<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
 							{heading && <Styled.StepHeading>{heading}</Styled.StepHeading>}
 							{description && <span>{description}</span>}

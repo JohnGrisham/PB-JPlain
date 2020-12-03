@@ -18,7 +18,6 @@ export const Landing = styled.div.attrs(() => ({
 
 export const LandingImage = styled(Image).attrs(() => ({
 	aspectRatio: 21 / 11,
-	className: landing.landingImage,
 	src: 'landing.jpg',
 	type: 'fluid'
 }))``

@@ -4,8 +4,9 @@ import { Link } from 'gatsby'
 import header from './modules'
 import styled from 'styled-components'
 
-export const LoginButton = styled(Button).attrs(() => ({
-	className: header.loginButton
+export const SignupButton = styled(Button).attrs(() => ({
+	className: header.signupButton,
+	href: '#CTA'
 }))``
 
 export const MobileMenu = styled(Menu).attrs(() => ({

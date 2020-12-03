@@ -48,17 +48,6 @@ export const sources: Source[] = [
 		bias: Bias.Centrist
 	},
 	{
-		id: 'bloomberg',
-		name: 'Bloomberg',
-		description:
-			'Bloomberg delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News.',
-		url: 'http://www.bloomberg.com',
-		category: 'business',
-		language: 'en',
-		country: 'us',
-		bias: Bias.Centrist
-	},
-	{
 		id: 'breitbart-news',
 		name: 'Breitbart News',
 		description:
@@ -68,28 +57,6 @@ export const sources: Source[] = [
 		language: 'en',
 		country: 'us',
 		bias: Bias.FarRight
-	},
-	{
-		id: 'business-insider',
-		name: 'Business Insider',
-		description:
-			'Business Insider is a fast-growing business site with deep financial, media, tech, and other industry verticals. Launched in 2007, the site is now the largest business news site on the web.',
-		url: 'http://www.businessinsider.com',
-		category: 'business',
-		language: 'en',
-		country: 'us',
-		bias: Bias.Centrist
-	},
-	{
-		id: 'buzzfeed',
-		name: 'Buzzfeed',
-		description:
-			'BuzzFeed is a cross-platform, global network for news and entertainment that generates seven billion views each month.',
-		url: 'https://www.buzzfeed.com',
-		category: 'entertainment',
-		language: 'en',
-		country: 'us',
-		bias: Bias.FarLeft
 	},
 	{
 		id: 'cbs-news',
@@ -133,16 +100,6 @@ export const sources: Source[] = [
 		language: 'en',
 		country: 'us',
 		bias: Bias.Left
-	},
-	{
-		id: 'mashable',
-		name: 'Mashable',
-		description: 'Mashable is a global, multi-platform media and entertainment company.',
-		url: 'https://mashable.com',
-		category: 'entertainment',
-		language: 'en',
-		country: 'us',
-		bias: Bias.FarLeft
 	},
 	{
 		id: 'msnbc',
@@ -215,17 +172,6 @@ export const sources: Source[] = [
 			'Reuters.com brings you the latest news from around the world, covering breaking news in business, politics, entertainment, technology, video and pictures.',
 		url: 'http://www.reuters.com',
 		category: 'general',
-		language: 'en',
-		country: 'us',
-		bias: Bias.Centrist
-	},
-	{
-		id: 'techcrunch',
-		name: 'TechCrunch',
-		description:
-			'TechCrunch is a leading technology media property, dedicated to obsessively profiling startups, reviewing new Internet products, and breaking tech news.',
-		url: 'https://techcrunch.com',
-		category: 'technology',
 		language: 'en',
 		country: 'us',
 		bias: Bias.Centrist

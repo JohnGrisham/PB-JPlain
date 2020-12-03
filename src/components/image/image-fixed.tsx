@@ -38,7 +38,9 @@ const ImageFixed: React.FC<ImageFixedProps> = ({ src, style, className, height =
 		return <div>Image not found</div>
 	}
 
-	return <Img fixed={{ ...image, height, width }} style={style} className={className} />
+	return (
+		<Img fixed={{ ...image, height, width }} style={style} className={`fixed${className ? ` ${className}` : ''}`} />
+	)
 }
 
 export default ImageFixed

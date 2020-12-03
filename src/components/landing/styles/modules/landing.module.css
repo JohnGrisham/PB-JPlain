@@ -25,10 +25,6 @@
 	width: 100%;
 }
 
-:local(.landingImage) {
-	width: 100%;
-}
-
 :local(.sources) {
 	background-color: white;
 	display: flex;
