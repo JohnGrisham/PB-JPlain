@@ -612,6 +612,11 @@ pre tt:after {
 	margin: 0;
 }
 
+:global(.Mui-disabled) {
+	background-color: grey;
+	cursor: not-allowed;
+}
+
 @media only screen and (max-width: 480px) {
 	html {
 		font-size: 100%;

@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as Styled from './styles'
 import { Button, MenuItem } from '@material-ui/core'
 import { ConvertContext } from '../../contexts'
+import { FirebaseContext } from '../../services'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useWindowSize } from '../../utils'
@@ -17,11 +18,17 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 	const { width } = useWindowSize()
 
 	const { setIsOpen } = React.useContext(ConvertContext)
+	const { authToken } = React.useContext(FirebaseContext)
 
 	const menu = (
 		<>
 			<Styled.SiteLink to="/blog">Blog</Styled.SiteLink>
-			<Styled.SignupButton type="button" variant="contained" color="primary" onClick={() => setIsOpen(true)}>
+			<Styled.SignupButton
+				disabled={!!authToken}
+				type="button"
+				variant="contained"
+				color="primary"
+				onClick={() => setIsOpen(true)}>
 				<h4>Signup</h4>
 			</Styled.SignupButton>
 		</>
@@ -32,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 			<MenuItem>
 				<Styled.SiteLink to="/blog">Blog</Styled.SiteLink>
 			</MenuItem>
-			<MenuItem>
+			<MenuItem disabled={!!authToken}>
 				<Styled.SignupButton type="button" variant="contained" color="primary" onClick={() => setIsOpen(true)}>
 					<h4>Signup</h4>
 				</Styled.SignupButton>
