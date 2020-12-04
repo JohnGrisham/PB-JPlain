@@ -2,8 +2,6 @@ import * as React from 'react'
 import * as Styled from './styles'
 import { Benefits } from './benefits'
 import { CallToAction } from '../call-to-action'
-import { ConvertContext } from '../../contexts'
-import { ConvertModal } from '../convert-modal'
 import { Description } from './description'
 import { FirebaseContext } from '../../services'
 import { SourcesDrag } from '../sources-drag'
@@ -16,18 +14,12 @@ export interface LandingProps {
 
 const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) => {
 	const { firebase } = React.useContext(FirebaseContext)
-	const { isOpen, setHasBeenDismissed, setIsOpen } = React.useContext(ConvertContext)
 
 	React.useEffect(() => {
 		if (firebase) {
 			firebase.analytics().logEvent('We have landed!')
 		}
 	}, [firebase])
-
-	const onCloseConvertModal = React.useCallback(() => {
-		setIsOpen(false)
-		setHasBeenDismissed(true)
-	}, [setHasBeenDismissed, setIsOpen])
 
 	return (
 		<Styled.Landing>
@@ -45,7 +37,6 @@ const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) 
 			<Benefits />
 			<SourcesDrag />
 			<CallToAction />
-			<ConvertModal open={isOpen} onClose={onCloseConvertModal} />
 		</Styled.Landing>
 	)
 }

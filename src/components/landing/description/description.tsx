@@ -46,7 +46,7 @@ const Description: React.FC = () => {
 					{description.steps.map(({ description, heading, icon }, i) => (
 						<Styled.Step
 							key={`step-${i}`}
-							style={stepColumns === 2 ? { gridColumn: 'span 1', gridColumnEnd: 'auto' } : undefined}>
+							style={stepColumns && stepColumns < 3 ? { gridColumn: 'span 1', gridColumnEnd: 'auto' } : undefined}>
 							<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
 							{heading && <Styled.StepHeading>{heading}</Styled.StepHeading>}
 							{description && <span>{description}</span>}

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { Button, MenuItem } from '@material-ui/core'
+import { ConvertContext } from '../../contexts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useWindowSize } from '../../utils'
@@ -15,10 +16,12 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 	const { width } = useWindowSize()
 
+	const { setIsOpen } = React.useContext(ConvertContext)
+
 	const menu = (
 		<>
 			<Styled.SiteLink to="/blog">Blog</Styled.SiteLink>
-			<Styled.SignupButton type="button" variant="contained" color="primary">
+			<Styled.SignupButton type="button" variant="contained" color="primary" onClick={() => setIsOpen(true)}>
 				<h4>Signup</h4>
 			</Styled.SignupButton>
 		</>
@@ -30,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 				<Styled.SiteLink to="/blog">Blog</Styled.SiteLink>
 			</MenuItem>
 			<MenuItem>
-				<Styled.SignupButton type="button" variant="contained" color="primary">
+				<Styled.SignupButton type="button" variant="contained" color="primary" onClick={() => setIsOpen(true)}>
 					<h4>Signup</h4>
 				</Styled.SignupButton>
 			</MenuItem>

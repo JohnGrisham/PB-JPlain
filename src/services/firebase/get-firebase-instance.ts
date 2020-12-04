@@ -1,5 +1,5 @@
 import 'firebase/analytics'
-import 'firebase/firestore'
+import 'firebase/auth'
 import { checkIsClient } from '../../utils'
 import firebase from 'firebase/app'
 

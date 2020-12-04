@@ -13,10 +13,25 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 	}
 }
 
+exports.createSchemaCustomization = ({ actions }) => {
+	const { createTypes } = actions
+	const typeDefs = `
+	type MarkdownRemarkFrontmatter {
+		title: String
+		slug: String
+		date: Date
+		featuredImage: String
+	}
+
+	type MarkdownRemark implements Node {
+		frontmatter: MarkdownRemarkFrontmatter
+	}
+  `
+	createTypes(typeDefs)
+}
+
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-	const {
-		data: { allMarkdownRemark, errors }
-	} = await graphql(`
+	const { allMarkdownRemark, errors } = await graphql(`
 		{
 			allMarkdownRemark {
 				edges {
@@ -30,9 +45,9 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 		}
 	`)
 
-	if (errors) {
+	if (!allMarkdownRemark || errors) {
 		// eslint-disable-next-line no-console
-		console.log('Error retrieving data', errors)
+		console.log('Error retrieving data', errors || 'No data could be found for this query.')
 		return
 	}
 

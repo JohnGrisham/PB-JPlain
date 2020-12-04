@@ -14,7 +14,7 @@ const formSchema = Yup.object().shape({
 })
 
 const CallToActionForm: React.FC = () => {
-	const { firebase } = React.useContext(FirebaseContext)
+	const { firebase, setAuthToken } = React.useContext(FirebaseContext)
 
 	const onSubmitCTA = React.useCallback(
 		async ({ email }: CTAValue, actions: FormikHelpers<CTAValue>) => {
@@ -23,18 +23,13 @@ const CallToActionForm: React.FC = () => {
 					return
 				}
 
-				const db = firebase.firestore()
+				const { user } = await firebase.auth().createUserWithEmailAndPassword(email, 'echo-break')
 
-				const emailDoc = await db.collection('signups').doc(email).get()
-
-				if (emailDoc.exists) {
-					throw new Error('Email has already been submitted.')
+				if (user) {
+					const { refreshToken } = user
+					setAuthToken(refreshToken)
 				}
 
-				await db.collection('signups').doc(email).set({
-					dateOfSignup: new Date(),
-					email
-				})
 				actions.setStatus({ errors: [], success: true })
 				window.location.replace('/confirmation')
 			} catch (error) {
@@ -43,7 +38,7 @@ const CallToActionForm: React.FC = () => {
 				actions.setSubmitting(false)
 			}
 		},
-		[firebase]
+		[firebase, setAuthToken]
 	)
 
 	return (

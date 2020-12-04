@@ -9,7 +9,7 @@ export const query = graphql`
 				node {
 					frontmatter {
 						title
-						date(formatString: "DD MMMM, YYYY")
+						date
 					}
 					excerpt
 				}
@@ -18,20 +18,22 @@ export const query = graphql`
 	}
 `
 
-const articleTemplate: React.FC<BlogData> = ({
-	data: {
+const articleTemplate: React.FC<BlogData> = ({ data }) => {
+	if (!data) {
+		return null
+	}
+
+	const {
 		allMarkdownRemark: {
 			edges: [
 				{
-					node: {
-						frontmatter: { title }
-					}
+					node: { frontmatter }
 				}
 			]
 		}
-	}
-}) => {
-	return <div>{title}</div>
+	} = { ...data }
+
+	return <div>{frontmatter.title}</div>
 }
 
 export default articleTemplate

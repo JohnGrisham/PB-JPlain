@@ -5,8 +5,7 @@ import header from './modules'
 import styled from 'styled-components'
 
 export const SignupButton = styled(Button).attrs(() => ({
-	className: header.signupButton,
-	href: '#CTA'
+	className: header.signupButton
 }))``
 
 export const MobileMenu = styled(Menu).attrs(() => ({
