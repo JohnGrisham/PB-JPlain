@@ -24,11 +24,11 @@ export const Confirmation = styled.div`
 		}
 
 		h2 {
-			font-size: 3.5vw;
+			font-size: max(18px, 3vw);
 		}
 
 		h5 {
-			font-size: 3vw;
+			font-size: max(16px, 2.5vw);
 		}
 	}
 `
@@ -36,5 +36,5 @@ export const Confirmation = styled.div`
 export const ConfirmationImage = styled(Image).attrs({ src: 'signup-confirmation.png', type: 'fluid' })`
 	height: 100%;
 	position: absolute !important;
-	width: 100vw;
+	min-width: 100vw;
 `

@@ -39,7 +39,12 @@ module.exports = {
 		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
-		`gatsby-plugin-sitemap`,
+		{
+			resolve: `gatsby-plugin-sitemap`,
+			options: {
+				exclude: ['/confirmation']
+			}
+		},
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-css-modules-typings`,

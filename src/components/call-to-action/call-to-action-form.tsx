@@ -14,7 +14,7 @@ const formSchema = Yup.object().shape({
 })
 
 const CallToActionForm: React.FC = () => {
-	const { firebase, setAuthToken } = React.useContext(FirebaseContext)
+	const { authToken, firebase, setAuthToken } = React.useContext(FirebaseContext)
 
 	const onSubmitCTA = React.useCallback(
 		async ({ email }: CTAValue, actions: FormikHelpers<CTAValue>) => {
@@ -67,14 +67,18 @@ const CallToActionForm: React.FC = () => {
 							variant="outlined"
 							required
 						/>
-						<Button disabled={!isValid || isSubmitting} type="submit" variant="contained" color="primary">
+						<Button
+							disabled={!!authToken || !isValid || isSubmitting}
+							type="submit"
+							variant="contained"
+							color="primary">
 							Sign Up
 						</Button>
 						{status.errors.length > 0 &&
 							status.errors.map((error: { message: string }, i: number) => (
 								<Styled.CallToActionError key={`cta-error-${i}`}>{error.message}</Styled.CallToActionError>
 							))}
-						{status.errors.length <= 0 && status.success && (
+						{status.errors.length <= 0 && (status.success || !!authToken) && (
 							<Styled.CallToActionSuccess>
 								Congratulations you&apos;re now on the waiting list!
 							</Styled.CallToActionSuccess>
