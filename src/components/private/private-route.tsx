@@ -1,5 +1,6 @@
 import { FirebaseContext } from '../../services'
 import React from 'react'
+import { checkIsClient } from '../../utils'
 import { navigate } from 'gatsby'
 
 export interface PrivateRouteProps {
@@ -9,8 +10,23 @@ export interface PrivateRouteProps {
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, path = '/' }) => {
 	const { authToken } = React.useContext(FirebaseContext)
 
-	if (!authToken && window.location.href !== path) {
-		navigate(path)
+	const isClient = React.useMemo(() => checkIsClient(), [])
+
+	React.useEffect(() => {
+		const checkPermission = () => {
+			if (!authToken && window.location.href !== path) {
+				navigate(path)
+			}
+		}
+
+		if (!isClient) {
+			return
+		}
+
+		checkPermission()
+	}, [authToken, isClient, path])
+
+	if (!authToken) {
 		return null
 	}
 
