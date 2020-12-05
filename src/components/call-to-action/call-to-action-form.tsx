@@ -52,6 +52,7 @@ const CallToActionForm: React.FC = () => {
 					<Styled.CallToActionInput>
 						<TextField
 							id="CTA"
+							disabled={!!authToken}
 							error={touched && errors?.email && !status.success ? true : false}
 							helperText={
 								touched && status.errors.length <= 0 && !status.success && errors?.email ? errors.email : undefined

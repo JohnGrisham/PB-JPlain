@@ -614,8 +614,9 @@ pre tt:after {
 }
 
 :global(.Mui-disabled) {
-	background-color: grey;
+	background-color: gainsboro;
 	cursor: not-allowed !important;
+	opacity: 0.5 !important;
 	pointer-events: all !important;
 }
 
