@@ -26,10 +26,10 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 						key={id}
 						style={postColumns && postColumns < 3 ? { gridColumn: 'span 1', gridColumnEnd: 'auto' } : undefined}>
 						<Styled.PostLink to={slug}>
-							<Styled.FeaturedImage src={featuredImage} />
+							{featuredImage && <Styled.FeaturedImage src={featuredImage} />}
 							<span>
 								<h3>{title}</h3>
-								<h5>{moment(date).format('MM/DD/YYYY')}</h5>
+								{date && <h5>{moment(date).format('MM/DD/YYYY')}</h5>}
 								<p>{excerpt}</p>
 							</span>
 						</Styled.PostLink>

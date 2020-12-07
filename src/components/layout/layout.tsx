@@ -1,7 +1,5 @@
 import 'minireset.css'
 import 'normalize.css'
-// Uncomment next line and remove Styled instances to stop using styled components for global styles and use pure css
-// import './styles/modules/global.module.css'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { ConvertContext } from '../../contexts'

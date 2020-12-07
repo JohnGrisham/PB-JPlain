@@ -17,8 +17,8 @@ exports.createSchemaCustomization = ({ actions }) => {
 	const { createTypes } = actions
 	const typeDefs = `
 	type MarkdownRemarkFrontmatter {
-		title: String
-		slug: String
+		title: String!
+		slug: String!
 		date: Date
 		featuredImage: String
 	}
@@ -31,7 +31,9 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-	const { allMarkdownRemark, errors } = await graphql(`
+	const {
+		data: { allMarkdownRemark, errors }
+	} = await graphql(`
 		{
 			allMarkdownRemark {
 				edges {
@@ -47,7 +49,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
 	if (!allMarkdownRemark || errors) {
 		// eslint-disable-next-line no-console
-		console.log('Error retrieving data', errors || 'No data could be found for this query.')
+		console.log('Error retrieving data', errors || 'No data could be found for this query!')
 		return
 	}
 

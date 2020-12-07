@@ -1,8 +1,8 @@
 // Delete this file if you don't want to use styled components for global styles.
-import layoutCSS, { layout } from './modules'
+import globalCSS, { layout } from './modules'
 import styled, { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyle = createGlobalStyle(layoutCSS)
+export const GlobalStyle = createGlobalStyle(globalCSS)
 
 export const Content = styled.main.attrs(() => ({
 	className: layout.content
