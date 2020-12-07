@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const ConvertModal = styled(Dialog)`
 	.MuiDialog-paper {
 		align-items: center;
-		background-color: #8660ab;
+		background-color: white;
 		display: flex;
 		flex-direction: column;
 		padding: 25px;

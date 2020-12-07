@@ -4,16 +4,16 @@ import { off, on } from '../helpers'
 import { checkIsClient } from '../check-is-client'
 
 export default function useWindowSize(): {
-	height: number
-	width: number
+	height: number | null
+	width: number | null
 } {
 	const isClient = React.useMemo(() => checkIsClient(), [])
 
 	const getSize = React.useCallback(() => {
 		if (!isClient) {
 			return {
-				height: 0,
-				width: 0
+				height: null,
+				width: null
 			}
 		}
 
