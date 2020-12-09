@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 					{siteTitle}
 				</Styled.SiteLink>
 			</Styled.SiteContext>
-			{!width || width <= 700 ? (
+			{!width ? null : width <= 700 ? (
 				<>
 					<Button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
 						<FontAwesomeIcon color="white" icon={faBars} />
