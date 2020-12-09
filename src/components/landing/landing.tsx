@@ -13,13 +13,7 @@ export interface LandingProps {
 }
 
 const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) => {
-	const { authToken, firebase } = React.useContext(FirebaseContext)
-
-	React.useEffect(() => {
-		if (firebase) {
-			firebase.analytics().logEvent('We have landed!')
-		}
-	}, [firebase])
+	const { authToken } = React.useContext(FirebaseContext)
 
 	return (
 		<Styled.Landing>
