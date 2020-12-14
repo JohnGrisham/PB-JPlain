@@ -1,6 +1,10 @@
 import * as React from 'react'
+import { Article, Heading, List, Paragraph, PostTitle, SubHeading, Title } from './styles'
+import { Image, Layout } from '../components'
 import { BlogData } from '../interfaces'
+import RehypeReact from 'rehype-react'
 import { graphql } from 'gatsby'
+import moment from 'moment'
 
 export const query = graphql`
 	query($slug: String!) {
@@ -8,10 +12,12 @@ export const query = graphql`
 			edges {
 				node {
 					frontmatter {
-						title
 						date
+						featuredImage
+						title
 					}
 					excerpt
+					htmlAst
 				}
 			}
 		}
@@ -27,13 +33,39 @@ const articleTemplate: React.FC<BlogData> = ({ data }) => {
 		allMarkdownRemark: {
 			edges: [
 				{
-					node: { frontmatter }
+					node: { frontmatter, htmlAst }
 				}
 			]
 		}
 	} = { ...data }
 
-	return <div>{frontmatter.title}</div>
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const renderAst = new (RehypeReact as any)({
+		components: {
+			h1: Heading,
+			h2: SubHeading,
+			p: Paragraph,
+			ul: List
+		},
+		createElement: React.createElement
+	}).Compiler
+
+	return (
+		<Layout>
+			<Article>
+				<Title>{frontmatter.title}</Title>
+				{(frontmatter.featuredImage || frontmatter.date) && (
+					<PostTitle>
+						{frontmatter.featuredImage && <Image src={frontmatter.featuredImage} type="fluid" />}
+						{frontmatter.date && (
+							<SubHeading style={{ textAlign: 'center' }}>{moment(frontmatter.date).format('MM/DD/YYYY')}</SubHeading>
+						)}
+					</PostTitle>
+				)}
+				{renderAst(htmlAst)}
+			</Article>
+		</Layout>
+	)
 }
 
 export default articleTemplate

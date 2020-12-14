@@ -14,12 +14,6 @@ export const Step = styled.div.attrs(() => ({
 	className: description.step
 }))``
 
-// This component uses a technique which allows for dynamic centering of leftover grid items that normally wouldn't be centered in this grid.
-// The source can be found here: https://css-irl.info/controlling-leftover-grid-items/
-export const StepGrid = styled.div.attrs(() => ({
-	className: description.stepGrid
-}))``
-
 export const StepHeading = styled.h3.attrs(() => ({
 	className: description.stepHeading
 }))``

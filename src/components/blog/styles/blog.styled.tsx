@@ -27,7 +27,7 @@ export const PostItem = styled(Card).attrs({
 	}
 
 	span {
-		padding: 2em;
+		padding: 1em;
 	}
 `
 

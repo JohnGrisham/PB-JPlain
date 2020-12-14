@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Grid } from '../grid'
 import { Post } from '../../interfaces'
 import { faBlog } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
@@ -10,31 +11,29 @@ interface BlogProps {
 }
 
 const Blog: React.FC<BlogProps> = ({ posts }) => {
-	const postColumns = React.useMemo(() => {
-		if (!posts) {
+	const blogItems = React.useMemo(() => {
+		if (posts.length <= 0) {
 			return null
 		}
 
-		return posts.length < 3 ? posts.length : 6
+		return posts.map(({ frontmatter: { date, featuredImage, slug, title }, excerpt, id }) => (
+			<Styled.PostItem key={id}>
+				<Styled.PostLink to={slug}>
+					{featuredImage && <Styled.FeaturedImage src={featuredImage} />}
+					<span>
+						<h3>{title}</h3>
+						{date && <h5>{moment(date).format('MM/DD/YYYY')}</h5>}
+						<p>{excerpt}</p>
+					</span>
+				</Styled.PostLink>
+			</Styled.PostItem>
+		))
 	}, [posts])
 
 	return (
-		<Styled.Blog style={postColumns ? { gridTemplateColumns: `repeat(${postColumns}, 1fr)` } : undefined}>
-			{posts.length > 0 ? (
-				posts.map(({ frontmatter: { date, featuredImage, slug, title }, excerpt, id }) => (
-					<Styled.PostItem
-						key={id}
-						style={postColumns && postColumns < 3 ? { gridColumn: 'span 1', gridColumnEnd: 'auto' } : undefined}>
-						<Styled.PostLink to={slug}>
-							{featuredImage && <Styled.FeaturedImage src={featuredImage} />}
-							<span>
-								<h3>{title}</h3>
-								{date && <h5>{moment(date).format('MM/DD/YYYY')}</h5>}
-								<p>{excerpt}</p>
-							</span>
-						</Styled.PostLink>
-					</Styled.PostItem>
-				))
+		<Styled.Blog>
+			{blogItems ? (
+				<Grid items={blogItems} style={{ width: '90%' }} />
 			) : (
 				<h2>
 					No blog posts yet but check back soon!&nbsp;

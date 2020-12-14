@@ -19,7 +19,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 	type MarkdownRemarkFrontmatter {
 		title: String!
 		slug: String!
-		date: Date
+		date: String
 		featuredImage: String
 	}
 

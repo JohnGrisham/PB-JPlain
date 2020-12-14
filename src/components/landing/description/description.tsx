@@ -3,6 +3,7 @@ import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { DescriptionOptions } from '../../../interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Grid } from '../../grid'
 
 const Description: React.FC = () => {
 	const {
@@ -29,31 +30,25 @@ const Description: React.FC = () => {
 		`
 	)
 
-	const stepColumns = React.useMemo(() => {
-		if (!description?.steps) {
+	const stepItems = React.useMemo(() => {
+		if (!description?.steps || description.steps.length <= 0) {
 			return null
 		}
 
-		return description.steps.length < 3 ? description.steps.length : 6
+		return description.steps.map(({ description, heading, icon }, i) => (
+			<>
+				<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
+				{heading && <Styled.StepHeading>{heading}</Styled.StepHeading>}
+				{description && <span>{description}</span>}
+			</>
+		))
 	}, [description])
 
 	return (
 		<Styled.Description>
 			{description.heading && <h2>{description.heading}</h2>}
 			{description.subHeading && <h3>{description.subHeading}</h3>}
-			{description.steps && (
-				<Styled.StepGrid style={stepColumns ? { gridTemplateColumns: `repeat(${stepColumns}, 1fr)` } : undefined}>
-					{description.steps.map(({ description, heading, icon }, i) => (
-						<Styled.Step
-							key={`step-${i}`}
-							style={stepColumns && stepColumns < 3 ? { gridColumn: 'span 1', gridColumnEnd: 'auto' } : undefined}>
-							<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
-							{heading && <Styled.StepHeading>{heading}</Styled.StepHeading>}
-							{description && <span>{description}</span>}
-						</Styled.Step>
-					))}
-				</Styled.StepGrid>
-			)}
+			{stepItems && <Grid items={stepItems} />}
 		</Styled.Description>
 	)
 }
