@@ -1,0 +1,14 @@
+{
+	"heading": "Here's what people are saying.",
+	"subHeading": "Check it out!",
+	"testimonials": [
+		{
+			"quote": "This is some cool shit!",
+			"attributedUser": {
+				"name": "bob",
+				"company": "Builders Co",
+				"avatar": "bob.jpg"
+			}
+		}
+	]
+}

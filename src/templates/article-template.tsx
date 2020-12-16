@@ -56,9 +56,15 @@ const articleTemplate: React.FC<BlogData> = ({ data }) => {
 				<Title>{frontmatter.title}</Title>
 				{(frontmatter.featuredImage || frontmatter.date) && (
 					<PostTitle>
-						{frontmatter.featuredImage && <Image src={frontmatter.featuredImage} type="fluid" />}
+						{frontmatter.featuredImage && (
+							<Image
+								src={frontmatter.featuredImage}
+								type="fluid"
+								style={frontmatter.date ? { marginBottom: '10px' } : undefined}
+							/>
+						)}
 						{frontmatter.date && (
-							<SubHeading style={{ textAlign: 'center' }}>{moment(frontmatter.date).format('MM/DD/YYYY')}</SubHeading>
+							<SubHeading style={{ textAlign: 'center' }}>{moment(frontmatter.date).format('MMM Do YYYY')}</SubHeading>
 						)}
 					</PostTitle>
 				)}

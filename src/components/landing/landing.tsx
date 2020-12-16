@@ -5,6 +5,7 @@ import { CallToAction } from '../call-to-action'
 import { Description } from './description'
 import { FirebaseContext } from '../../services'
 import { SourcesDrag } from '../sources-drag'
+//import { Testimonials } from './testimonials'
 
 export interface LandingProps {
 	callToAction?: string
@@ -29,6 +30,7 @@ const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) 
 			</Styled.LandingImageWrapper>
 			<Description />
 			<Benefits />
+			{/* <Testimonials /> */}
 			<SourcesDrag />
 			<CallToAction />
 		</Styled.Landing>

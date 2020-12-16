@@ -1,4 +1,5 @@
 {
 	"description": "As political polarisation continues to grow it's even more important that we have access to different viewpoints. Stay up to date with conflicting viewpoints and thoughts on relevant news and start making better arguements for the things you care about.",
-	"image": { "height": 350, "src": "divide.png", "width": 350 }
+	"image": { "height": 350, "src": "divide.png", "width": 350 },
+	"order": 3
 }

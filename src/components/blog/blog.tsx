@@ -22,7 +22,7 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 					{featuredImage && <Styled.FeaturedImage src={featuredImage} />}
 					<span>
 						<h3>{title}</h3>
-						{date && <h5>{moment(date).format('MM/DD/YYYY')}</h5>}
+						{date && <h5>{moment(date).format('MMM Do YYYY')}</h5>}
 						<p>{excerpt}</p>
 					</span>
 				</Styled.PostLink>
