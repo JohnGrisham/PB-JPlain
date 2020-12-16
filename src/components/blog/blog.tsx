@@ -20,11 +20,13 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 			<Styled.PostItem key={id}>
 				<Styled.PostLink to={slug}>
 					{featuredImage && <Styled.FeaturedImage src={featuredImage} />}
-					<span>
-						<h3>{title}</h3>
-						{date && <h5>{moment(date).format('MMM Do YYYY')}</h5>}
+					<Styled.PostContent>
+						<Styled.PostContentUpper>
+							<h3>{title}</h3>
+							{date && <h5>{moment(date).format('MMM Do YYYY')}</h5>}
+						</Styled.PostContentUpper>
 						<p>{excerpt}</p>
-					</span>
+					</Styled.PostContent>
 				</Styled.PostLink>
 			</Styled.PostItem>
 		))

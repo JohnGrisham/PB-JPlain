@@ -10,6 +10,18 @@
 	flex: 1;
 }
 
+:local(.postContent) {
+	padding: 1em;
+}
+
+:local(.postContentUpper) {
+	margin-bottom: 10px;
+}
+
+:local(.postContentUpper *) {
+	margin: 0px;
+}
+
 :local(.postItem) {
 	align-items: center;
 	display: flex;

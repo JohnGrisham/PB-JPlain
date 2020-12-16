@@ -8,12 +8,7 @@
 		"sourceType": "module",
 		"tsconfigRootDir": "./"
 	},
-	"extends": [
-		"plugin:@typescript-eslint/recommended",
-		"prettier/@typescript-eslint",
-		"plugin:react/recommended",
-		"plugin:prettier/recommended"
-	],
+	"extends": ["plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint", "plugin:react/recommended"],
 	"plugins": ["@typescript-eslint", "react", "react-hooks"],
 	"env": {
 		"browser": true,

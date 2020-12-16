@@ -10,7 +10,7 @@ const Benefits: React.FC = () => {
 	} = useStaticQuery<{ allBenefitsJson: { edges: Array<{ node: BenefitOptions }> } }>(
 		graphql`
 			query {
-				allBenefitsJson(order: { asc: order }) {
+				allBenefitsJson(sort: { fields: order }) {
 					edges {
 						node {
 							id

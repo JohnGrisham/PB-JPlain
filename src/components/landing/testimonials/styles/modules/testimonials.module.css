@@ -1,7 +1,62 @@
-:local(.testimonialsWrapper) {
-	align-items: center;
+:local(.attributedUser) {
+	display: flex;
+	flex: 1;
+	margin: 0.5em;
+}
+
+:local(.attributedUserAvatar) {
+	display: flex;
+	margin-right: 0.5em;
+}
+
+:local(.attributedUserAvatar img) {
+	margin-bottom: 0px;
+}
+
+:local(.attributedUserInformation) {
+	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-	height: 500px;
-	justify-content: center;
+	margin-bottom: 1em;
+}
+
+:local(.attributedUserInformation span) {
+	white-space: nowrap;
+}
+
+:local(.attributedUserInformation h4) {
+	margin-bottom: 0.5em;
+}
+
+:local(.testimonialsWrapper) {
+	align-items: center;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+
+:local(.testimony) {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+}
+
+:local(.quote) {
+	color: #383838;
+	display: flex;
+	flex: 1;
+	margin-bottom: 1em;
+}
+
+:local(.quote h3) {
+	line-height: 1.5em;
+	margin: 0 0.5em 0 0.5em;
+	overflow: hidden;
+}
+
+@media all and (min-width: 900px) {
+	.testimony {
+		max-width: 300px;
+	}
 }

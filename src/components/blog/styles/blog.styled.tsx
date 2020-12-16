@@ -17,19 +17,15 @@ export const FeaturedImage = styled(Image).attrs(() => ({
 export const PostItem = styled(Card).attrs({
 	className: blog.postItem,
 	raised: true
-})`
-	h3 {
-		margin-bottom: 0px;
-	}
+})``
 
-	h5 {
-		margin-top: 0px;
-	}
+export const PostContent = styled.span.attrs({
+	className: blog.postContent
+})``
 
-	span {
-		padding: 1em;
-	}
-`
+export const PostContentUpper = styled.div.attrs({
+	className: blog.postContentUpper
+})``
 
 export const PostLink = styled(Link).attrs({
 	className: blog.postLink

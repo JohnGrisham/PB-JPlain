@@ -35,7 +35,7 @@ const Description: React.FC = () => {
 			return null
 		}
 
-		return description.steps.map(({ description, heading, icon }, i) => (
+		return description.steps.map(({ description, heading, icon }) => (
 			<>
 				<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
 				{heading && <Styled.StepHeading>{heading}</Styled.StepHeading>}

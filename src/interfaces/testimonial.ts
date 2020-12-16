@@ -2,6 +2,7 @@ export interface Testimonial {
 	attributedUser: {
 		avatar?: string
 		company?: string
+		title?: string
 		name: string
 	}
 	quote: string
