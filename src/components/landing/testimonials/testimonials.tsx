@@ -1,10 +1,9 @@
 import * as React from 'react'
 import * as Styled from './styles'
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import { graphql, useStaticQuery } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Grid } from '../../grid'
 import { TestimonialOptions } from '../../../interfaces'
+import { Testimony } from '../../testimony'
 
 const Testimonials: React.FC = () => {
 	const query = useStaticQuery<{
@@ -34,9 +33,7 @@ const Testimonials: React.FC = () => {
 	)
 
 	const testimonial = React.useMemo(() => {
-		const {
-			allTestimonialsJson: { edges = [] }
-		} = { ...query }
+		const { allTestimonialsJson: { edges = [] } = { edges: [] } } = { ...query }
 
 		if (edges.length <= 0) {
 			return null
@@ -52,27 +49,10 @@ const Testimonials: React.FC = () => {
 			return []
 		}
 
-		return testimonial.testimonials.map(({ attributedUser, quote }, i) => (
-			<Styled.Testimony key={i}>
-				<Styled.Quote>
-					<FontAwesomeIcon icon={faQuoteLeft} />
-					<h3>{quote}</h3>
-					<FontAwesomeIcon icon={faQuoteRight} />
-				</Styled.Quote>
-				<Styled.AttributedUser>
-					{attributedUser.avatar && (
-						<Styled.AttributedUserAvatar src={require(`../../../images/${attributedUser.avatar}`)} />
-					)}
-					<Styled.AttributedUserInformation>
-						<h4>{attributedUser.name}</h4>
-						{(attributedUser.company || attributedUser.title) && (
-							<span>{`${attributedUser.title ? attributedUser.title : ''}${
-								attributedUser.company && attributedUser.title ? ', ' : ''
-							} ${attributedUser.company ? attributedUser.company : ''}`}</span>
-						)}
-					</Styled.AttributedUserInformation>
-				</Styled.AttributedUser>
-			</Styled.Testimony>
+		return testimonial.testimonials.map((testimony, i) => (
+			<Styled.Intersection key={`testimony-${i}`}>
+				<Testimony {...testimony} />
+			</Styled.Intersection>
 		))
 	}, [testimonial])
 
