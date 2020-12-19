@@ -2,12 +2,12 @@ import * as React from 'react'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Benefit } from '../../benefit'
-import { BenefitOptions } from '../../../interfaces'
+import { BenefitsJson } from '../../../interfaces'
 
 const Benefits: React.FC = () => {
 	const {
 		allBenefitsJson: { edges: benefits }
-	} = useStaticQuery<{ allBenefitsJson: { edges: Array<{ node: BenefitOptions }> } }>(
+	} = useStaticQuery<{ allBenefitsJson: { edges: Array<{ node: BenefitsJson }> } }>(
 		graphql`
 			query {
 				allBenefitsJson(sort: { fields: order }) {

@@ -1,12 +1,12 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
-import { DescriptionOptions } from '../../../interfaces'
+import { DescriptionJson } from '../../../interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Grid } from '../../grid'
 
 const Description: React.FC = () => {
-	const query = useStaticQuery<{ allDescriptionJson: { edges: Array<{ node: DescriptionOptions }> } }>(
+	const query = useStaticQuery<{ allDescriptionJson: { edges: Array<{ node: DescriptionJson }> } }>(
 		graphql`
 			query {
 				allDescriptionJson {

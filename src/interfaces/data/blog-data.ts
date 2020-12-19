@@ -1,9 +1,9 @@
-import { Post } from '../post'
+import { MarkdownRemark } from './graphqlGenerated'
 
 export interface BlogData {
 	data: {
 		allMarkdownRemark: {
-			edges: Array<{ node: Post }>
+			edges: Array<{ node: MarkdownRemark }>
 		}
 	}
 }

@@ -2,12 +2,12 @@ import * as React from 'react'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Grid } from '../../grid'
-import { TestimonialOptions } from '../../../interfaces'
+import { TestimonialsJson } from '../../../interfaces'
 import { Testimony } from '../../testimony'
 
 const Testimonials: React.FC = () => {
 	const query = useStaticQuery<{
-		allTestimonialsJson: { edges: Array<{ node: TestimonialOptions }> }
+		allTestimonialsJson: { edges: Array<{ node: TestimonialsJson }> }
 	}>(
 		graphql`
 			query {

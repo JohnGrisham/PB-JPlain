@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as Styled from './styles'
-import { BenefitOptions } from '../../interfaces'
+import { BenefitsJson } from '../../interfaces'
 import { Image } from '../image'
 import { IntersectionContext } from '../intersection-observer'
 
@@ -27,7 +27,7 @@ const textVariants = {
 }
 
 interface BenefitProps {
-	benefit: BenefitOptions
+	benefit: BenefitsJson
 }
 
 export const Benefit: React.FC<BenefitProps> = ({ benefit }) => {

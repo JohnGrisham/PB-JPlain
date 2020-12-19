@@ -31,10 +31,6 @@ type MarkdownRemarkFrontmatter {
 	featuredImage: String
 }
 
-type MarkdownRemark implements Node {
-	frontmatter: MarkdownRemarkFrontmatter
-}
-
 type Step {
 	icon: String
 	heading: String!

@@ -44,6 +44,9 @@
     "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.19.4",
+    "@graphql-codegen/typescript": "1.19.0",
+    "@graphql-codegen/typescript-operations": "^1.17.12",
     "@types/jest": "^26.0.14",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
@@ -77,7 +80,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
-    "lint": "eslint . -c .eslintrc.json --no-error-on-unmatched-pattern --fix --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . -c .eslintrc.json --no-error-on-unmatched-pattern --fix --ext .js,.jsx,.ts,.tsx",
+    "generate-types": "graphql-codegen --config codegen.yml"
   },
   "repository": {
     "type": "git",

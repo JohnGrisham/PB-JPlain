@@ -8,6 +8,6 @@
 		"module": "commonJs",
 		"noEmit": true
 	},
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules", "./src/interfaces/data/graphqlGenerated.ts"],
 	"include": ["./**/*.ts", "./**/*.tsx", "./src/modules/css.d.ts"]
 }

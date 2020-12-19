@@ -3,7 +3,7 @@ import * as Styled from './styles'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IntersectionContext } from '../intersection-observer'
-import { Testimonial } from '../../interfaces'
+import { Testimony as TestimonyProps } from '../../interfaces'
 
 const testimonyVariants = {
 	flip: {
@@ -14,7 +14,7 @@ const testimonyVariants = {
 	}
 }
 
-const Testimony: React.FC<Testimonial> = ({ attributedUser, quote }) => {
+const Testimony: React.FC<TestimonyProps> = ({ attributedUser, quote }) => {
 	const { inThreshold } = React.useContext(IntersectionContext)
 
 	const motionProps = React.useMemo(
