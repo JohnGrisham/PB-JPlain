@@ -6,11 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Grid } from '../../grid'
 
 const Description: React.FC = () => {
-	const {
-		allDescriptionJson: {
-			edges: [{ node: description }]
-		}
-	} = useStaticQuery<{ allDescriptionJson: { edges: Array<{ node: DescriptionOptions }> } }>(
+	const query = useStaticQuery<{ allDescriptionJson: { edges: Array<{ node: DescriptionOptions }> } }>(
 		graphql`
 			query {
 				allDescriptionJson {
@@ -30,6 +26,18 @@ const Description: React.FC = () => {
 		`
 	)
 
+	const description = React.useMemo(() => {
+		const { allDescriptionJson: { edges = [] } = { edges: [] } } = { ...query }
+
+		if (edges.length <= 0) {
+			return null
+		}
+
+		const [{ node: description }] = { ...edges }
+
+		return description
+	}, [query])
+
 	const stepItems = React.useMemo(() => {
 		if (!description?.steps || description.steps.length <= 0) {
 			return null
@@ -43,6 +51,10 @@ const Description: React.FC = () => {
 			</>
 		))
 	}, [description])
+
+	if (!description) {
+		return null
+	}
 
 	return (
 		<Styled.Description>

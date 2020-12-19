@@ -27,6 +27,10 @@ const Benefits: React.FC = () => {
 		`
 	)
 
+	if (benefits.length <= 0) {
+		return null
+	}
+
 	return (
 		<Styled.Benefits>
 			{benefits.map(({ node }) => (

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const typeDefs = require('./src/graphql/typedefs.js')
+
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 	if (stage === 'build-html') {
 		actions.setWebpackConfig({
@@ -15,36 +18,36 @@ exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 
 exports.createSchemaCustomization = ({ actions }) => {
 	const { createTypes } = actions
-	const typeDefs = `
-	type MarkdownRemarkFrontmatter {
-		title: String!
-		slug: String!
-		date: String
-		featuredImage: String
-	}
+	// 	const typeDefs = `
+	// 	type MarkdownRemarkFrontmatter {
+	// 		title: String!
+	// 		slug: String!
+	// 		date: String
+	// 		featuredImage: String
+	// 	}
 
-	type AttributedUser {
-		name: String!
-		company: String
-		title: String
-		avatar: String
-	}
+	// 	type AttributedUser {
+	// 		name: String!
+	// 		company: String
+	// 		title: String
+	// 		avatar: String
+	// 	}
 
-	type Testimony {
-		attributedUser: AttributedUser!
-		quote: String!
-	}
+	// 	type Testimony {
+	// 		attributedUser: AttributedUser!
+	// 		quote: String!
+	// 	}
 
-	type MarkdownRemark implements Node {
-		frontmatter: MarkdownRemarkFrontmatter
-	}
+	// 	type MarkdownRemark implements Node {
+	// 		frontmatter: MarkdownRemarkFrontmatter
+	// 	}
 
-	type TestimonialsJson implements Node {
-		heading: String
-		subHeading: String
-		testimonials: [Testimony!]!
-	}
-  `
+	// 	type TestimonialsJson implements Node {
+	// 		heading: String
+	// 		subHeading: String
+	// 		testimonials: [Testimony!]!
+	// 	}
+	//   `
 	createTypes(typeDefs)
 }
 
