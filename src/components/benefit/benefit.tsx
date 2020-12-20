@@ -53,11 +53,10 @@ export const Benefit: React.FC<BenefitProps> = ({ benefit }) => {
 					<Image src={benefit.image.src} height={benefit.image.height} width={benefit.image.width} />
 				</Styled.BenefitMotionImage>
 			)}
-			{benefit.description && (
-				<Styled.BenefitMotionText {...motionProps} variants={textVariants}>
-					<span>{benefit.description}</span>
-				</Styled.BenefitMotionText>
-			)}
+			<Styled.BenefitMotionText {...motionProps} variants={textVariants}>
+				{benefit.heading && <h2>{benefit.heading}</h2>}
+				<span>{benefit.description}</span>
+			</Styled.BenefitMotionText>
 		</Styled.Benefit>
 	)
 }

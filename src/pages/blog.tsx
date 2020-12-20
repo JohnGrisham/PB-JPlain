@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Blog, Layout, SEO } from '../components'
-import { BlogData } from '../interfaces'
+import { Query } from '../interfaces'
 import { graphql } from 'gatsby'
 
 export const query = graphql`
@@ -23,7 +23,7 @@ export const query = graphql`
 	}
 `
 
-const BlogPage: React.FC<BlogData> = ({
+const BlogPage: React.FC<{ data: { allMarkdownRemark: Query['allMarkdownRemark'] } }> = ({
 	data: {
 		allMarkdownRemark: { edges }
 	}

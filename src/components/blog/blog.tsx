@@ -28,7 +28,7 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 						<Styled.PostContent>
 							<Styled.PostContentUpper>
 								<h3>{title}</h3>
-								{date && <h5>{moment(date).format('MMM Do YYYY')}</h5>}
+								{date && <h5>{moment(new Date(date)).format('MMM Do YYYY')}</h5>}
 							</Styled.PostContentUpper>
 							<p>{excerpt}</p>
 						</Styled.PostContent>

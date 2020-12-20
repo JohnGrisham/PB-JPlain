@@ -17,16 +17,40 @@
 }
 
 :local(.benefitMotionText) {
+	align-items: center;
 	color: #383838;
-	font-size: 2em;
+	display: flex;
+	flex-direction: column;
 	margin-left: 50%;
 	margin-top: 1em;
 	width: 60%;
 }
 
+:local(.benefitMotionText h2) {
+	font-size: 3em;
+	margin-bottom: 1em;
+}
+
+:local(.benefitMotionText span) {
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+:local(.benefitMotionText span:first-letter) {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
 @media all and (max-width: 700px) {
 	.benefitMotionText {
-		font-size: 1.5em;
 		width: 75%;
+	}
+
+	.benefitMotionText h2 {
+		font-size: 2em;
+	}
+
+	.benefitMotionText span {
+		font-size: 1.5em;
 	}
 }

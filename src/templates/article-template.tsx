@@ -67,7 +67,7 @@ const articleTemplate: React.FC<BlogData> = ({ data }) => {
 								)}
 								{frontmatter.date && (
 									<SubHeading style={{ textAlign: 'center' }}>
-										{moment(frontmatter.date).format('MMM Do YYYY')}
+										{moment(new Date(frontmatter.date)).format('MMM Do YYYY')}
 									</SubHeading>
 								)}
 							</PostTitle>

@@ -7,6 +7,7 @@ type AttributedUser {
 }
 
 type BenefitsJson implements Node {
+	heading: String
 	description: String!
 	image: ImageOptions
 	order: Int!
@@ -29,6 +30,10 @@ type MarkdownRemarkFrontmatter {
 	slug: String!
 	date: String
 	featuredImage: String
+}
+
+type MarkdownRemark implements Node {
+	frontmatter: MarkdownRemarkFrontmatter
 }
 
 type Step {

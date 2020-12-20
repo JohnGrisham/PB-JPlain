@@ -2,12 +2,14 @@ import * as React from 'react'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Grid } from '../../grid'
-import { TestimonialsJson } from '../../../interfaces'
+import { Query } from '../../../interfaces'
 import { Testimony } from '../../testimony'
 
 const Testimonials: React.FC = () => {
-	const query = useStaticQuery<{
-		allTestimonialsJson: { edges: Array<{ node: TestimonialsJson }> }
+	const {
+		allTestimonialsJson: { edges }
+	} = useStaticQuery<{
+		allTestimonialsJson: Query['allTestimonialsJson']
 	}>(
 		graphql`
 			query {
@@ -33,16 +35,14 @@ const Testimonials: React.FC = () => {
 	)
 
 	const testimonial = React.useMemo(() => {
-		const { allTestimonialsJson: { edges = [] } = { edges: [] } } = { ...query }
-
-		if (edges.length <= 0) {
+		if (!edges || edges.length <= 0) {
 			return null
 		}
 
 		const [{ node: testimonial }] = { ...edges }
 
 		return testimonial
-	}, [query])
+	}, [edges])
 
 	const testimonies = React.useMemo(() => {
 		if (!testimonial) {

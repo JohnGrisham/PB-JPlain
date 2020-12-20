@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 # Test content posts
 src/content/posts/test.md
+# Test content testimonials
+src/content/landing/testimonials/*

@@ -1,12 +1,15 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
-import { DescriptionJson } from '../../../interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Grid } from '../../grid'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { Query } from '../../../interfaces'
 
 const Description: React.FC = () => {
-	const query = useStaticQuery<{ allDescriptionJson: { edges: Array<{ node: DescriptionJson }> } }>(
+	const {
+		allDescriptionJson: { edges }
+	} = useStaticQuery<{ allDescriptionJson: Query['allDescriptionJson'] }>(
 		graphql`
 			query {
 				allDescriptionJson {
@@ -27,16 +30,14 @@ const Description: React.FC = () => {
 	)
 
 	const description = React.useMemo(() => {
-		const { allDescriptionJson: { edges = [] } = { edges: [] } } = { ...query }
-
-		if (edges.length <= 0) {
+		if (!edges || edges.length <= 0) {
 			return null
 		}
 
-		const [{ node: description }] = { ...edges }
+		const [{ node: description }] = edges
 
 		return description
-	}, [query])
+	}, [edges])
 
 	const stepItems = React.useMemo(() => {
 		if (!description?.steps || description.steps.length <= 0) {
@@ -45,7 +46,7 @@ const Description: React.FC = () => {
 
 		return description.steps.map(({ description, heading, icon }) => (
 			<>
-				<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon} />}</Styled.StepIcon>
+				<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon as IconProp} />}</Styled.StepIcon>
 				{heading && <Styled.StepHeading>{heading}</Styled.StepHeading>}
 				{description && <span>{description}</span>}
 			</>

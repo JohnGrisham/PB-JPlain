@@ -12,9 +12,4 @@ export const BenefitMotionImage = styled(motion.div).attrs(() => ({
 
 export const BenefitMotionText = styled(motion.div).attrs(() => ({
 	className: `${benefit.benefitMotion} ${benefit.benefitMotionText}`
-}))`
-	> ::first-letter {
-		font-weight: bold;
-		font-size: 1.5em;
-	}
-`
+}))``

@@ -5,8 +5,12 @@ import { DeviceType, useDeviceDetect, useIntersection, useOritentation } from '.
 
 export const IntersectionContext = React.createContext({ inThreshold: false })
 
+interface IntersectionOptions extends IntersectionObserverInit {
+	shouldResetIntersection?: boolean
+}
+
 interface IntersectionObserverProps extends React.HTMLAttributes<HTMLDivElement> {
-	options?: IntersectionObserverInit
+	options?: IntersectionOptions
 }
 
 export const IntersectionObserver: React.FC<IntersectionObserverProps> = ({
@@ -32,9 +36,11 @@ export const IntersectionObserver: React.FC<IntersectionObserverProps> = ({
 	const intersection = useIntersection(intersectionRef, shouldReplaceThreshold ? { ...options, threshold: 0 } : options)
 
 	React.useEffect(() => {
-		const isInThreshold = !!intersection && intersection.isIntersecting
-		return setInThreshold(isInThreshold)
-	}, [intersection])
+		if (!inThreshold || options.shouldResetIntersection) {
+			const isInThreshold = !!intersection && intersection.isIntersecting
+			return setInThreshold(isInThreshold)
+		}
+	}, [intersection, inThreshold, options])
 
 	return (
 		<IntersectionContext.Provider value={{ inThreshold }}>
