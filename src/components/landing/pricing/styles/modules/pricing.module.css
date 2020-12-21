@@ -1,0 +1,4 @@
+:local(.pricingWrapper) {
+	display: flex;
+	flex-direction: column;
+}
