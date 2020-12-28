@@ -4,6 +4,7 @@ import { Benefits } from './benefits'
 import { CallToAction } from '../call-to-action'
 import { Description } from './description'
 import { FirebaseContext } from '../../services'
+import { Pricing } from './pricing'
 import { SourcesDrag } from '../sources-drag'
 import { Testimonials } from './testimonials'
 
@@ -30,8 +31,9 @@ const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) 
 			</Styled.LandingImageWrapper>
 			<Description />
 			<Benefits />
-			<Testimonials />
 			<SourcesDrag />
+			<Testimonials />
+			<Pricing />
 			<CallToAction />
 		</Styled.Landing>
 	)

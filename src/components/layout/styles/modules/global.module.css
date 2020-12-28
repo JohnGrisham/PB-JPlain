@@ -605,6 +605,10 @@ pre tt:after {
 	width: 100%;
 }
 
+:global(.MuiButton-containedPrimary) {
+	background-color: #077cf9 !important;
+}
+
 :global(.MuiMenu-list) {
 	background-color: #4e2378;
 }

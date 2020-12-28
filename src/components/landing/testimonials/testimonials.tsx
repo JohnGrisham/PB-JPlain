@@ -62,9 +62,11 @@ const Testimonials: React.FC = () => {
 
 	return (
 		<Styled.Testimonials>
+			<Styled.WaveTop />
 			{testimonial.heading && <h2>{testimonial.heading}</h2>}
 			{testimonial.subHeading && <h3>{testimonial.subHeading}</h3>}
 			<Grid items={testimonies} />
+			<Styled.WaveBottom />
 		</Styled.Testimonials>
 	)
 }

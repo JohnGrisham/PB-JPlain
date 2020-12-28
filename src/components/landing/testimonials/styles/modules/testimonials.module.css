@@ -4,8 +4,37 @@
 
 :local(.testimonialsWrapper) {
 	align-items: center;
+	background-color: #332379;
 	color: white;
 	display: flex;
 	flex-direction: column;
+	overflow: visible;
 	padding: 1rem;
+	position: relative;
+}
+
+:local(.wave) {
+	display: block;
+	left: 0;
+	width: 100%;
+	height: 125px;
+	mask: url('../../../../../images/drip.png');
+	mask-size: 240px;
+	mask-repeat: repeat-x;
+	position: absolute;
+	background: #332379;
+	z-index: -1;
+	background-size: 10px;
+	background-position: 0 100%;
+	z-index: 2;
+}
+
+:local(.waveTop) {
+	bottom: 100%;
+	bottom: calc(100% - 1px);
+	transform: rotateX(180deg);
+}
+
+:local(.waveBottom) {
+	top: calc(100% - 1px);
 }
