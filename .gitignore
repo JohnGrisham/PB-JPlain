@@ -71,3 +71,5 @@ yarn-error.log
 src/content/posts/test.md
 # Test content testimonials
 src/content/landing/testimonials/*
+# Test content pricing
+src/content/landing/pricing/*

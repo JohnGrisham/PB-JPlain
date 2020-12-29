@@ -37,7 +37,13 @@ module.exports = {
 				plugins: [`gatsby-transformer-json`]
 			}
 		},
-		`gatsby-transformer-sharp`,
+		{
+			resolve: `gatsby-transformer-sharp`,
+			options: {
+				// The option defaults to true
+				checkSupportedExtensions: false
+			}
+		},
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-sitemap`,

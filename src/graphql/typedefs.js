@@ -19,6 +19,11 @@ type DescriptionJson implements Node {
 	steps: [Step!]
 }
 
+type Feature {
+	planLevel: Int!
+	description: String!
+}
+
 type ImageOptions {
 	src: String!
 	height: Int!
@@ -34,6 +39,21 @@ type MarkdownRemarkFrontmatter {
 
 type MarkdownRemark implements Node {
 	frontmatter: MarkdownRemarkFrontmatter
+}
+
+type Plan {
+	action: String
+	level: Int!
+	price: String!
+	features: [Feature!]
+	type: String!
+}
+
+type PricingJson implements Node {
+	heading: String
+	subHeading: String
+	plans: [Plan!]!
+	sharedFeatures: [Feature!]
 }
 
 type Step {

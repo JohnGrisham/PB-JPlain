@@ -22,6 +22,10 @@ const Grid: React.FC<GridProps> = ({ items, style }) => {
 		return { ...style, gridTemplateColumns: `repeat(${itemColumns}, 1fr)` }
 	}, [itemColumns, style])
 
+	if (items.length <= 0) {
+		return null
+	}
+
 	return (
 		<Styled.Grid style={gridStyle}>
 			{items.map((element, i) => (

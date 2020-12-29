@@ -4,6 +4,10 @@
 	z-index: 2;
 }
 
+:local(.callToAction h4) {
+	font-size: max(16px, 1.1vw);
+}
+
 :local(.heading) {
 	font-size: max(18px, 5vw);
 	position: absolute;
@@ -42,4 +46,8 @@
 	position: absolute;
 	top: 30%;
 	z-index: 2;
+}
+
+:local(.gradientDrip) {
+	background: linear-gradient(to right, #8c2485, #7a2485 10%, #6a2383 25%, #322155, #241f47);
 }

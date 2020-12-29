@@ -3,10 +3,9 @@ import * as Styled from './styles'
 import { Benefits } from './benefits'
 import { CallToAction } from '../call-to-action'
 import { Description } from './description'
+import { Evaluations } from './evaluations'
 import { FirebaseContext } from '../../services'
-import { Pricing } from './pricing'
 import { SourcesDrag } from '../sources-drag'
-import { Testimonials } from './testimonials'
 
 export interface LandingProps {
 	callToAction?: string
@@ -28,12 +27,12 @@ const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) 
 					</Styled.CallToAction>
 				)}
 				<Styled.LandingImage />
+				<Styled.GradientDrip />
 			</Styled.LandingImageWrapper>
 			<Description />
 			<Benefits />
 			<SourcesDrag />
-			<Testimonials />
-			<Pricing />
+			<Evaluations />
 			<CallToAction />
 		</Styled.Landing>
 	)

@@ -1,0 +1,10 @@
+:local(.planMotion) {
+	display: flex;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+:local(.planWrapper) {
+	background-color: white;
+	display: flex;
+}

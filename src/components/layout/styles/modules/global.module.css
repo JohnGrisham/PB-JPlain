@@ -621,6 +621,32 @@ pre tt:after {
 	background-color: gainsboro;
 	opacity: 0.5 !important;
 }
+/* I got my inspiration from Wes Bos. Check it out here: https://mastergatsby.com/ */
+:global(.drip) {
+	display: block;
+	left: 0;
+	width: 100%;
+	height: 180px;
+	mask: url('../../../../images/drip.svg');
+	mask-size: 250px;
+	mask-repeat: repeat-x;
+	position: absolute;
+	background: #332379;
+	z-index: -1;
+	background-size: 10px;
+	background-position: 0 100%;
+	z-index: 2;
+}
+
+:global(.dripTop) {
+	bottom: 100%;
+	bottom: calc(100% - 1px);
+	transform: rotateX(180deg);
+}
+
+:global(.dripBottom) {
+	top: calc(100% - 1px);
+}
 
 @media only screen and (max-width: 480px) {
 	html {

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Benefit } from '../../benefit'
+import { Benefit } from './benefit'
 import { Query } from '../../../interfaces'
 
 const Benefits: React.FC = () => {

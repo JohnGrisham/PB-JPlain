@@ -10,10 +10,6 @@ export const Description = styled.div.attrs(() => ({
 	}
 `
 
-export const Step = styled.div.attrs(() => ({
-	className: description.step
-}))``
-
 export const StepHeading = styled.h3.attrs(() => ({
 	className: description.stepHeading
 }))``

@@ -15,6 +15,16 @@ export type Scalars = {
   JSON: any;
 };
 
+
+
+
+
+
+
+
+
+
+
 export type AttributedUser = {
   __typename?: 'AttributedUser';
   name: Scalars['String'];
@@ -190,6 +200,16 @@ export type BenefitsJsonGroupConnection = {
 export type BenefitsJsonSortInput = {
   fields?: Maybe<Array<Maybe<BenefitsJsonFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type BlurredOptions = {
+  /** Width of the generated low-res preview. Default is 20px */
+  width?: Maybe<Scalars['Int']>;
+  /**
+   * Force the output format for the low-res preview. Default is to use the same
+   * format as the input. You should rarely need to change this
+   */
+  toFormat?: Maybe<ImageFormat>;
 };
 
 export type BooleanQueryOperatorInput = {
@@ -682,6 +702,21 @@ export type DuotoneGradient = {
   opacity?: Maybe<Scalars['Int']>;
 };
 
+export type Feature = {
+  __typename?: 'Feature';
+  planLevel: Scalars['Int'];
+  description: Scalars['String'];
+};
+
+export type FeatureFilterInput = {
+  planLevel?: Maybe<IntQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+};
+
+export type FeatureFilterListInput = {
+  elemMatch?: Maybe<FeatureFilterInput>;
+};
+
 export type File = Node & {
   __typename?: 'File';
   sourceInstanceName: Scalars['String'];
@@ -726,8 +761,8 @@ export type File = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  childMarkdownRemark?: Maybe<MarkdownRemark>;
   childBenefitsJson?: Maybe<BenefitsJson>;
+  childPricingJson?: Maybe<PricingJson>;
   childDescriptionJson?: Maybe<DescriptionJson>;
   childTestimonialsJson?: Maybe<TestimonialsJson>;
 };
@@ -896,6 +931,7 @@ export enum FileFieldsEnum {
   ChildImageSharpSizesOriginalName = 'childImageSharp___sizes___originalName',
   ChildImageSharpSizesPresentationWidth = 'childImageSharp___sizes___presentationWidth',
   ChildImageSharpSizesPresentationHeight = 'childImageSharp___sizes___presentationHeight',
+  ChildImageSharpGatsbyImageData = 'childImageSharp___gatsbyImageData',
   ChildImageSharpOriginalWidth = 'childImageSharp___original___width',
   ChildImageSharpOriginalHeight = 'childImageSharp___original___height',
   ChildImageSharpOriginalSrc = 'childImageSharp___original___src',
@@ -1029,63 +1065,6 @@ export enum FileFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
-  ChildMarkdownRemarkId = 'childMarkdownRemark___id',
-  ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
-  ChildMarkdownRemarkFrontmatterSlug = 'childMarkdownRemark___frontmatter___slug',
-  ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
-  ChildMarkdownRemarkFrontmatterFeaturedImage = 'childMarkdownRemark___frontmatter___featuredImage',
-  ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
-  ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
-  ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
-  ChildMarkdownRemarkHtml = 'childMarkdownRemark___html',
-  ChildMarkdownRemarkHtmlAst = 'childMarkdownRemark___htmlAst',
-  ChildMarkdownRemarkExcerptAst = 'childMarkdownRemark___excerptAst',
-  ChildMarkdownRemarkHeadings = 'childMarkdownRemark___headings',
-  ChildMarkdownRemarkHeadingsId = 'childMarkdownRemark___headings___id',
-  ChildMarkdownRemarkHeadingsValue = 'childMarkdownRemark___headings___value',
-  ChildMarkdownRemarkHeadingsDepth = 'childMarkdownRemark___headings___depth',
-  ChildMarkdownRemarkTimeToRead = 'childMarkdownRemark___timeToRead',
-  ChildMarkdownRemarkTableOfContents = 'childMarkdownRemark___tableOfContents',
-  ChildMarkdownRemarkWordCountParagraphs = 'childMarkdownRemark___wordCount___paragraphs',
-  ChildMarkdownRemarkWordCountSentences = 'childMarkdownRemark___wordCount___sentences',
-  ChildMarkdownRemarkWordCountWords = 'childMarkdownRemark___wordCount___words',
-  ChildMarkdownRemarkParentId = 'childMarkdownRemark___parent___id',
-  ChildMarkdownRemarkParentParentId = 'childMarkdownRemark___parent___parent___id',
-  ChildMarkdownRemarkParentParentChildren = 'childMarkdownRemark___parent___parent___children',
-  ChildMarkdownRemarkParentChildren = 'childMarkdownRemark___parent___children',
-  ChildMarkdownRemarkParentChildrenId = 'childMarkdownRemark___parent___children___id',
-  ChildMarkdownRemarkParentChildrenChildren = 'childMarkdownRemark___parent___children___children',
-  ChildMarkdownRemarkParentInternalContent = 'childMarkdownRemark___parent___internal___content',
-  ChildMarkdownRemarkParentInternalContentDigest = 'childMarkdownRemark___parent___internal___contentDigest',
-  ChildMarkdownRemarkParentInternalDescription = 'childMarkdownRemark___parent___internal___description',
-  ChildMarkdownRemarkParentInternalFieldOwners = 'childMarkdownRemark___parent___internal___fieldOwners',
-  ChildMarkdownRemarkParentInternalIgnoreType = 'childMarkdownRemark___parent___internal___ignoreType',
-  ChildMarkdownRemarkParentInternalMediaType = 'childMarkdownRemark___parent___internal___mediaType',
-  ChildMarkdownRemarkParentInternalOwner = 'childMarkdownRemark___parent___internal___owner',
-  ChildMarkdownRemarkParentInternalType = 'childMarkdownRemark___parent___internal___type',
-  ChildMarkdownRemarkChildren = 'childMarkdownRemark___children',
-  ChildMarkdownRemarkChildrenId = 'childMarkdownRemark___children___id',
-  ChildMarkdownRemarkChildrenParentId = 'childMarkdownRemark___children___parent___id',
-  ChildMarkdownRemarkChildrenParentChildren = 'childMarkdownRemark___children___parent___children',
-  ChildMarkdownRemarkChildrenChildren = 'childMarkdownRemark___children___children',
-  ChildMarkdownRemarkChildrenChildrenId = 'childMarkdownRemark___children___children___id',
-  ChildMarkdownRemarkChildrenChildrenChildren = 'childMarkdownRemark___children___children___children',
-  ChildMarkdownRemarkChildrenInternalContent = 'childMarkdownRemark___children___internal___content',
-  ChildMarkdownRemarkChildrenInternalContentDigest = 'childMarkdownRemark___children___internal___contentDigest',
-  ChildMarkdownRemarkChildrenInternalDescription = 'childMarkdownRemark___children___internal___description',
-  ChildMarkdownRemarkChildrenInternalFieldOwners = 'childMarkdownRemark___children___internal___fieldOwners',
-  ChildMarkdownRemarkChildrenInternalIgnoreType = 'childMarkdownRemark___children___internal___ignoreType',
-  ChildMarkdownRemarkChildrenInternalMediaType = 'childMarkdownRemark___children___internal___mediaType',
-  ChildMarkdownRemarkChildrenInternalOwner = 'childMarkdownRemark___children___internal___owner',
-  ChildMarkdownRemarkChildrenInternalType = 'childMarkdownRemark___children___internal___type',
-  ChildMarkdownRemarkInternalContent = 'childMarkdownRemark___internal___content',
-  ChildMarkdownRemarkInternalContentDigest = 'childMarkdownRemark___internal___contentDigest',
-  ChildMarkdownRemarkInternalDescription = 'childMarkdownRemark___internal___description',
-  ChildMarkdownRemarkInternalFieldOwners = 'childMarkdownRemark___internal___fieldOwners',
-  ChildMarkdownRemarkInternalIgnoreType = 'childMarkdownRemark___internal___ignoreType',
-  ChildMarkdownRemarkInternalMediaType = 'childMarkdownRemark___internal___mediaType',
-  ChildMarkdownRemarkInternalOwner = 'childMarkdownRemark___internal___owner',
-  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type',
   ChildBenefitsJsonHeading = 'childBenefitsJson___heading',
   ChildBenefitsJsonDescription = 'childBenefitsJson___description',
   ChildBenefitsJsonImageSrc = 'childBenefitsJson___image___src',
@@ -1130,6 +1109,57 @@ export enum FileFieldsEnum {
   ChildBenefitsJsonInternalMediaType = 'childBenefitsJson___internal___mediaType',
   ChildBenefitsJsonInternalOwner = 'childBenefitsJson___internal___owner',
   ChildBenefitsJsonInternalType = 'childBenefitsJson___internal___type',
+  ChildPricingJsonHeading = 'childPricingJson___heading',
+  ChildPricingJsonSubHeading = 'childPricingJson___subHeading',
+  ChildPricingJsonPlans = 'childPricingJson___plans',
+  ChildPricingJsonPlansAction = 'childPricingJson___plans___action',
+  ChildPricingJsonPlansLevel = 'childPricingJson___plans___level',
+  ChildPricingJsonPlansPrice = 'childPricingJson___plans___price',
+  ChildPricingJsonPlansFeatures = 'childPricingJson___plans___features',
+  ChildPricingJsonPlansFeaturesPlanLevel = 'childPricingJson___plans___features___planLevel',
+  ChildPricingJsonPlansFeaturesDescription = 'childPricingJson___plans___features___description',
+  ChildPricingJsonPlansType = 'childPricingJson___plans___type',
+  ChildPricingJsonSharedFeatures = 'childPricingJson___sharedFeatures',
+  ChildPricingJsonSharedFeaturesPlanLevel = 'childPricingJson___sharedFeatures___planLevel',
+  ChildPricingJsonSharedFeaturesDescription = 'childPricingJson___sharedFeatures___description',
+  ChildPricingJsonId = 'childPricingJson___id',
+  ChildPricingJsonParentId = 'childPricingJson___parent___id',
+  ChildPricingJsonParentParentId = 'childPricingJson___parent___parent___id',
+  ChildPricingJsonParentParentChildren = 'childPricingJson___parent___parent___children',
+  ChildPricingJsonParentChildren = 'childPricingJson___parent___children',
+  ChildPricingJsonParentChildrenId = 'childPricingJson___parent___children___id',
+  ChildPricingJsonParentChildrenChildren = 'childPricingJson___parent___children___children',
+  ChildPricingJsonParentInternalContent = 'childPricingJson___parent___internal___content',
+  ChildPricingJsonParentInternalContentDigest = 'childPricingJson___parent___internal___contentDigest',
+  ChildPricingJsonParentInternalDescription = 'childPricingJson___parent___internal___description',
+  ChildPricingJsonParentInternalFieldOwners = 'childPricingJson___parent___internal___fieldOwners',
+  ChildPricingJsonParentInternalIgnoreType = 'childPricingJson___parent___internal___ignoreType',
+  ChildPricingJsonParentInternalMediaType = 'childPricingJson___parent___internal___mediaType',
+  ChildPricingJsonParentInternalOwner = 'childPricingJson___parent___internal___owner',
+  ChildPricingJsonParentInternalType = 'childPricingJson___parent___internal___type',
+  ChildPricingJsonChildren = 'childPricingJson___children',
+  ChildPricingJsonChildrenId = 'childPricingJson___children___id',
+  ChildPricingJsonChildrenParentId = 'childPricingJson___children___parent___id',
+  ChildPricingJsonChildrenParentChildren = 'childPricingJson___children___parent___children',
+  ChildPricingJsonChildrenChildren = 'childPricingJson___children___children',
+  ChildPricingJsonChildrenChildrenId = 'childPricingJson___children___children___id',
+  ChildPricingJsonChildrenChildrenChildren = 'childPricingJson___children___children___children',
+  ChildPricingJsonChildrenInternalContent = 'childPricingJson___children___internal___content',
+  ChildPricingJsonChildrenInternalContentDigest = 'childPricingJson___children___internal___contentDigest',
+  ChildPricingJsonChildrenInternalDescription = 'childPricingJson___children___internal___description',
+  ChildPricingJsonChildrenInternalFieldOwners = 'childPricingJson___children___internal___fieldOwners',
+  ChildPricingJsonChildrenInternalIgnoreType = 'childPricingJson___children___internal___ignoreType',
+  ChildPricingJsonChildrenInternalMediaType = 'childPricingJson___children___internal___mediaType',
+  ChildPricingJsonChildrenInternalOwner = 'childPricingJson___children___internal___owner',
+  ChildPricingJsonChildrenInternalType = 'childPricingJson___children___internal___type',
+  ChildPricingJsonInternalContent = 'childPricingJson___internal___content',
+  ChildPricingJsonInternalContentDigest = 'childPricingJson___internal___contentDigest',
+  ChildPricingJsonInternalDescription = 'childPricingJson___internal___description',
+  ChildPricingJsonInternalFieldOwners = 'childPricingJson___internal___fieldOwners',
+  ChildPricingJsonInternalIgnoreType = 'childPricingJson___internal___ignoreType',
+  ChildPricingJsonInternalMediaType = 'childPricingJson___internal___mediaType',
+  ChildPricingJsonInternalOwner = 'childPricingJson___internal___owner',
+  ChildPricingJsonInternalType = 'childPricingJson___internal___type',
   ChildDescriptionJsonHeading = 'childDescriptionJson___heading',
   ChildDescriptionJsonSubHeading = 'childDescriptionJson___subHeading',
   ChildDescriptionJsonSteps = 'childDescriptionJson___steps',
@@ -1262,8 +1292,8 @@ export type FileFilterInput = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
 };
@@ -1318,9 +1348,16 @@ export enum ImageFit {
 
 export enum ImageFormat {
   NoChange = 'NO_CHANGE',
+  Auto = 'AUTO',
   Jpg = 'JPG',
   Png = 'PNG',
   Webp = 'WEBP'
+}
+
+export enum ImageLayout {
+  Fixed = 'FIXED',
+  Fluid = 'FLUID',
+  Constrained = 'CONSTRAINED'
 }
 
 export type ImageOptions = {
@@ -1336,6 +1373,13 @@ export type ImageOptionsFilterInput = {
   width?: Maybe<IntQueryOperatorInput>;
 };
 
+export enum ImagePlaceholder {
+  DominantColor = 'DOMINANT_COLOR',
+  TracedSvg = 'TRACED_SVG',
+  Blurred = 'BLURRED',
+  None = 'NONE'
+}
+
 export type ImageSharp = Node & {
   __typename?: 'ImageSharp';
   fixed?: Maybe<ImageSharpFixed>;
@@ -1344,6 +1388,7 @@ export type ImageSharp = Node & {
   fluid?: Maybe<ImageSharpFluid>;
   /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   sizes?: Maybe<ImageSharpSizes>;
+  gatsbyImageData: Scalars['JSON'];
   original?: Maybe<ImageSharpOriginal>;
   resize?: Maybe<ImageSharpResize>;
   id: Scalars['ID'];
@@ -1449,6 +1494,27 @@ export type ImageSharpSizesArgs = {
 };
 
 
+export type ImageSharpGatsbyImageDataArgs = {
+  layout?: Maybe<ImageLayout>;
+  maxWidth?: Maybe<Scalars['Int']>;
+  maxHeight?: Maybe<Scalars['Int']>;
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  placeholder?: Maybe<ImagePlaceholder>;
+  blurredOptions?: Maybe<BlurredOptions>;
+  tracedSVGOptions?: Maybe<Potrace>;
+  formats?: Maybe<Array<Maybe<ImageFormat>>>;
+  outputPixelDensities?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  sizes?: Maybe<Scalars['String']>;
+  quality?: Maybe<Scalars['Int']>;
+  jpgOptions?: Maybe<JpgOptions>;
+  pngOptions?: Maybe<PngOptions>;
+  webpOptions?: Maybe<WebPOptions>;
+  transformOptions?: Maybe<TransformOptions>;
+  background?: Maybe<Scalars['String']>;
+};
+
+
 export type ImageSharpResizeArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -1545,6 +1611,7 @@ export enum ImageSharpFieldsEnum {
   SizesOriginalName = 'sizes___originalName',
   SizesPresentationWidth = 'sizes___presentationWidth',
   SizesPresentationHeight = 'sizes___presentationHeight',
+  GatsbyImageData = 'gatsbyImageData',
   OriginalWidth = 'original___width',
   OriginalHeight = 'original___height',
   OriginalSrc = 'original___src',
@@ -1647,6 +1714,7 @@ export type ImageSharpFilterInput = {
   resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
   fluid?: Maybe<ImageSharpFluidFilterInput>;
   sizes?: Maybe<ImageSharpSizesFilterInput>;
+  gatsbyImageData?: Maybe<JsonQueryOperatorInput>;
   original?: Maybe<ImageSharpOriginalFilterInput>;
   resize?: Maybe<ImageSharpResizeFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -1852,6 +1920,11 @@ export type IntQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
+export type JpgOptions = {
+  quality?: Maybe<Scalars['Int']>;
+  progressive?: Maybe<Scalars['Boolean']>;
+};
+
 
 export type JsonQueryOperatorInput = {
   eq?: Maybe<Scalars['JSON']>;
@@ -1898,11 +1971,9 @@ export type MarkdownRemark = Node & {
   __typename?: 'MarkdownRemark';
   id: Scalars['ID'];
   frontmatter?: Maybe<MarkdownRemarkFrontmatter>;
-  excerpt?: Maybe<Scalars['String']>;
-  rawMarkdownBody?: Maybe<Scalars['String']>;
-  fileAbsolutePath?: Maybe<Scalars['String']>;
   html?: Maybe<Scalars['String']>;
   htmlAst?: Maybe<Scalars['JSON']>;
+  excerpt?: Maybe<Scalars['String']>;
   excerptAst?: Maybe<Scalars['JSON']>;
   headings?: Maybe<Array<Maybe<MarkdownHeading>>>;
   timeToRead?: Maybe<Scalars['Int']>;
@@ -1974,11 +2045,9 @@ export enum MarkdownRemarkFieldsEnum {
   FrontmatterSlug = 'frontmatter___slug',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterFeaturedImage = 'frontmatter___featuredImage',
-  Excerpt = 'excerpt',
-  RawMarkdownBody = 'rawMarkdownBody',
-  FileAbsolutePath = 'fileAbsolutePath',
   Html = 'html',
   HtmlAst = 'htmlAst',
+  Excerpt = 'excerpt',
   ExcerptAst = 'excerptAst',
   Headings = 'headings',
   HeadingsId = 'headings___id',
@@ -2079,11 +2148,9 @@ export enum MarkdownRemarkFieldsEnum {
 export type MarkdownRemarkFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
-  excerpt?: Maybe<StringQueryOperatorInput>;
-  rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
-  fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
   html?: Maybe<StringQueryOperatorInput>;
   htmlAst?: Maybe<JsonQueryOperatorInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
   excerptAst?: Maybe<JsonQueryOperatorInput>;
   headings?: Maybe<MarkdownHeadingFilterListInput>;
   timeToRead?: Maybe<IntQueryOperatorInput>;
@@ -2167,6 +2234,32 @@ export type PageInfo = {
   totalCount: Scalars['Int'];
 };
 
+export type Plan = {
+  __typename?: 'Plan';
+  action?: Maybe<Scalars['String']>;
+  level: Scalars['Int'];
+  price: Scalars['String'];
+  features?: Maybe<Array<Feature>>;
+  type: Scalars['String'];
+};
+
+export type PlanFilterInput = {
+  action?: Maybe<StringQueryOperatorInput>;
+  level?: Maybe<IntQueryOperatorInput>;
+  price?: Maybe<StringQueryOperatorInput>;
+  features?: Maybe<FeatureFilterListInput>;
+  type?: Maybe<StringQueryOperatorInput>;
+};
+
+export type PlanFilterListInput = {
+  elemMatch?: Maybe<PlanFilterInput>;
+};
+
+export type PngOptions = {
+  quality?: Maybe<Scalars['Int']>;
+  compressionSpeed?: Maybe<Scalars['Int']>;
+};
+
 export type Potrace = {
   turnPolicy?: Maybe<PotraceTurnPolicy>;
   turdSize?: Maybe<Scalars['Float']>;
@@ -2188,6 +2281,175 @@ export enum PotraceTurnPolicy {
   TurnpolicyMajority = 'TURNPOLICY_MAJORITY'
 }
 
+export type PricingJson = Node & {
+  __typename?: 'PricingJson';
+  heading?: Maybe<Scalars['String']>;
+  subHeading?: Maybe<Scalars['String']>;
+  plans: Array<Plan>;
+  sharedFeatures?: Maybe<Array<Feature>>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+export type PricingJsonConnection = {
+  __typename?: 'PricingJsonConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<PricingJsonEdge>;
+  nodes: Array<PricingJson>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<PricingJsonGroupConnection>;
+};
+
+
+export type PricingJsonConnectionDistinctArgs = {
+  field: PricingJsonFieldsEnum;
+};
+
+
+export type PricingJsonConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: PricingJsonFieldsEnum;
+};
+
+export type PricingJsonEdge = {
+  __typename?: 'PricingJsonEdge';
+  next?: Maybe<PricingJson>;
+  node: PricingJson;
+  previous?: Maybe<PricingJson>;
+};
+
+export enum PricingJsonFieldsEnum {
+  Heading = 'heading',
+  SubHeading = 'subHeading',
+  Plans = 'plans',
+  PlansAction = 'plans___action',
+  PlansLevel = 'plans___level',
+  PlansPrice = 'plans___price',
+  PlansFeatures = 'plans___features',
+  PlansFeaturesPlanLevel = 'plans___features___planLevel',
+  PlansFeaturesDescription = 'plans___features___description',
+  PlansType = 'plans___type',
+  SharedFeatures = 'sharedFeatures',
+  SharedFeaturesPlanLevel = 'sharedFeatures___planLevel',
+  SharedFeaturesDescription = 'sharedFeatures___description',
+  Id = 'id',
+  ParentId = 'parent___id',
+  ParentParentId = 'parent___parent___id',
+  ParentParentParentId = 'parent___parent___parent___id',
+  ParentParentParentChildren = 'parent___parent___parent___children',
+  ParentParentChildren = 'parent___parent___children',
+  ParentParentChildrenId = 'parent___parent___children___id',
+  ParentParentChildrenChildren = 'parent___parent___children___children',
+  ParentParentInternalContent = 'parent___parent___internal___content',
+  ParentParentInternalContentDigest = 'parent___parent___internal___contentDigest',
+  ParentParentInternalDescription = 'parent___parent___internal___description',
+  ParentParentInternalFieldOwners = 'parent___parent___internal___fieldOwners',
+  ParentParentInternalIgnoreType = 'parent___parent___internal___ignoreType',
+  ParentParentInternalMediaType = 'parent___parent___internal___mediaType',
+  ParentParentInternalOwner = 'parent___parent___internal___owner',
+  ParentParentInternalType = 'parent___parent___internal___type',
+  ParentChildren = 'parent___children',
+  ParentChildrenId = 'parent___children___id',
+  ParentChildrenParentId = 'parent___children___parent___id',
+  ParentChildrenParentChildren = 'parent___children___parent___children',
+  ParentChildrenChildren = 'parent___children___children',
+  ParentChildrenChildrenId = 'parent___children___children___id',
+  ParentChildrenChildrenChildren = 'parent___children___children___children',
+  ParentChildrenInternalContent = 'parent___children___internal___content',
+  ParentChildrenInternalContentDigest = 'parent___children___internal___contentDigest',
+  ParentChildrenInternalDescription = 'parent___children___internal___description',
+  ParentChildrenInternalFieldOwners = 'parent___children___internal___fieldOwners',
+  ParentChildrenInternalIgnoreType = 'parent___children___internal___ignoreType',
+  ParentChildrenInternalMediaType = 'parent___children___internal___mediaType',
+  ParentChildrenInternalOwner = 'parent___children___internal___owner',
+  ParentChildrenInternalType = 'parent___children___internal___type',
+  ParentInternalContent = 'parent___internal___content',
+  ParentInternalContentDigest = 'parent___internal___contentDigest',
+  ParentInternalDescription = 'parent___internal___description',
+  ParentInternalFieldOwners = 'parent___internal___fieldOwners',
+  ParentInternalIgnoreType = 'parent___internal___ignoreType',
+  ParentInternalMediaType = 'parent___internal___mediaType',
+  ParentInternalOwner = 'parent___internal___owner',
+  ParentInternalType = 'parent___internal___type',
+  Children = 'children',
+  ChildrenId = 'children___id',
+  ChildrenParentId = 'children___parent___id',
+  ChildrenParentParentId = 'children___parent___parent___id',
+  ChildrenParentParentChildren = 'children___parent___parent___children',
+  ChildrenParentChildren = 'children___parent___children',
+  ChildrenParentChildrenId = 'children___parent___children___id',
+  ChildrenParentChildrenChildren = 'children___parent___children___children',
+  ChildrenParentInternalContent = 'children___parent___internal___content',
+  ChildrenParentInternalContentDigest = 'children___parent___internal___contentDigest',
+  ChildrenParentInternalDescription = 'children___parent___internal___description',
+  ChildrenParentInternalFieldOwners = 'children___parent___internal___fieldOwners',
+  ChildrenParentInternalIgnoreType = 'children___parent___internal___ignoreType',
+  ChildrenParentInternalMediaType = 'children___parent___internal___mediaType',
+  ChildrenParentInternalOwner = 'children___parent___internal___owner',
+  ChildrenParentInternalType = 'children___parent___internal___type',
+  ChildrenChildren = 'children___children',
+  ChildrenChildrenId = 'children___children___id',
+  ChildrenChildrenParentId = 'children___children___parent___id',
+  ChildrenChildrenParentChildren = 'children___children___parent___children',
+  ChildrenChildrenChildren = 'children___children___children',
+  ChildrenChildrenChildrenId = 'children___children___children___id',
+  ChildrenChildrenChildrenChildren = 'children___children___children___children',
+  ChildrenChildrenInternalContent = 'children___children___internal___content',
+  ChildrenChildrenInternalContentDigest = 'children___children___internal___contentDigest',
+  ChildrenChildrenInternalDescription = 'children___children___internal___description',
+  ChildrenChildrenInternalFieldOwners = 'children___children___internal___fieldOwners',
+  ChildrenChildrenInternalIgnoreType = 'children___children___internal___ignoreType',
+  ChildrenChildrenInternalMediaType = 'children___children___internal___mediaType',
+  ChildrenChildrenInternalOwner = 'children___children___internal___owner',
+  ChildrenChildrenInternalType = 'children___children___internal___type',
+  ChildrenInternalContent = 'children___internal___content',
+  ChildrenInternalContentDigest = 'children___internal___contentDigest',
+  ChildrenInternalDescription = 'children___internal___description',
+  ChildrenInternalFieldOwners = 'children___internal___fieldOwners',
+  ChildrenInternalIgnoreType = 'children___internal___ignoreType',
+  ChildrenInternalMediaType = 'children___internal___mediaType',
+  ChildrenInternalOwner = 'children___internal___owner',
+  ChildrenInternalType = 'children___internal___type',
+  InternalContent = 'internal___content',
+  InternalContentDigest = 'internal___contentDigest',
+  InternalDescription = 'internal___description',
+  InternalFieldOwners = 'internal___fieldOwners',
+  InternalIgnoreType = 'internal___ignoreType',
+  InternalMediaType = 'internal___mediaType',
+  InternalOwner = 'internal___owner',
+  InternalType = 'internal___type'
+}
+
+export type PricingJsonFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  subHeading?: Maybe<StringQueryOperatorInput>;
+  plans?: Maybe<PlanFilterListInput>;
+  sharedFeatures?: Maybe<FeatureFilterListInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+export type PricingJsonGroupConnection = {
+  __typename?: 'PricingJsonGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<PricingJsonEdge>;
+  nodes: Array<PricingJson>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type PricingJsonSortInput = {
+  fields?: Maybe<Array<Maybe<PricingJsonFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type Query = {
   __typename?: 'Query';
   file?: Maybe<File>;
@@ -2206,6 +2468,8 @@ export type Query = {
   allBenefitsJson: BenefitsJsonConnection;
   descriptionJson?: Maybe<DescriptionJson>;
   allDescriptionJson: DescriptionJsonConnection;
+  pricingJson?: Maybe<PricingJson>;
+  allPricingJson: PricingJsonConnection;
   testimonialsJson?: Maybe<TestimonialsJson>;
   allTestimonialsJson: TestimonialsJsonConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
@@ -2255,8 +2519,8 @@ export type QueryFileArgs = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
 };
@@ -2352,7 +2616,6 @@ export type QuerySitePageArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -2370,11 +2633,9 @@ export type QueryAllSitePageArgs = {
 export type QueryMarkdownRemarkArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
-  excerpt?: Maybe<StringQueryOperatorInput>;
-  rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
-  fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
   html?: Maybe<StringQueryOperatorInput>;
   htmlAst?: Maybe<JsonQueryOperatorInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
   excerptAst?: Maybe<JsonQueryOperatorInput>;
   headings?: Maybe<MarkdownHeadingFilterListInput>;
   timeToRead?: Maybe<IntQueryOperatorInput>;
@@ -2399,6 +2660,7 @@ export type QueryImageSharpArgs = {
   resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
   fluid?: Maybe<ImageSharpFluidFilterInput>;
   sizes?: Maybe<ImageSharpSizesFilterInput>;
+  gatsbyImageData?: Maybe<JsonQueryOperatorInput>;
   original?: Maybe<ImageSharpOriginalFilterInput>;
   resize?: Maybe<ImageSharpResizeFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2450,6 +2712,26 @@ export type QueryDescriptionJsonArgs = {
 export type QueryAllDescriptionJsonArgs = {
   filter?: Maybe<DescriptionJsonFilterInput>;
   sort?: Maybe<DescriptionJsonSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryPricingJsonArgs = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  subHeading?: Maybe<StringQueryOperatorInput>;
+  plans?: Maybe<PlanFilterListInput>;
+  sharedFeatures?: Maybe<FeatureFilterListInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllPricingJsonArgs = {
+  filter?: Maybe<PricingJsonFilterInput>;
+  sort?: Maybe<PricingJsonSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -2859,7 +3141,6 @@ export type SitePage = Node & {
   children: Array<Node>;
   internal: Internal;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
-  context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
@@ -2885,15 +3166,6 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: SitePageFieldsEnum;
-};
-
-export type SitePageContext = {
-  __typename?: 'SitePageContext';
-  slug?: Maybe<Scalars['String']>;
-};
-
-export type SitePageContextFilterInput = {
-  slug?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2996,7 +3268,6 @@ export enum SitePageFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
-  ContextSlug = 'context___slug',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -3048,6 +3319,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsGoogleFamilies = 'pluginCreator___pluginOptions___google___families',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
+  PluginCreatorPluginOptionsCheckSupportedExtensions = 'pluginCreator___pluginOptions___checkSupportedExtensions',
   PluginCreatorPluginOptionsExclude = 'pluginCreator___pluginOptions___exclude',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
@@ -3096,7 +3368,6 @@ export type SitePageFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -3263,6 +3534,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsGoogleFamilies = 'pluginOptions___google___families',
   PluginOptionsName = 'pluginOptions___name',
   PluginOptionsPath = 'pluginOptions___path',
+  PluginOptionsCheckSupportedExtensions = 'pluginOptions___checkSupportedExtensions',
   PluginOptionsExclude = 'pluginOptions___exclude',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
@@ -3402,6 +3674,7 @@ export type SitePluginPluginOptions = {
   google?: Maybe<SitePluginPluginOptionsGoogle>;
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
+  checkSupportedExtensions?: Maybe<Scalars['Boolean']>;
   exclude?: Maybe<Array<Maybe<Scalars['String']>>>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
@@ -3422,6 +3695,7 @@ export type SitePluginPluginOptionsFilterInput = {
   google?: Maybe<SitePluginPluginOptionsGoogleFilterInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
+  checkSupportedExtensions?: Maybe<BooleanQueryOperatorInput>;
   exclude?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
@@ -3704,6 +3978,19 @@ export type TestimonyFilterListInput = {
   elemMatch?: Maybe<TestimonyFilterInput>;
 };
 
+export type TransformOptions = {
+  grayscale?: Maybe<Scalars['Boolean']>;
+  duotone?: Maybe<DuotoneGradient>;
+  rotate?: Maybe<Scalars['Int']>;
+  trim?: Maybe<Scalars['Float']>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  fit?: Maybe<ImageFit>;
+};
+
+export type WebPOptions = {
+  quality?: Maybe<Scalars['Int']>;
+};
+
 export type GatsbyImageSharpFixedFragment = (
   { __typename?: 'ImageSharpFixed' }
   & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>
@@ -3882,7 +4169,7 @@ export type Unnamed_3_Query = (
       { __typename?: 'BenefitsJsonEdge' }
       & { node: (
         { __typename?: 'BenefitsJson' }
-        & Pick<BenefitsJson, 'id' | 'description'>
+        & Pick<BenefitsJson, 'id' | 'heading' | 'description'>
         & { image?: Maybe<(
           { __typename?: 'ImageOptions' }
           & Pick<ImageOptions, 'height' | 'src' | 'width'>
@@ -3918,6 +4205,30 @@ export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_5_Query = (
   { __typename?: 'Query' }
+  & { allPricingJson: (
+    { __typename?: 'PricingJsonConnection' }
+    & { edges: Array<(
+      { __typename?: 'PricingJsonEdge' }
+      & { node: (
+        { __typename?: 'PricingJson' }
+        & Pick<PricingJson, 'heading' | 'subHeading'>
+        & { sharedFeatures?: Maybe<Array<(
+          { __typename?: 'Feature' }
+          & Pick<Feature, 'description' | 'planLevel'>
+        )>>, plans: Array<(
+          { __typename?: 'Plan' }
+          & Pick<Plan, 'level' | 'price' | 'type'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_6_Query = (
+  { __typename?: 'Query' }
   & { allTestimonialsJson: (
     { __typename?: 'TestimonialsJsonConnection' }
     & { edges: Array<(
@@ -3952,10 +4263,10 @@ export type SiteTitleQueryQuery = (
   )> }
 );
 
-export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_6_Query = (
+export type Unnamed_7_Query = (
   { __typename?: 'Query' }
   & { site?: Maybe<(
     { __typename?: 'Site' }
@@ -3966,10 +4277,10 @@ export type Unnamed_6_Query = (
   )> }
 );
 
-export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_7_Query = (
+export type Unnamed_8_Query = (
   { __typename?: 'Query' }
   & { allMarkdownRemark: (
     { __typename?: 'MarkdownRemarkConnection' }
@@ -3988,12 +4299,12 @@ export type Unnamed_7_Query = (
   ) }
 );
 
-export type Unnamed_8_QueryVariables = Exact<{
+export type Unnamed_9_QueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type Unnamed_8_Query = (
+export type Unnamed_9_Query = (
   { __typename?: 'Query' }
   & { allMarkdownRemark: (
     { __typename?: 'MarkdownRemarkConnection' }
