@@ -17,8 +17,8 @@
 	display: block;
 	left: 0;
 	width: 100%;
-	height: 125px;
-	mask: url('../../../../../images/drip.png');
+	height: 180px;
+	mask: url('../../../../../images/drip.svg');
 	mask-size: 240px;
 	mask-repeat: repeat-x;
 	position: absolute;
