@@ -52,7 +52,7 @@ const Pricing: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ style }) => {
 			return null
 		}
 
-		const [{ node: pricing }] = { ...edges }
+		const [{ node: pricing }] = edges
 
 		return pricing
 	}, [edges])

@@ -39,7 +39,7 @@ const Testimonials: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ style })
 			return null
 		}
 
-		const [{ node: testimonial }] = { ...edges }
+		const [{ node: testimonial }] = edges
 
 		return testimonial
 	}, [edges])

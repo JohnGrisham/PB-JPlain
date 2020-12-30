@@ -38,8 +38,8 @@ const Evaluations: React.FC = () => {
 			return null
 		}
 
-		const [{ node: pricing } = { node: null }] = { ...pricingEdges }
-		const [{ node: testimonials } = { node: null }] = { ...testimonialEdges }
+		const [{ node: pricing } = { node: null }] = pricingEdges
+		const [{ node: testimonials } = { node: null }] = testimonialEdges
 
 		return { pricing, testimonials }
 	}, [testimonialEdges, pricingEdges])
