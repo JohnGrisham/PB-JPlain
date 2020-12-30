@@ -3,6 +3,7 @@
 	display: flex;
 	flex: 1;
 	flex-direction: column;
+	margin-top: 2em;
 }
 
 .sources h2 {
@@ -24,6 +25,7 @@
 	background-origin: content-box;
 	background-size: cover;
 	height: 240px;
+	margin-top: 4em;
 	position: absolute;
 	top: 0;
 	width: 240px;

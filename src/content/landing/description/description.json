@@ -1,19 +1,19 @@
 {
-	"heading": "You have a bias",
-	"subHeading": "It's time to break it!",
+	"heading": "Media outlets are biased",
+	"subHeading": "But you don't have to be!",
 	"steps": [
 		{
-			"description": "Tell us your political leaning and some basic information about the type of content you see on your social media feed. Are you more liberal or conservative? Do you prefer CNN, Fox news or somewhere else?",
+			"description": "Tell us your political leaning and some basic information about the type of content you see on your social media feed. Do you follow conservative media or liberal media outlets?",
 			"heading": "Tell us your viewpoint",
 			"icon": "eye"
 		},
 		{
-			"description": "Find sources that you typically wouldn't follow and read articles on topics you already have an opinion on but through a different set of eyes. Discover topics you've never heard of from pundits across the political spectrum as well as news from traditionally less biased sources.",
-			"heading": "Discover new perspectives",
+			"description": "Find new sources and articles in a curated newsletter each week. Discover news from both sides and unbiased news instead of relying on the honesty of reporters.",
+			"heading": "Discover personalized news",
 			"icon": "newspaper"
 		},
 		{
-			"description": "Prepare to leave your social media filter bubble. News outlets you've avoided in the past start to make a little more sense and you're ready to give a different viewpoint a shot. You now have a deeper understanding of the news everyone else is reading and not just your own.",
+			"description": "Improve your media literacy by getting your news from multiple media outlets. Don't be fooled by the biased news on your social media feed again!",
 			"heading": "Leave your echo chamber",
 			"icon": "door-open"
 		}

@@ -10,14 +10,18 @@ export const Description = styled.div.attrs(() => ({
 	}
 `
 
-export const StepHeading = styled.h3.attrs(() => ({
+export const StepHeading = styled.h2.attrs({
 	className: description.stepHeading
-}))``
+})``
 
-export const StepIcon = styled(Paper).attrs(() => ({
+export const StepIcon = styled(Paper).attrs({
 	className: description.stepIcon
-}))``
+})``
 
-export const SubHeading = styled.h2.attrs(() => ({
+export const SubHeading = styled.h2.attrs({
 	className: description.subHeading
-}))``
+})``
+
+export const DripBottom = styled.div.attrs({
+	className: `drip dripBottom ${description.dripBottom}`
+})``

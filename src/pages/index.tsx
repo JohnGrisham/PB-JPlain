@@ -4,9 +4,9 @@ import { Landing, Layout, SEO } from '../components'
 const HomePage = () => {
 	return (
 		<Layout>
-			<SEO title="Break your echo chamber in social media" />
+			<SEO title="Break your Social Media Echo Chamber" />
 			<Landing
-				heading="News that doesn't care how you feel"
+				heading="News perspectives from both sides"
 				subHeading="Sign up to get early access"
 				callToAction="Sign up"
 			/>

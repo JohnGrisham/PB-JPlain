@@ -7,6 +7,11 @@
 	justify-content: center;
 	padding: 1rem;
 	padding-top: 150px;
+	position: relative;
+}
+
+:local(.dripBottom) {
+	background: white;
 }
 
 :local(.stepGrid) {
@@ -15,6 +20,7 @@
 }
 
 :local(.stepHeading) {
+	font-size: 1.5em;
 	margin-bottom: 1rem;
 }
 

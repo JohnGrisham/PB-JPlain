@@ -62,6 +62,7 @@ const Description: React.FC = () => {
 			{description.heading && <h2>{description.heading}</h2>}
 			{description.subHeading && <h3>{description.subHeading}</h3>}
 			{stepItems && <Grid items={stepItems} />}
+			<Styled.DripBottom />
 		</Styled.Description>
 	)
 }

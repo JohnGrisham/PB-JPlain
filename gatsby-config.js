@@ -7,7 +7,7 @@ module.exports = {
 	siteMetadata: {
 		siteUrl: `https://echo-breaking-news.com`,
 		title: `Echo Breaking News`,
-		description: `Stuck in an echo chamber in social media? Break free with Echo Breaking news and discover a new perspective!`,
+		description: `Stuck in a social media echo chamber? Break free and improve your media literacy with fresh news and perspectives.`,
 		author: `John Grisham`,
 		logo: 'echo-breaking-logo.png'
 	},
