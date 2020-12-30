@@ -5,7 +5,10 @@ import styled from 'styled-components'
 
 export const CallToAction = styled(Button).attrs(() => ({
 	className: landing.callToAction,
-	href: '#CTA'
+	color: 'primary',
+	href: '#CTA',
+	type: 'button',
+	variant: 'contained'
 }))``
 
 export const Heading = styled.h1.attrs({

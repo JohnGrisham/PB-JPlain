@@ -25,6 +25,17 @@ export type Scalars = {
 
 
 
+export type ActionOptions = {
+  __typename?: 'ActionOptions';
+  actionContent: Scalars['String'];
+  href?: Maybe<Scalars['String']>;
+};
+
+export type ActionOptionsFilterInput = {
+  actionContent?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
+};
+
 export type AttributedUser = {
   __typename?: 'AttributedUser';
   name: Scalars['String'];
@@ -762,9 +773,9 @@ export type File = Node & {
   children: Array<Node>;
   internal: Internal;
   childBenefitsJson?: Maybe<BenefitsJson>;
-  childPricingJson?: Maybe<PricingJson>;
-  childDescriptionJson?: Maybe<DescriptionJson>;
   childTestimonialsJson?: Maybe<TestimonialsJson>;
+  childDescriptionJson?: Maybe<DescriptionJson>;
+  childPricingJson?: Maybe<PricingJson>;
 };
 
 
@@ -1109,10 +1120,104 @@ export enum FileFieldsEnum {
   ChildBenefitsJsonInternalMediaType = 'childBenefitsJson___internal___mediaType',
   ChildBenefitsJsonInternalOwner = 'childBenefitsJson___internal___owner',
   ChildBenefitsJsonInternalType = 'childBenefitsJson___internal___type',
+  ChildTestimonialsJsonHeading = 'childTestimonialsJson___heading',
+  ChildTestimonialsJsonSubHeading = 'childTestimonialsJson___subHeading',
+  ChildTestimonialsJsonTestimonials = 'childTestimonialsJson___testimonials',
+  ChildTestimonialsJsonTestimonialsAttributedUserName = 'childTestimonialsJson___testimonials___attributedUser___name',
+  ChildTestimonialsJsonTestimonialsAttributedUserCompany = 'childTestimonialsJson___testimonials___attributedUser___company',
+  ChildTestimonialsJsonTestimonialsAttributedUserTitle = 'childTestimonialsJson___testimonials___attributedUser___title',
+  ChildTestimonialsJsonTestimonialsAttributedUserAvatar = 'childTestimonialsJson___testimonials___attributedUser___avatar',
+  ChildTestimonialsJsonTestimonialsQuote = 'childTestimonialsJson___testimonials___quote',
+  ChildTestimonialsJsonId = 'childTestimonialsJson___id',
+  ChildTestimonialsJsonParentId = 'childTestimonialsJson___parent___id',
+  ChildTestimonialsJsonParentParentId = 'childTestimonialsJson___parent___parent___id',
+  ChildTestimonialsJsonParentParentChildren = 'childTestimonialsJson___parent___parent___children',
+  ChildTestimonialsJsonParentChildren = 'childTestimonialsJson___parent___children',
+  ChildTestimonialsJsonParentChildrenId = 'childTestimonialsJson___parent___children___id',
+  ChildTestimonialsJsonParentChildrenChildren = 'childTestimonialsJson___parent___children___children',
+  ChildTestimonialsJsonParentInternalContent = 'childTestimonialsJson___parent___internal___content',
+  ChildTestimonialsJsonParentInternalContentDigest = 'childTestimonialsJson___parent___internal___contentDigest',
+  ChildTestimonialsJsonParentInternalDescription = 'childTestimonialsJson___parent___internal___description',
+  ChildTestimonialsJsonParentInternalFieldOwners = 'childTestimonialsJson___parent___internal___fieldOwners',
+  ChildTestimonialsJsonParentInternalIgnoreType = 'childTestimonialsJson___parent___internal___ignoreType',
+  ChildTestimonialsJsonParentInternalMediaType = 'childTestimonialsJson___parent___internal___mediaType',
+  ChildTestimonialsJsonParentInternalOwner = 'childTestimonialsJson___parent___internal___owner',
+  ChildTestimonialsJsonParentInternalType = 'childTestimonialsJson___parent___internal___type',
+  ChildTestimonialsJsonChildren = 'childTestimonialsJson___children',
+  ChildTestimonialsJsonChildrenId = 'childTestimonialsJson___children___id',
+  ChildTestimonialsJsonChildrenParentId = 'childTestimonialsJson___children___parent___id',
+  ChildTestimonialsJsonChildrenParentChildren = 'childTestimonialsJson___children___parent___children',
+  ChildTestimonialsJsonChildrenChildren = 'childTestimonialsJson___children___children',
+  ChildTestimonialsJsonChildrenChildrenId = 'childTestimonialsJson___children___children___id',
+  ChildTestimonialsJsonChildrenChildrenChildren = 'childTestimonialsJson___children___children___children',
+  ChildTestimonialsJsonChildrenInternalContent = 'childTestimonialsJson___children___internal___content',
+  ChildTestimonialsJsonChildrenInternalContentDigest = 'childTestimonialsJson___children___internal___contentDigest',
+  ChildTestimonialsJsonChildrenInternalDescription = 'childTestimonialsJson___children___internal___description',
+  ChildTestimonialsJsonChildrenInternalFieldOwners = 'childTestimonialsJson___children___internal___fieldOwners',
+  ChildTestimonialsJsonChildrenInternalIgnoreType = 'childTestimonialsJson___children___internal___ignoreType',
+  ChildTestimonialsJsonChildrenInternalMediaType = 'childTestimonialsJson___children___internal___mediaType',
+  ChildTestimonialsJsonChildrenInternalOwner = 'childTestimonialsJson___children___internal___owner',
+  ChildTestimonialsJsonChildrenInternalType = 'childTestimonialsJson___children___internal___type',
+  ChildTestimonialsJsonInternalContent = 'childTestimonialsJson___internal___content',
+  ChildTestimonialsJsonInternalContentDigest = 'childTestimonialsJson___internal___contentDigest',
+  ChildTestimonialsJsonInternalDescription = 'childTestimonialsJson___internal___description',
+  ChildTestimonialsJsonInternalFieldOwners = 'childTestimonialsJson___internal___fieldOwners',
+  ChildTestimonialsJsonInternalIgnoreType = 'childTestimonialsJson___internal___ignoreType',
+  ChildTestimonialsJsonInternalMediaType = 'childTestimonialsJson___internal___mediaType',
+  ChildTestimonialsJsonInternalOwner = 'childTestimonialsJson___internal___owner',
+  ChildTestimonialsJsonInternalType = 'childTestimonialsJson___internal___type',
+  ChildDescriptionJsonHeading = 'childDescriptionJson___heading',
+  ChildDescriptionJsonSubHeading = 'childDescriptionJson___subHeading',
+  ChildDescriptionJsonSteps = 'childDescriptionJson___steps',
+  ChildDescriptionJsonStepsIcon = 'childDescriptionJson___steps___icon',
+  ChildDescriptionJsonStepsHeading = 'childDescriptionJson___steps___heading',
+  ChildDescriptionJsonStepsDescription = 'childDescriptionJson___steps___description',
+  ChildDescriptionJsonId = 'childDescriptionJson___id',
+  ChildDescriptionJsonParentId = 'childDescriptionJson___parent___id',
+  ChildDescriptionJsonParentParentId = 'childDescriptionJson___parent___parent___id',
+  ChildDescriptionJsonParentParentChildren = 'childDescriptionJson___parent___parent___children',
+  ChildDescriptionJsonParentChildren = 'childDescriptionJson___parent___children',
+  ChildDescriptionJsonParentChildrenId = 'childDescriptionJson___parent___children___id',
+  ChildDescriptionJsonParentChildrenChildren = 'childDescriptionJson___parent___children___children',
+  ChildDescriptionJsonParentInternalContent = 'childDescriptionJson___parent___internal___content',
+  ChildDescriptionJsonParentInternalContentDigest = 'childDescriptionJson___parent___internal___contentDigest',
+  ChildDescriptionJsonParentInternalDescription = 'childDescriptionJson___parent___internal___description',
+  ChildDescriptionJsonParentInternalFieldOwners = 'childDescriptionJson___parent___internal___fieldOwners',
+  ChildDescriptionJsonParentInternalIgnoreType = 'childDescriptionJson___parent___internal___ignoreType',
+  ChildDescriptionJsonParentInternalMediaType = 'childDescriptionJson___parent___internal___mediaType',
+  ChildDescriptionJsonParentInternalOwner = 'childDescriptionJson___parent___internal___owner',
+  ChildDescriptionJsonParentInternalType = 'childDescriptionJson___parent___internal___type',
+  ChildDescriptionJsonChildren = 'childDescriptionJson___children',
+  ChildDescriptionJsonChildrenId = 'childDescriptionJson___children___id',
+  ChildDescriptionJsonChildrenParentId = 'childDescriptionJson___children___parent___id',
+  ChildDescriptionJsonChildrenParentChildren = 'childDescriptionJson___children___parent___children',
+  ChildDescriptionJsonChildrenChildren = 'childDescriptionJson___children___children',
+  ChildDescriptionJsonChildrenChildrenId = 'childDescriptionJson___children___children___id',
+  ChildDescriptionJsonChildrenChildrenChildren = 'childDescriptionJson___children___children___children',
+  ChildDescriptionJsonChildrenInternalContent = 'childDescriptionJson___children___internal___content',
+  ChildDescriptionJsonChildrenInternalContentDigest = 'childDescriptionJson___children___internal___contentDigest',
+  ChildDescriptionJsonChildrenInternalDescription = 'childDescriptionJson___children___internal___description',
+  ChildDescriptionJsonChildrenInternalFieldOwners = 'childDescriptionJson___children___internal___fieldOwners',
+  ChildDescriptionJsonChildrenInternalIgnoreType = 'childDescriptionJson___children___internal___ignoreType',
+  ChildDescriptionJsonChildrenInternalMediaType = 'childDescriptionJson___children___internal___mediaType',
+  ChildDescriptionJsonChildrenInternalOwner = 'childDescriptionJson___children___internal___owner',
+  ChildDescriptionJsonChildrenInternalType = 'childDescriptionJson___children___internal___type',
+  ChildDescriptionJsonInternalContent = 'childDescriptionJson___internal___content',
+  ChildDescriptionJsonInternalContentDigest = 'childDescriptionJson___internal___contentDigest',
+  ChildDescriptionJsonInternalDescription = 'childDescriptionJson___internal___description',
+  ChildDescriptionJsonInternalFieldOwners = 'childDescriptionJson___internal___fieldOwners',
+  ChildDescriptionJsonInternalIgnoreType = 'childDescriptionJson___internal___ignoreType',
+  ChildDescriptionJsonInternalMediaType = 'childDescriptionJson___internal___mediaType',
+  ChildDescriptionJsonInternalOwner = 'childDescriptionJson___internal___owner',
+  ChildDescriptionJsonInternalType = 'childDescriptionJson___internal___type',
   ChildPricingJsonHeading = 'childPricingJson___heading',
   ChildPricingJsonSubHeading = 'childPricingJson___subHeading',
   ChildPricingJsonPlans = 'childPricingJson___plans',
-  ChildPricingJsonPlansAction = 'childPricingJson___plans___action',
+  ChildPricingJsonPlansActionActionContent = 'childPricingJson___plans___action___actionContent',
+  ChildPricingJsonPlansActionHref = 'childPricingJson___plans___action___href',
+  ChildPricingJsonPlansImageSrc = 'childPricingJson___plans___image___src',
+  ChildPricingJsonPlansImageHeight = 'childPricingJson___plans___image___height',
+  ChildPricingJsonPlansImageWidth = 'childPricingJson___plans___image___width',
   ChildPricingJsonPlansLevel = 'childPricingJson___plans___level',
   ChildPricingJsonPlansPrice = 'childPricingJson___plans___price',
   ChildPricingJsonPlansFeatures = 'childPricingJson___plans___features',
@@ -1159,97 +1264,7 @@ export enum FileFieldsEnum {
   ChildPricingJsonInternalIgnoreType = 'childPricingJson___internal___ignoreType',
   ChildPricingJsonInternalMediaType = 'childPricingJson___internal___mediaType',
   ChildPricingJsonInternalOwner = 'childPricingJson___internal___owner',
-  ChildPricingJsonInternalType = 'childPricingJson___internal___type',
-  ChildDescriptionJsonHeading = 'childDescriptionJson___heading',
-  ChildDescriptionJsonSubHeading = 'childDescriptionJson___subHeading',
-  ChildDescriptionJsonSteps = 'childDescriptionJson___steps',
-  ChildDescriptionJsonStepsIcon = 'childDescriptionJson___steps___icon',
-  ChildDescriptionJsonStepsHeading = 'childDescriptionJson___steps___heading',
-  ChildDescriptionJsonStepsDescription = 'childDescriptionJson___steps___description',
-  ChildDescriptionJsonId = 'childDescriptionJson___id',
-  ChildDescriptionJsonParentId = 'childDescriptionJson___parent___id',
-  ChildDescriptionJsonParentParentId = 'childDescriptionJson___parent___parent___id',
-  ChildDescriptionJsonParentParentChildren = 'childDescriptionJson___parent___parent___children',
-  ChildDescriptionJsonParentChildren = 'childDescriptionJson___parent___children',
-  ChildDescriptionJsonParentChildrenId = 'childDescriptionJson___parent___children___id',
-  ChildDescriptionJsonParentChildrenChildren = 'childDescriptionJson___parent___children___children',
-  ChildDescriptionJsonParentInternalContent = 'childDescriptionJson___parent___internal___content',
-  ChildDescriptionJsonParentInternalContentDigest = 'childDescriptionJson___parent___internal___contentDigest',
-  ChildDescriptionJsonParentInternalDescription = 'childDescriptionJson___parent___internal___description',
-  ChildDescriptionJsonParentInternalFieldOwners = 'childDescriptionJson___parent___internal___fieldOwners',
-  ChildDescriptionJsonParentInternalIgnoreType = 'childDescriptionJson___parent___internal___ignoreType',
-  ChildDescriptionJsonParentInternalMediaType = 'childDescriptionJson___parent___internal___mediaType',
-  ChildDescriptionJsonParentInternalOwner = 'childDescriptionJson___parent___internal___owner',
-  ChildDescriptionJsonParentInternalType = 'childDescriptionJson___parent___internal___type',
-  ChildDescriptionJsonChildren = 'childDescriptionJson___children',
-  ChildDescriptionJsonChildrenId = 'childDescriptionJson___children___id',
-  ChildDescriptionJsonChildrenParentId = 'childDescriptionJson___children___parent___id',
-  ChildDescriptionJsonChildrenParentChildren = 'childDescriptionJson___children___parent___children',
-  ChildDescriptionJsonChildrenChildren = 'childDescriptionJson___children___children',
-  ChildDescriptionJsonChildrenChildrenId = 'childDescriptionJson___children___children___id',
-  ChildDescriptionJsonChildrenChildrenChildren = 'childDescriptionJson___children___children___children',
-  ChildDescriptionJsonChildrenInternalContent = 'childDescriptionJson___children___internal___content',
-  ChildDescriptionJsonChildrenInternalContentDigest = 'childDescriptionJson___children___internal___contentDigest',
-  ChildDescriptionJsonChildrenInternalDescription = 'childDescriptionJson___children___internal___description',
-  ChildDescriptionJsonChildrenInternalFieldOwners = 'childDescriptionJson___children___internal___fieldOwners',
-  ChildDescriptionJsonChildrenInternalIgnoreType = 'childDescriptionJson___children___internal___ignoreType',
-  ChildDescriptionJsonChildrenInternalMediaType = 'childDescriptionJson___children___internal___mediaType',
-  ChildDescriptionJsonChildrenInternalOwner = 'childDescriptionJson___children___internal___owner',
-  ChildDescriptionJsonChildrenInternalType = 'childDescriptionJson___children___internal___type',
-  ChildDescriptionJsonInternalContent = 'childDescriptionJson___internal___content',
-  ChildDescriptionJsonInternalContentDigest = 'childDescriptionJson___internal___contentDigest',
-  ChildDescriptionJsonInternalDescription = 'childDescriptionJson___internal___description',
-  ChildDescriptionJsonInternalFieldOwners = 'childDescriptionJson___internal___fieldOwners',
-  ChildDescriptionJsonInternalIgnoreType = 'childDescriptionJson___internal___ignoreType',
-  ChildDescriptionJsonInternalMediaType = 'childDescriptionJson___internal___mediaType',
-  ChildDescriptionJsonInternalOwner = 'childDescriptionJson___internal___owner',
-  ChildDescriptionJsonInternalType = 'childDescriptionJson___internal___type',
-  ChildTestimonialsJsonHeading = 'childTestimonialsJson___heading',
-  ChildTestimonialsJsonSubHeading = 'childTestimonialsJson___subHeading',
-  ChildTestimonialsJsonTestimonials = 'childTestimonialsJson___testimonials',
-  ChildTestimonialsJsonTestimonialsAttributedUserName = 'childTestimonialsJson___testimonials___attributedUser___name',
-  ChildTestimonialsJsonTestimonialsAttributedUserCompany = 'childTestimonialsJson___testimonials___attributedUser___company',
-  ChildTestimonialsJsonTestimonialsAttributedUserTitle = 'childTestimonialsJson___testimonials___attributedUser___title',
-  ChildTestimonialsJsonTestimonialsAttributedUserAvatar = 'childTestimonialsJson___testimonials___attributedUser___avatar',
-  ChildTestimonialsJsonTestimonialsQuote = 'childTestimonialsJson___testimonials___quote',
-  ChildTestimonialsJsonId = 'childTestimonialsJson___id',
-  ChildTestimonialsJsonParentId = 'childTestimonialsJson___parent___id',
-  ChildTestimonialsJsonParentParentId = 'childTestimonialsJson___parent___parent___id',
-  ChildTestimonialsJsonParentParentChildren = 'childTestimonialsJson___parent___parent___children',
-  ChildTestimonialsJsonParentChildren = 'childTestimonialsJson___parent___children',
-  ChildTestimonialsJsonParentChildrenId = 'childTestimonialsJson___parent___children___id',
-  ChildTestimonialsJsonParentChildrenChildren = 'childTestimonialsJson___parent___children___children',
-  ChildTestimonialsJsonParentInternalContent = 'childTestimonialsJson___parent___internal___content',
-  ChildTestimonialsJsonParentInternalContentDigest = 'childTestimonialsJson___parent___internal___contentDigest',
-  ChildTestimonialsJsonParentInternalDescription = 'childTestimonialsJson___parent___internal___description',
-  ChildTestimonialsJsonParentInternalFieldOwners = 'childTestimonialsJson___parent___internal___fieldOwners',
-  ChildTestimonialsJsonParentInternalIgnoreType = 'childTestimonialsJson___parent___internal___ignoreType',
-  ChildTestimonialsJsonParentInternalMediaType = 'childTestimonialsJson___parent___internal___mediaType',
-  ChildTestimonialsJsonParentInternalOwner = 'childTestimonialsJson___parent___internal___owner',
-  ChildTestimonialsJsonParentInternalType = 'childTestimonialsJson___parent___internal___type',
-  ChildTestimonialsJsonChildren = 'childTestimonialsJson___children',
-  ChildTestimonialsJsonChildrenId = 'childTestimonialsJson___children___id',
-  ChildTestimonialsJsonChildrenParentId = 'childTestimonialsJson___children___parent___id',
-  ChildTestimonialsJsonChildrenParentChildren = 'childTestimonialsJson___children___parent___children',
-  ChildTestimonialsJsonChildrenChildren = 'childTestimonialsJson___children___children',
-  ChildTestimonialsJsonChildrenChildrenId = 'childTestimonialsJson___children___children___id',
-  ChildTestimonialsJsonChildrenChildrenChildren = 'childTestimonialsJson___children___children___children',
-  ChildTestimonialsJsonChildrenInternalContent = 'childTestimonialsJson___children___internal___content',
-  ChildTestimonialsJsonChildrenInternalContentDigest = 'childTestimonialsJson___children___internal___contentDigest',
-  ChildTestimonialsJsonChildrenInternalDescription = 'childTestimonialsJson___children___internal___description',
-  ChildTestimonialsJsonChildrenInternalFieldOwners = 'childTestimonialsJson___children___internal___fieldOwners',
-  ChildTestimonialsJsonChildrenInternalIgnoreType = 'childTestimonialsJson___children___internal___ignoreType',
-  ChildTestimonialsJsonChildrenInternalMediaType = 'childTestimonialsJson___children___internal___mediaType',
-  ChildTestimonialsJsonChildrenInternalOwner = 'childTestimonialsJson___children___internal___owner',
-  ChildTestimonialsJsonChildrenInternalType = 'childTestimonialsJson___children___internal___type',
-  ChildTestimonialsJsonInternalContent = 'childTestimonialsJson___internal___content',
-  ChildTestimonialsJsonInternalContentDigest = 'childTestimonialsJson___internal___contentDigest',
-  ChildTestimonialsJsonInternalDescription = 'childTestimonialsJson___internal___description',
-  ChildTestimonialsJsonInternalFieldOwners = 'childTestimonialsJson___internal___fieldOwners',
-  ChildTestimonialsJsonInternalIgnoreType = 'childTestimonialsJson___internal___ignoreType',
-  ChildTestimonialsJsonInternalMediaType = 'childTestimonialsJson___internal___mediaType',
-  ChildTestimonialsJsonInternalOwner = 'childTestimonialsJson___internal___owner',
-  ChildTestimonialsJsonInternalType = 'childTestimonialsJson___internal___type'
+  ChildPricingJsonInternalType = 'childPricingJson___internal___type'
 }
 
 export type FileFilterInput = {
@@ -1293,9 +1308,9 @@ export type FileFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
-  childPricingJson?: Maybe<PricingJsonFilterInput>;
-  childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
+  childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -2236,7 +2251,8 @@ export type PageInfo = {
 
 export type Plan = {
   __typename?: 'Plan';
-  action?: Maybe<Scalars['String']>;
+  action?: Maybe<ActionOptions>;
+  image?: Maybe<ImageOptions>;
   level: Scalars['Int'];
   price: Scalars['String'];
   features?: Maybe<Array<Feature>>;
@@ -2244,7 +2260,8 @@ export type Plan = {
 };
 
 export type PlanFilterInput = {
-  action?: Maybe<StringQueryOperatorInput>;
+  action?: Maybe<ActionOptionsFilterInput>;
+  image?: Maybe<ImageOptionsFilterInput>;
   level?: Maybe<IntQueryOperatorInput>;
   price?: Maybe<StringQueryOperatorInput>;
   features?: Maybe<FeatureFilterListInput>;
@@ -2326,7 +2343,11 @@ export enum PricingJsonFieldsEnum {
   Heading = 'heading',
   SubHeading = 'subHeading',
   Plans = 'plans',
-  PlansAction = 'plans___action',
+  PlansActionActionContent = 'plans___action___actionContent',
+  PlansActionHref = 'plans___action___href',
+  PlansImageSrc = 'plans___image___src',
+  PlansImageHeight = 'plans___image___height',
+  PlansImageWidth = 'plans___image___width',
   PlansLevel = 'plans___level',
   PlansPrice = 'plans___price',
   PlansFeatures = 'plans___features',
@@ -2520,9 +2541,9 @@ export type QueryFileArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
-  childPricingJson?: Maybe<PricingJsonFilterInput>;
-  childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
+  childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
 };
 
 
@@ -4125,7 +4146,7 @@ export type Unnamed_1_Query = (
     { __typename?: 'FileConnection' }
     & { nodes: Array<(
       { __typename?: 'File' }
-      & Pick<File, 'relativePath'>
+      & Pick<File, 'relativePath' | 'publicURL' | 'extension'>
       & { childImageSharp?: Maybe<(
         { __typename?: 'ImageSharp' }
         & { fixed?: Maybe<(
@@ -4205,6 +4226,32 @@ export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_5_Query = (
   { __typename?: 'Query' }
+  & { allTestimonialsJson: (
+    { __typename?: 'TestimonialsJsonConnection' }
+    & { edges: Array<(
+      { __typename?: 'TestimonialsJsonEdge' }
+      & { node: (
+        { __typename?: 'TestimonialsJson' }
+        & Pick<TestimonialsJson, 'id'>
+      ) }
+    )> }
+  ), allPricingJson: (
+    { __typename?: 'PricingJsonConnection' }
+    & { edges: Array<(
+      { __typename?: 'PricingJsonEdge' }
+      & { node: (
+        { __typename?: 'PricingJson' }
+        & Pick<PricingJson, 'id'>
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_6_Query = (
+  { __typename?: 'Query' }
   & { allPricingJson: (
     { __typename?: 'PricingJsonConnection' }
     & { edges: Array<(
@@ -4218,16 +4265,23 @@ export type Unnamed_5_Query = (
         )>>, plans: Array<(
           { __typename?: 'Plan' }
           & Pick<Plan, 'level' | 'price' | 'type'>
+          & { features?: Maybe<Array<(
+            { __typename?: 'Feature' }
+            & Pick<Feature, 'planLevel' | 'description'>
+          )>>, image?: Maybe<(
+            { __typename?: 'ImageOptions' }
+            & Pick<ImageOptions, 'src' | 'height' | 'width'>
+          )> }
         )> }
       ) }
     )> }
   ) }
 );
 
-export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_6_Query = (
+export type Unnamed_7_Query = (
   { __typename?: 'Query' }
   & { allTestimonialsJson: (
     { __typename?: 'TestimonialsJsonConnection' }
@@ -4249,6 +4303,20 @@ export type Unnamed_6_Query = (
   ) }
 );
 
+export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_8_Query = (
+  { __typename?: 'Query' }
+  & { allFile: (
+    { __typename?: 'FileConnection' }
+    & { nodes: Array<(
+      { __typename?: 'File' }
+      & Pick<File, 'relativePath' | 'publicURL'>
+    )> }
+  ) }
+);
+
 export type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4263,10 +4331,10 @@ export type SiteTitleQueryQuery = (
   )> }
 );
 
-export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_7_Query = (
+export type Unnamed_9_Query = (
   { __typename?: 'Query' }
   & { site?: Maybe<(
     { __typename?: 'Site' }
@@ -4277,10 +4345,10 @@ export type Unnamed_7_Query = (
   )> }
 );
 
-export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_10_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_8_Query = (
+export type Unnamed_10_Query = (
   { __typename?: 'Query' }
   & { allMarkdownRemark: (
     { __typename?: 'MarkdownRemarkConnection' }
@@ -4299,12 +4367,12 @@ export type Unnamed_8_Query = (
   ) }
 );
 
-export type Unnamed_9_QueryVariables = Exact<{
+export type Unnamed_11_QueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type Unnamed_9_Query = (
+export type Unnamed_11_Query = (
   { __typename?: 'Query' }
   & { allMarkdownRemark: (
     { __typename?: 'MarkdownRemarkConnection' }

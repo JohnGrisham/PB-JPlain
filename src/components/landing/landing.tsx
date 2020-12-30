@@ -22,7 +22,7 @@ const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) 
 				{heading && <Styled.Heading>{heading}</Styled.Heading>}
 				{subHeading && <Styled.SubHeading>{subHeading}</Styled.SubHeading>}
 				{callToAction && (
-					<Styled.CallToAction disabled={!!authToken} type="button" variant="contained" color="primary">
+					<Styled.CallToAction disabled={!!authToken}>
 						<h4>{callToAction}</h4>
 					</Styled.CallToAction>
 				)}

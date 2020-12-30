@@ -23,9 +23,22 @@ const Pricing: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ style }) => {
 								planLevel
 							}
 							plans {
+								action {
+									actionContent
+									href
+								}
 								level
 								price
 								type
+								features {
+									planLevel
+									description
+								}
+								image {
+									src
+									height
+									width
+								}
 							}
 						}
 					}

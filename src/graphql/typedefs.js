@@ -1,4 +1,9 @@
 const typeDefs = `
+type ActionOptions {
+	actionContent: String!
+	href: String 
+}
+
 type AttributedUser {
 	name: String!
 	company: String
@@ -42,7 +47,8 @@ type MarkdownRemark implements Node {
 }
 
 type Plan {
-	action: String
+	action: ActionOptions
+	image: ImageOptions
 	level: Int!
 	price: String!
 	features: [Feature!]

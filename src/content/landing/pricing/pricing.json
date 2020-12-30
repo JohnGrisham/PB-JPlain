@@ -1,0 +1,25 @@
+{
+	"heading": "Pricing",
+	"sharedFeatures": [
+		{
+			"planLevel": 0,
+			"description": "Weekly personalized newsletter"
+		}
+	],
+	"plans": [
+		{
+			"level": 0,
+			"type": "Basic",
+			"price": "Free",
+			"action": {
+				"actionContent": "Sign up",
+				"href": "#CTA"
+			},
+			"image": {
+				"src": "pen.svg",
+				"height": 300,
+				"width": 300
+			}
+		}
+	]
+}

@@ -1,7 +1,8 @@
 // Credit: https://github.com/gatsbyjs/gatsby/discussions/10482#discussioncomment-100864
 import * as React from 'react'
+import Img, { GatsbyImageFluidProps } from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import { Query } from '../../interfaces'
 import { get } from 'lodash'
 
 export interface ImageFluidProps extends React.HTMLAttributes<HTMLImageElement> {
@@ -25,13 +26,13 @@ const ImageFluid: React.FC<ImageFluidProps> = ({ aspectRatio = 4 / 3, src, style
 		}
 	`
 
-	const data = useStaticQuery(query)
+	const data = useStaticQuery<{ allFile: Query['allFile'] }>(query)
 
-	const match: string = React.useMemo(
+	const match = React.useMemo(
 		() => data.allFile.nodes.find(({ relativePath }: { relativePath: string }) => src === relativePath),
 		[data, src]
 	)
-	const image = get(match, 'childImageSharp.fluid')
+	const image: GatsbyImageFluidProps['fluid'] = get(match, 'childImageSharp.fluid')
 
 	if (!image) {
 		return <div>Image not found</div>
