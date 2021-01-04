@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { Benefits } from './benefits'
-import { CallToAction } from '../call-to-action'
+import { Conversions } from './conversions'
 import { Description } from './description'
 import { Evaluations } from './evaluations'
 import { FirebaseContext } from '../../services'
@@ -33,7 +33,7 @@ const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) 
 			<Benefits />
 			<SourcesDrag />
 			<Evaluations />
-			<CallToAction />
+			<Conversions />
 		</Styled.Landing>
 	)
 }

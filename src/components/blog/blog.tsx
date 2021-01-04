@@ -3,9 +3,8 @@ import * as Styled from './styles'
 import { MarkdownRemark, MarkdownRemarkFrontmatter } from '../../interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Grid } from '../grid'
+import { Post } from './post'
 import { faBlog } from '@fortawesome/free-solid-svg-icons'
-import moment from 'moment'
-
 interface BlogProps {
 	posts: MarkdownRemark[]
 }
@@ -18,24 +17,9 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 			return null
 		}
 
-		return postsWithFrontMatter.map(({ frontmatter, excerpt, id }) => {
-			const { date, featuredImage, slug, title } = { ...(frontmatter as MarkdownRemarkFrontmatter) }
-
-			return (
-				<Styled.PostItem key={id}>
-					<Styled.PostLink to={slug}>
-						{featuredImage && <Styled.FeaturedImage src={featuredImage} />}
-						<Styled.PostContent>
-							<Styled.PostContentUpper>
-								<h3>{title}</h3>
-								{date && <h5>{moment(new Date(date)).format('MMM Do YYYY')}</h5>}
-							</Styled.PostContentUpper>
-							<p>{excerpt}</p>
-						</Styled.PostContent>
-					</Styled.PostLink>
-				</Styled.PostItem>
-			)
-		})
+		return postsWithFrontMatter.map(({ frontmatter, excerpt, id }) => (
+			<Post key={id} {...(frontmatter as MarkdownRemarkFrontmatter)} excerpt={excerpt} />
+		))
 	}, [posts])
 
 	return (

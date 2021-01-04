@@ -2,11 +2,17 @@ import { Image } from '../../image'
 import callToAction from './modules'
 import styled from 'styled-components'
 
-export const CallToAction = styled.div.attrs({ className: callToAction.callToActionWrapper })``
+export const CallToAction = styled.div.attrs({
+	className: `${callToAction.callToActionWrapper} largeItem`
+})``
 
-export const CallToActionError = styled.p.attrs({ className: callToAction.callToActionError })``
+export const CallToActionError = styled.p.attrs({
+	className: callToAction.callToActionError
+})``
 
-export const CallToActionSuccess = styled.p.attrs({ className: callToAction.callToActionSuccess })``
+export const CallToActionSuccess = styled.p.attrs({
+	className: callToAction.callToActionSuccess
+})``
 
 export const CallToActionForm = styled.form.attrs({
 	autoComplete: 'off',
@@ -14,7 +20,6 @@ export const CallToActionForm = styled.form.attrs({
 })``
 
 export const CallToActionImage = styled(Image).attrs({
-	className: callToAction.callToActionImage,
 	src: 'cta.jpg',
 	type: 'fluid'
 })``

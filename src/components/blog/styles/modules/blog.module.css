@@ -5,35 +5,3 @@
 	min-height: 100vh;
 	padding: 1em 0 1em 0;
 }
-
-:local(.featuredImage) {
-	flex: 1;
-}
-
-:local(.postContent) {
-	padding: 1em;
-}
-
-:local(.postContentUpper) {
-	margin-bottom: 10px;
-}
-
-:local(.postContentUpper *) {
-	margin: 0px;
-}
-
-:local(.postItem) {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-}
-
-:local(.postLink) {
-	color: black;
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	text-decoration: none;
-	width: 100%;
-}
