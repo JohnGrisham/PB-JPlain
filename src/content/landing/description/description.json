@@ -3,17 +3,17 @@
 	"subHeading": "But you don't have to be!",
 	"steps": [
 		{
-			"description": "Tell us your political leaning and some basic information about the type of content you see on your social media feed. Do you follow conservative media or liberal media outlets?",
+			"description": "Tell us your political leaning and some basic information about the type of content you typically read online. Do you follow conservative or liberal media outlets?",
 			"heading": "Tell us your viewpoint",
 			"icon": "eye"
 		},
 		{
-			"description": "Find new sources and articles in a curated newsletter each week. Discover news from both sides and unbiased news instead of relying on the honesty of reporters.",
+			"description": "Find new sources and articles in a curated newsletter each week. Discover less biased viewpoints from both sides instead of relying on the honesty of reporters.",
 			"heading": "Discover personalized news",
 			"icon": "newspaper"
 		},
 		{
-			"description": "Improve your media literacy by getting your news from multiple media outlets. Don't be fooled by the biased news on your social media feed again!",
+			"description": "Improve your media literacy by getting your news from multiple media outlets. Don't be fooled by biased sources again!",
 			"heading": "Leave your echo chamber",
 			"icon": "door-open"
 		}

@@ -6,7 +6,7 @@ const Confirmation: React.FC = () => {
 		<Styled.Confirmation>
 			<span>
 				<h2>Congratulations you&apos;re now on the waitlist</h2>
-				<h5 style={{ color: '#fff0cc' }}>That&apos;s one step closer to breaking your news echo chamber</h5>
+				<h5 style={{ color: '#fff0cc' }}>That&apos;s one step closer to breaking your echo chamber</h5>
 				<h5>
 					While you wait checkout:
 					<br />

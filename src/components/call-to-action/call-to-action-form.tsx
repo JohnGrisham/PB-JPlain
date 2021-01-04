@@ -73,7 +73,7 @@ const CallToActionForm: React.FC = () => {
 							type="submit"
 							variant="contained"
 							color="primary">
-							Sign Up
+							Free Sign up
 						</Button>
 						{status.errors.length > 0 &&
 							status.errors.map((error: { message: string }, i: number) => (
