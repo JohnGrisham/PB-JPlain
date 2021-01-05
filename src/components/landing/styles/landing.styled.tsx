@@ -1,23 +1,36 @@
 import { Button } from '@material-ui/core'
 import { Image } from '../../image'
-import landing from './modules'
 import styled from 'styled-components'
 
 export const CallToAction = styled(Button).attrs(() => ({
-	className: landing.callToAction,
 	color: 'primary',
 	href: '#CTA',
 	type: 'button',
 	variant: 'contained'
-}))``
+}))`
+	bottom: 15%;
+	position: absolute;
+	z-index: 2;
 
-export const Heading = styled.h1.attrs({
-	className: landing.heading
-})``
+	h4 {
+		font-size: max(16px, 1.1vw);
+	}
+`
 
-export const Landing = styled.div.attrs({
-	className: landing.landingWrapper
-})``
+export const Heading = styled.h1`
+	font-size: max(18px, 5vw);
+	position: absolute;
+	top: 10%;
+	white-space: nowrap;
+	z-index: 2;
+`
+
+export const Landing = styled.div`
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding-top: 70px;
+`
 
 export const LandingImage = styled(Image).attrs(() => ({
 	aspectRatio: 21 / 11,
@@ -25,18 +38,23 @@ export const LandingImage = styled(Image).attrs(() => ({
 	type: 'fluid'
 }))``
 
-export const LandingImageWrapper = styled.div.attrs({
-	className: landing.landingImageWrapper
-})``
+export const LandingImageWrapper = styled.div`
+	color: white;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+`
 
-export const Sources = styled.div.attrs({
-	className: landing.sources
-})``
-
-export const SubHeading = styled.h2.attrs({
-	className: landing.subHeading
-})``
+export const SubHeading = styled.h2`
+	font-size: max(16px, 3vw);
+	position: absolute;
+	top: 30%;
+	z-index: 2;
+`
 
 export const GradientDrip = styled.div.attrs({
-	className: `drip dripBottom ${landing.gradientDrip}`
-})``
+	className: `drip dripBottom`
+})`
+	background: linear-gradient(to right, #8c2485, #7a2485 10%, #6a2383 25%, #322155, #241f47);
+`

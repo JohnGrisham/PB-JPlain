@@ -1,16 +1,18 @@
-// Delete this file if you don't want to use styled components for global styles.
-import globalCSS, { layout } from './modules'
 import styled, { createGlobalStyle } from 'styled-components'
+import globalCSS from './modules'
 
 export const GlobalStyle = createGlobalStyle(globalCSS)
 
-export const Content = styled.main.attrs(() => ({
-	className: layout.content
-}))``
+export const Content = styled.main`
+	display: flex;
+	flex-direction: column;
+`
 
-export const Layout = styled.div.attrs(() => ({
-	className: layout.layoutWrapper
-}))`
+export const Layout = styled.div`
+	background-color: #4e2378;
+	padding-bottom: 1.45rem;
+	position: relative;
+
 	footer {
 		color: white;
 

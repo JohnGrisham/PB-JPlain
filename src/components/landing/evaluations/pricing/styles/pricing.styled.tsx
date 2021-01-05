@@ -1,12 +1,17 @@
 import { IntersectionObserver } from '../../../../intersection-observer'
-import pricing from './modules'
 import styled from 'styled-components'
 
-export const Pricing = styled.div.attrs({
-	className: pricing.pricingWrapper
-})``
+export const Pricing = styled.div`
+	align-items: center;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	height: 500px;
+	min-width: 80%;
+`
 
 export const Intersection = styled(IntersectionObserver).attrs({
-	className: pricing.intersection,
 	options: { threshold: 0.5 }
-})``
+})`
+	display: flex;
+`
