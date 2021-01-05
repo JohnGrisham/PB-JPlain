@@ -55,5 +55,5 @@ export const SubHeading = styled.h2`
 export const GradientDrip = styled.div.attrs({
 	className: `drip dripBottom`
 })`
-	background: linear-gradient(to right, #8c2485, #7a2485 10%, #6a2383 25%, #322155, #241f47);
+	background: linear-gradient(to right, #882483, #742382 10%, #692381 25%, #341f58, #221e46);
 `
