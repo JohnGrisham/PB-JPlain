@@ -11,6 +11,7 @@ export const Content = styled.main`
 export const Layout = styled.div`
 	background-color: #4e2378;
 	padding-bottom: 1.45rem;
+	padding-top: 70px;
 	position: relative;
 
 	footer {

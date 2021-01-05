@@ -29,12 +29,11 @@ export const Landing = styled.div`
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	padding-top: 70px;
 `
 
 export const LandingImage = styled(Image).attrs(() => ({
 	aspectRatio: 21 / 11,
-	src: 'landing.jpg',
+	src: 'landing.webp',
 	type: 'fluid'
 }))``
 

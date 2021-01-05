@@ -605,8 +605,8 @@ pre tt:after {
 	width: 100%;
 }
 
-:global(.MuiButton-containedPrimary) {
-	background-color: #077cf9 !important;
+:global(.MuiButton-root.MuiButton-containedPrimary) {
+	background-color: #077cf9;
 }
 
 :global(.MuiMenu-list) {
@@ -618,8 +618,7 @@ pre tt:after {
 }
 
 :global(.Mui-disabled) {
-	background-color: gainsboro;
-	opacity: 0.5 !important;
+	opacity: 0.5;
 }
 /* I got my inspiration from Wes Bos. Check it out here: https://mastergatsby.com/ */
 :global(.drip) {
@@ -632,7 +631,6 @@ pre tt:after {
 	mask-repeat: repeat-x;
 	position: absolute;
 	background: #332379;
-	z-index: -1;
 	background-size: 10px;
 	background-position: 0 100%;
 	z-index: 2;

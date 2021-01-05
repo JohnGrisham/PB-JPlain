@@ -8,10 +8,12 @@ export const SignupButton = styled(Button)`
 `
 
 export const MobileMenu = styled(Menu)`
-	top: 50px;
+	top: 55px !important;
+	z-index: 4;
 
 	.MuiMenu-paper,
 	.MuiMenu-list {
+		background: #4e2378 !important;
 		height: 100%;
 		max-height: 100%;
 		max-width: 100%;
@@ -34,11 +36,16 @@ export const SiteHeader = styled.header`
 	color: white;
 	display: grid;
 	grid-template-columns: 5fr 0.5fr 1fr;
+	min-width: 420px;
 	padding: 1.45rem 1.0875rem;
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1000;
+	z-index: 3;
+
+	@media all and (max-width: 700px) {
+		grid-template-columns: 5fr 1fr;
+	}
 `
 
 export const SiteLink = styled(Link)`
