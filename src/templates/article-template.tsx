@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Article, Heading, List, Paragraph, PostTitle, SubHeading, Title } from './styles'
 import { Image, Layout } from '../components'
-import { BlogData } from '../interfaces'
+import { Query } from '../interfaces'
 import RehypeReact from 'rehype-react'
+import { format } from 'date-fns'
 import { graphql } from 'gatsby'
-import moment from 'moment'
 
 export const query = graphql`
 	query($slug: String!) {
@@ -24,7 +24,7 @@ export const query = graphql`
 	}
 `
 
-const articleTemplate: React.FC<BlogData> = ({ data }) => {
+const articleTemplate: React.FC<{ data: { allMarkdownRemark: Query['allMarkdownRemark'] } }> = ({ data }) => {
 	if (!data) {
 		return null
 	}
@@ -67,7 +67,7 @@ const articleTemplate: React.FC<BlogData> = ({ data }) => {
 								)}
 								{frontmatter.date && (
 									<SubHeading style={{ textAlign: 'center' }}>
-										{moment(new Date(frontmatter.date)).format('MMM Do YYYY')}
+										{format(new Date(frontmatter.date), 'MMM do yyyy')}
 									</SubHeading>
 								)}
 							</PostTitle>

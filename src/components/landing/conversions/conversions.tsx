@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { CallToAction } from '../../call-to-action'
 import { Post } from '../../blog'
 import { Query } from '../../../interfaces'
-import moment from 'moment'
+import { getUnixTime } from 'date-fns'
 
 const Conversions: React.FC = () => {
 	const {
@@ -48,7 +48,7 @@ const Conversions: React.FC = () => {
 				return -1
 			}
 
-			return moment(new Date(b.node.frontmatter.date)).unix() - moment(new Date(a.node.frontmatter.date)).unix()
+			return getUnixTime(new Date(b.node.frontmatter.date)) - getUnixTime(new Date(a.node.frontmatter.date))
 		})
 
 		const { node } = sortedPosts[0]
