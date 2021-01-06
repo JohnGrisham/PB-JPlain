@@ -7,4 +7,4 @@
   [[headers]]
   for = "staging.echo-breaking-news.com/*"
   [headers.values]
-    X-robots-tag: noindex
+    X-robots-tag = "noindex"
