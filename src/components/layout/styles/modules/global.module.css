@@ -633,7 +633,7 @@ pre tt:after {
 	background: #332379;
 	background-size: 10px;
 	background-position: 0 100%;
-	z-index: 2;
+	z-index: 1;
 }
 
 :global(.dripTop) {

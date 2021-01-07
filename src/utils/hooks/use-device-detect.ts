@@ -28,9 +28,11 @@ export default function useDeviceDetect() {
 		)
 
 		if (tablet) {
-			setDeviceType(DeviceType.Tablet)
-		} else if (mobile) {
-			setDeviceType(DeviceType.Mobile)
+			return setDeviceType(DeviceType.Tablet)
+		}
+
+		if (mobile) {
+			return setDeviceType(DeviceType.Mobile)
 		}
 
 		return setDeviceType(DeviceType.Desktop)

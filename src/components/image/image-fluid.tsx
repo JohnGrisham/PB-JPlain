@@ -18,7 +18,7 @@ const ImageFluid: React.FC<ImageFluidProps> = ({ aspectRatio = 4 / 3, src, style
 					relativePath
 					childImageSharp {
 						fluid(quality: 100) {
-							...GatsbyImageSharpFluid
+							...GatsbyImageSharpFluid_withWebp
 						}
 					}
 				}

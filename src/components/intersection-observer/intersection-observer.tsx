@@ -27,7 +27,7 @@ export const IntersectionObserver: React.FC<IntersectionObserverProps> = ({
 		() => orientation.type === 'landscape-primary' || orientation.type === 'landscape-secondary',
 		[orientation]
 	)
-	// I discovered that certain devices will not display an interection if threshold is greater than 0 and the device orientation is landscape so for now just use 0 if that is the case.
+	// Workaround for: https://github.com/w3c/IntersectionObserver/issues/266
 	const shouldReplaceThreshold = React.useMemo(
 		() => (isInLandscape && deviceType === DeviceType.Mobile) || (isInLandscape && deviceType === DeviceType.Tablet),
 		[deviceType, isInLandscape]

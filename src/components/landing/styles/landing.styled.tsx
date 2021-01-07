@@ -33,7 +33,7 @@ export const Landing = styled.div`
 
 export const LandingImage = styled(Image).attrs(() => ({
 	aspectRatio: 21 / 11,
-	src: 'landing.webp',
+	src: 'landing.jpg',
 	type: 'fluid'
 }))``
 
@@ -55,5 +55,5 @@ export const SubHeading = styled.h2`
 export const GradientDrip = styled.div.attrs({
 	className: `drip dripBottom`
 })`
-	background: linear-gradient(to right, #882483, #742382 10%, #692381 25%, #341f58, #221e46);
+	background: linear-gradient(to right, #882483, #782483 10%, #692381 25%, #372259, #221e46);
 `

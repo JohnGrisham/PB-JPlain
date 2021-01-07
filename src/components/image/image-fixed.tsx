@@ -20,7 +20,7 @@ const ImageFixed: React.FC<ImageFixedProps> = ({ src, style, className, height =
 					publicURL
 					childImageSharp {
 						fixed(quality: 100) {
-							...GatsbyImageSharpFixed
+							...GatsbyImageSharpFixed_withWebp
 						}
 					}
 					extension

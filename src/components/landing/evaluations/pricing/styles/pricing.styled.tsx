@@ -6,7 +6,6 @@ export const Pricing = styled.div`
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	height: 500px;
 	min-width: 80%;
 `
 
