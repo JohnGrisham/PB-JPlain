@@ -14,8 +14,8 @@ export const Author = styled.div`
 `
 
 export const AfterTitle = styled.div`
+	margin: auto auto;
 	width: 100%;
-	margin: 0px;
 
 	@media all and (min-width: 700px) {
 		width: 70%;
@@ -25,9 +25,14 @@ export const AfterTitle = styled.div`
 export const Content = styled.div`
 	display: flex;
 	flex: 1;
-	flex-direction: column;
 	margin-top: 2em;
+	max-width: 100vw;
 	overflow: hidden;
+	word-wrap: break-word;
+
+	div {
+		max-width: 100%;
+	}
 `
 
 export const Heading = styled.h1`

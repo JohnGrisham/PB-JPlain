@@ -84,7 +84,7 @@ const articleTemplate: React.FC<{ data: { allMarkdownRemark: Query['allMarkdownR
 						)}
 					</>
 				)}
-				{<Styled.Content>{renderAst(htmlAst)}</Styled.Content>}
+				<Styled.Content>{renderAst(htmlAst)}</Styled.Content>
 			</Styled.Article>
 		</Layout>
 	)

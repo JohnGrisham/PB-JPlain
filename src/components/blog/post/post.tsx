@@ -3,16 +3,18 @@ import * as Styled from './styles'
 import { MarkdownRemark, MarkdownRemarkFrontmatter } from '../../../interfaces'
 import { Avatar } from '../../avatar'
 import { CardProps } from '@material-ui/core'
+import { GatsbyLinkProps } from 'gatsby'
 import { format } from 'date-fns'
 
-interface Post extends MarkdownRemarkFrontmatter, Omit<CardProps, 'title'> {
+interface Post extends MarkdownRemarkFrontmatter, Omit<CardProps, 'title' | 'onClick'> {
 	excerpt: MarkdownRemark['excerpt']
+	onClick?: GatsbyLinkProps<Record<string, unknown>>['onClick']
 }
 
-const Post: React.FC<Post> = ({ author, className, date, excerpt, featuredImage, slug, title }) => {
+const Post: React.FC<Post> = ({ author, className, date, excerpt, featuredImage, onClick, slug, title }) => {
 	return (
 		<Styled.PostItem className={className}>
-			<Styled.PostLink to={`/blog/${slug}`}>
+			<Styled.PostLink to={`/blog/${slug}`} onClick={onClick}>
 				{featuredImage && <Styled.FeaturedImage src={featuredImage} />}
 				<Styled.PostContent>
 					<Styled.PostContentUpper>

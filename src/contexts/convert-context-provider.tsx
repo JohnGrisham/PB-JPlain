@@ -29,6 +29,7 @@ const ConvertProvider: React.FC = ({ children }) => {
 	return (
 		<ConvertContext.Provider
 			value={{
+				hasBeenDismissed,
 				isOpen,
 				setHasBeenDismissed: onSetHasBeenDismissed,
 				setIsOpen
