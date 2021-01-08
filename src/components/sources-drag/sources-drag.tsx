@@ -36,7 +36,7 @@ export const SourcesDrag: React.FC = () => {
 	}, [width, x])
 
 	return (
-		<div className="sources" ref={sourcesRef}>
+		<div id="sources" className="sources" ref={sourcesRef}>
 			<motion.div className="drag-container" style={{ background }}>
 				<h2>Our Sources</h2>
 				<motion.div

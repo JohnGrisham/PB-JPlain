@@ -78,7 +78,7 @@ const Pricing: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ style }) => {
 	}
 
 	return (
-		<Styled.Pricing style={style}>
+		<Styled.Pricing id="pricing" style={style}>
 			{pricing.heading && <h2>{pricing.heading}</h2>}
 			{pricing.subHeading && <h3>{pricing.subHeading}</h3>}
 			<Grid items={plans} />

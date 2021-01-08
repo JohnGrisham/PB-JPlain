@@ -61,7 +61,7 @@ const Testimonials: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ style })
 	}
 
 	return (
-		<Styled.Testimonials style={style}>
+		<Styled.Testimonials id="testimonials" style={style}>
 			{testimonial.heading && <h2>{testimonial.heading}</h2>}
 			{testimonial.subHeading && <h3>{testimonial.subHeading}</h3>}
 			<Grid items={testimonies} />

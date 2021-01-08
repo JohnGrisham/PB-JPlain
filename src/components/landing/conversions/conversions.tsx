@@ -76,7 +76,7 @@ const Conversions: React.FC = () => {
 	return (
 		<Styled.Conversions>
 			{latestPost && latestPost.frontmatter && (
-				<Styled.LatestPost>
+				<Styled.LatestPost id="blog">
 					<h2>Latest Post</h2>
 					<Post
 						className="largeItem"

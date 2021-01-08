@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Blog = styled.div`
+	align-items: center;
 	background-color: white;
 	display: flex;
 	justify-content: center;

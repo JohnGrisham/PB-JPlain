@@ -1,6 +1,6 @@
 import { Button, Menu } from '@material-ui/core'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { Image } from '../../image'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 export const SignupButton = styled(Button)`
@@ -35,7 +35,7 @@ export const SiteHeader = styled.header`
 	background: #4e2378;
 	color: white;
 	display: grid;
-	grid-template-columns: 5fr 0.5fr 1fr;
+	grid-template-columns: 5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
 	min-width: 420px;
 	padding: 1.45rem 1.0875rem;
 	position: fixed;
@@ -43,15 +43,19 @@ export const SiteHeader = styled.header`
 	width: 100%;
 	z-index: 3;
 
-	@media all and (max-width: 700px) {
+	@media all and (max-width: 1350px) {
 		grid-template-columns: 5fr 1fr;
 	}
 `
 
-export const SiteLink = styled(Link)`
+export const SiteLink = styled(AnchorLink)`
 	color: white;
 	margin: 0;
 	text-decoration: none;
+`
+
+export const SiteTitle = styled(SiteLink)`
+	font-size: 1.5rem;
 `
 
 export const SiteLogo = styled(Image)`

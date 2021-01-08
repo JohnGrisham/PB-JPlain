@@ -22,7 +22,10 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 
 	const menu = (
 		<>
-			<Styled.SiteLink to="/blog">Blog</Styled.SiteLink>
+			<Styled.SiteLink to="/#description">About</Styled.SiteLink>
+			<Styled.SiteLink to="/#benefits">Benefits</Styled.SiteLink>
+			<Styled.SiteLink to="/#sources">Sources</Styled.SiteLink>
+			<Styled.SiteLink to="/#pricing">Pricing</Styled.SiteLink>
 			<Styled.SignupButton
 				disabled={!!authToken}
 				type="button"
@@ -37,7 +40,16 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 	const mobileMenu = (
 		<Styled.MobileMenu open={isMobileMenuOpen} anchorEl={mobileMenuAnchor}>
 			<MenuItem>
-				<Styled.SiteLink to="/blog">Blog</Styled.SiteLink>
+				<Styled.SiteLink to="/#description">About</Styled.SiteLink>
+			</MenuItem>
+			<MenuItem>
+				<Styled.SiteLink to="/#benefits">Benefits</Styled.SiteLink>
+			</MenuItem>
+			<MenuItem>
+				<Styled.SiteLink to="/#sources">Sources</Styled.SiteLink>
+			</MenuItem>
+			<MenuItem>
+				<Styled.SiteLink to="/#pricing">Pricing</Styled.SiteLink>
 			</MenuItem>
 			<MenuItem disabled={!!authToken}>
 				<Styled.SignupButton type="button" variant="contained" color="primary" onClick={() => setIsOpen(true)}>
@@ -51,11 +63,9 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 		<Styled.SiteHeader ref={(ref) => setMobileMenuAnchor(ref)}>
 			<Styled.SiteContext>
 				{logo && <Styled.SiteLogo src={logo} />}
-				<Styled.SiteLink style={{ fontSize: '1.5rem' }} to="/">
-					{siteTitle}
-				</Styled.SiteLink>
+				<Styled.SiteTitle to="/#top">{siteTitle}</Styled.SiteTitle>
 			</Styled.SiteContext>
-			{!width ? null : width <= 700 ? (
+			{!width ? null : width <= 1350 ? (
 				<>
 					<Button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
 						<FontAwesomeIcon color="white" icon={faBars} />

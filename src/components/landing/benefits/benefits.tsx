@@ -33,7 +33,7 @@ const Benefits: React.FC = () => {
 	}
 
 	return (
-		<Styled.Benefits>
+		<Styled.Benefits id="benefits">
 			{benefits.map(({ node }) => (
 				<Styled.Intersection key={node.id}>
 					<Benefit benefit={node} />

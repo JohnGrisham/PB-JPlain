@@ -16,7 +16,7 @@ export interface LandingProps {
 const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) => {
 	const { authToken } = React.useContext(FirebaseContext)
 	return (
-		<Styled.Landing>
+		<Styled.Landing id="top">
 			<Styled.LandingImageWrapper>
 				{heading && <Styled.Heading>{heading}</Styled.Heading>}
 				{subHeading && <Styled.SubHeading>{subHeading}</Styled.SubHeading>}
