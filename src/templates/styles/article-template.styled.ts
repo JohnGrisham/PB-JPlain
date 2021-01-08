@@ -6,22 +6,28 @@ export const Article = styled.article`
 	display: flex;
 	flex-direction: column;
 	padding: 2em 10vw 2em 10vw;
-
-	div {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		overflow: hidden;
-	}
 `
 
-export const PostTitle = styled.div`
+export const Author = styled.div`
+	display: flex;
+	justify-content: center;
+`
+
+export const AfterTitle = styled.div`
 	width: 100%;
-	margin: 0px auto 2em auto;
+	margin: 0px;
 
 	@media all and (min-width: 700px) {
 		width: 70%;
 	}
+`
+
+export const Content = styled.div`
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin-top: 2em;
+	overflow: hidden;
 `
 
 export const Heading = styled.h1`

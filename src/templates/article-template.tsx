@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Article, Heading, List, Paragraph, PostTitle, SubHeading, Title } from './styles'
-import { Image, Layout } from '../components'
+import * as Styled from './styles'
+import { Avatar, Image, Layout } from '../components'
 import { Query } from '../interfaces'
 import RehypeReact from 'rehype-react'
 import { format } from 'date-fns'
@@ -12,6 +12,10 @@ export const query = graphql`
 			edges {
 				node {
 					frontmatter {
+						author {
+							avatar
+							name
+						}
 						date
 						featuredImage
 						title
@@ -42,22 +46,28 @@ const articleTemplate: React.FC<{ data: { allMarkdownRemark: Query['allMarkdownR
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const renderAst = new (RehypeReact as any)({
 		components: {
-			h1: Heading,
-			h2: SubHeading,
-			p: Paragraph,
-			ul: List
+			h1: Styled.Heading,
+			h2: Styled.SubHeading,
+			p: Styled.Paragraph,
+			ul: Styled.List
 		},
 		createElement: React.createElement
 	}).Compiler
 
 	return (
 		<Layout>
-			<Article>
+			<Styled.Article>
 				{frontmatter && (
 					<>
-						<Title>{frontmatter.title}</Title>
+						<Styled.Title>{frontmatter.title}</Styled.Title>
+						{frontmatter.author && (
+							<Styled.Author>
+								{frontmatter.author.avatar && <Avatar avatar={frontmatter.author.avatar} />}
+								<Styled.SubHeading>{frontmatter.author.name}</Styled.SubHeading>
+							</Styled.Author>
+						)}
 						{(frontmatter.featuredImage || frontmatter.date) && (
-							<PostTitle>
+							<Styled.AfterTitle>
 								{frontmatter.featuredImage && (
 									<Image
 										src={frontmatter.featuredImage}
@@ -66,16 +76,16 @@ const articleTemplate: React.FC<{ data: { allMarkdownRemark: Query['allMarkdownR
 									/>
 								)}
 								{frontmatter.date && (
-									<SubHeading style={{ textAlign: 'center' }}>
+									<Styled.SubHeading style={{ textAlign: 'center' }}>
 										{format(new Date(frontmatter.date), 'MMM do yyyy')}
-									</SubHeading>
+									</Styled.SubHeading>
 								)}
-							</PostTitle>
+							</Styled.AfterTitle>
 						)}
 					</>
 				)}
-				{renderAst(htmlAst)}
-			</Article>
+				{<Styled.Content>{renderAst(htmlAst)}</Styled.Content>}
+			</Styled.Article>
 		</Layout>
 	)
 }

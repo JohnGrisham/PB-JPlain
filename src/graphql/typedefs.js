@@ -36,6 +36,7 @@ type ImageOptions {
 }
 
 type MarkdownRemarkFrontmatter {
+	author: AttributedUser
 	title: String!
 	slug: String!
 	date: String

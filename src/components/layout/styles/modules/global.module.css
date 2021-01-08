@@ -627,7 +627,7 @@ pre tt:after {
 	width: 100%;
 	height: 180px;
 	mask: url('../../../../images/drip.svg');
-	mask-size: 250px;
+	mask-size: 250px auto;
 	mask-repeat: repeat-x;
 	position: absolute;
 	background: #332379;

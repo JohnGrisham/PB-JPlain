@@ -11,6 +11,10 @@ export const query = graphql`
 				node {
 					id
 					frontmatter {
+						author {
+							avatar
+							name
+						}
 						slug
 						title
 						date

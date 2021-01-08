@@ -17,6 +17,10 @@ const Conversions: React.FC = () => {
 						node {
 							id
 							frontmatter {
+								author {
+									avatar
+									name
+								}
 								slug
 								title
 								date

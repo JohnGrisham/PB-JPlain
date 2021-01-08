@@ -1,6 +1,7 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { MarkdownRemark, MarkdownRemarkFrontmatter } from '../../../interfaces'
+import { Avatar } from '../../avatar'
 import { CardProps } from '@material-ui/core'
 import { format } from 'date-fns'
 
@@ -8,7 +9,7 @@ interface Post extends MarkdownRemarkFrontmatter, Omit<CardProps, 'title'> {
 	excerpt: MarkdownRemark['excerpt']
 }
 
-const Post: React.FC<Post> = ({ className, date, excerpt, featuredImage, slug, title }) => {
+const Post: React.FC<Post> = ({ author, className, date, excerpt, featuredImage, slug, title }) => {
 	return (
 		<Styled.PostItem className={className}>
 			<Styled.PostLink to={`/blog/${slug}`}>
@@ -16,7 +17,15 @@ const Post: React.FC<Post> = ({ className, date, excerpt, featuredImage, slug, t
 				<Styled.PostContent>
 					<Styled.PostContentUpper>
 						<h3>{title}</h3>
-						{date && <h5>{format(new Date(date), 'MMM do yyyy')}</h5>}
+						<Styled.Info>
+							{author && (
+								<Styled.AuthorInfo>
+									{author.avatar && <Avatar avatar={author.avatar} />}
+									<h4>{author.name}</h4>
+								</Styled.AuthorInfo>
+							)}
+							{date && <h5>{format(new Date(date), 'MMM do yyyy')}</h5>}
+						</Styled.Info>
 					</Styled.PostContentUpper>
 					<p>{excerpt}</p>
 				</Styled.PostContent>

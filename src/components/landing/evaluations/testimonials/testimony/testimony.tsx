@@ -1,10 +1,9 @@
 import * as React from 'react'
 import * as Styled from './styles'
-import { Query, Testimony as TestimonyProps } from '../../../../../interfaces'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
-import { graphql, useStaticQuery } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IntersectionContext } from '../../../../intersection-observer'
+import { Testimony as TestimonyProps } from '../../../../../interfaces'
 
 const testimonyVariants = {
 	flip: {
@@ -17,29 +16,6 @@ const testimonyVariants = {
 
 const Testimony: React.FC<TestimonyProps> = ({ attributedUser, quote }) => {
 	const { inThreshold } = React.useContext(IntersectionContext)
-
-	const query = graphql`
-		query {
-			allFile(filter: { internal: { mediaType: { regex: "/image/" } } }) {
-				nodes {
-					relativePath
-					publicURL
-				}
-			}
-		}
-	`
-
-	const data = useStaticQuery<{ allFile: Query['allFile'] }>(query)
-
-	const avatarPath = React.useMemo(() => {
-		const match = data.allFile.nodes.find(
-			({ relativePath }: { relativePath: string }) => attributedUser.avatar === relativePath
-		)
-
-		if (match && match.publicURL) {
-			return match.publicURL
-		}
-	}, [data, attributedUser])
 
 	const motionProps = React.useMemo(
 		() => ({
@@ -63,7 +39,7 @@ const Testimony: React.FC<TestimonyProps> = ({ attributedUser, quote }) => {
 					<FontAwesomeIcon icon={faQuoteRight} />
 				</Styled.Quote>
 				<Styled.AttributedUser>
-					{attributedUser.avatar && avatarPath && <Styled.AttributedUserAvatar src={avatarPath} />}
+					{attributedUser.avatar && <Styled.AttributedUserAvatar avatar={attributedUser.avatar} />}
 					<Styled.AttributedUserInformation>
 						<h4>{attributedUser.name}</h4>
 						{(attributedUser.company || attributedUser.title) && (

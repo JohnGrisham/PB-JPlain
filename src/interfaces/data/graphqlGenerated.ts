@@ -773,9 +773,9 @@ export type File = Node & {
   children: Array<Node>;
   internal: Internal;
   childBenefitsJson?: Maybe<BenefitsJson>;
-  childTestimonialsJson?: Maybe<TestimonialsJson>;
   childDescriptionJson?: Maybe<DescriptionJson>;
   childPricingJson?: Maybe<PricingJson>;
+  childMarkdownRemark?: Maybe<MarkdownRemark>;
 };
 
 
@@ -1120,52 +1120,6 @@ export enum FileFieldsEnum {
   ChildBenefitsJsonInternalMediaType = 'childBenefitsJson___internal___mediaType',
   ChildBenefitsJsonInternalOwner = 'childBenefitsJson___internal___owner',
   ChildBenefitsJsonInternalType = 'childBenefitsJson___internal___type',
-  ChildTestimonialsJsonHeading = 'childTestimonialsJson___heading',
-  ChildTestimonialsJsonSubHeading = 'childTestimonialsJson___subHeading',
-  ChildTestimonialsJsonTestimonials = 'childTestimonialsJson___testimonials',
-  ChildTestimonialsJsonTestimonialsAttributedUserName = 'childTestimonialsJson___testimonials___attributedUser___name',
-  ChildTestimonialsJsonTestimonialsAttributedUserCompany = 'childTestimonialsJson___testimonials___attributedUser___company',
-  ChildTestimonialsJsonTestimonialsAttributedUserTitle = 'childTestimonialsJson___testimonials___attributedUser___title',
-  ChildTestimonialsJsonTestimonialsAttributedUserAvatar = 'childTestimonialsJson___testimonials___attributedUser___avatar',
-  ChildTestimonialsJsonTestimonialsQuote = 'childTestimonialsJson___testimonials___quote',
-  ChildTestimonialsJsonId = 'childTestimonialsJson___id',
-  ChildTestimonialsJsonParentId = 'childTestimonialsJson___parent___id',
-  ChildTestimonialsJsonParentParentId = 'childTestimonialsJson___parent___parent___id',
-  ChildTestimonialsJsonParentParentChildren = 'childTestimonialsJson___parent___parent___children',
-  ChildTestimonialsJsonParentChildren = 'childTestimonialsJson___parent___children',
-  ChildTestimonialsJsonParentChildrenId = 'childTestimonialsJson___parent___children___id',
-  ChildTestimonialsJsonParentChildrenChildren = 'childTestimonialsJson___parent___children___children',
-  ChildTestimonialsJsonParentInternalContent = 'childTestimonialsJson___parent___internal___content',
-  ChildTestimonialsJsonParentInternalContentDigest = 'childTestimonialsJson___parent___internal___contentDigest',
-  ChildTestimonialsJsonParentInternalDescription = 'childTestimonialsJson___parent___internal___description',
-  ChildTestimonialsJsonParentInternalFieldOwners = 'childTestimonialsJson___parent___internal___fieldOwners',
-  ChildTestimonialsJsonParentInternalIgnoreType = 'childTestimonialsJson___parent___internal___ignoreType',
-  ChildTestimonialsJsonParentInternalMediaType = 'childTestimonialsJson___parent___internal___mediaType',
-  ChildTestimonialsJsonParentInternalOwner = 'childTestimonialsJson___parent___internal___owner',
-  ChildTestimonialsJsonParentInternalType = 'childTestimonialsJson___parent___internal___type',
-  ChildTestimonialsJsonChildren = 'childTestimonialsJson___children',
-  ChildTestimonialsJsonChildrenId = 'childTestimonialsJson___children___id',
-  ChildTestimonialsJsonChildrenParentId = 'childTestimonialsJson___children___parent___id',
-  ChildTestimonialsJsonChildrenParentChildren = 'childTestimonialsJson___children___parent___children',
-  ChildTestimonialsJsonChildrenChildren = 'childTestimonialsJson___children___children',
-  ChildTestimonialsJsonChildrenChildrenId = 'childTestimonialsJson___children___children___id',
-  ChildTestimonialsJsonChildrenChildrenChildren = 'childTestimonialsJson___children___children___children',
-  ChildTestimonialsJsonChildrenInternalContent = 'childTestimonialsJson___children___internal___content',
-  ChildTestimonialsJsonChildrenInternalContentDigest = 'childTestimonialsJson___children___internal___contentDigest',
-  ChildTestimonialsJsonChildrenInternalDescription = 'childTestimonialsJson___children___internal___description',
-  ChildTestimonialsJsonChildrenInternalFieldOwners = 'childTestimonialsJson___children___internal___fieldOwners',
-  ChildTestimonialsJsonChildrenInternalIgnoreType = 'childTestimonialsJson___children___internal___ignoreType',
-  ChildTestimonialsJsonChildrenInternalMediaType = 'childTestimonialsJson___children___internal___mediaType',
-  ChildTestimonialsJsonChildrenInternalOwner = 'childTestimonialsJson___children___internal___owner',
-  ChildTestimonialsJsonChildrenInternalType = 'childTestimonialsJson___children___internal___type',
-  ChildTestimonialsJsonInternalContent = 'childTestimonialsJson___internal___content',
-  ChildTestimonialsJsonInternalContentDigest = 'childTestimonialsJson___internal___contentDigest',
-  ChildTestimonialsJsonInternalDescription = 'childTestimonialsJson___internal___description',
-  ChildTestimonialsJsonInternalFieldOwners = 'childTestimonialsJson___internal___fieldOwners',
-  ChildTestimonialsJsonInternalIgnoreType = 'childTestimonialsJson___internal___ignoreType',
-  ChildTestimonialsJsonInternalMediaType = 'childTestimonialsJson___internal___mediaType',
-  ChildTestimonialsJsonInternalOwner = 'childTestimonialsJson___internal___owner',
-  ChildTestimonialsJsonInternalType = 'childTestimonialsJson___internal___type',
   ChildDescriptionJsonHeading = 'childDescriptionJson___heading',
   ChildDescriptionJsonSubHeading = 'childDescriptionJson___subHeading',
   ChildDescriptionJsonSteps = 'childDescriptionJson___steps',
@@ -1264,7 +1218,68 @@ export enum FileFieldsEnum {
   ChildPricingJsonInternalIgnoreType = 'childPricingJson___internal___ignoreType',
   ChildPricingJsonInternalMediaType = 'childPricingJson___internal___mediaType',
   ChildPricingJsonInternalOwner = 'childPricingJson___internal___owner',
-  ChildPricingJsonInternalType = 'childPricingJson___internal___type'
+  ChildPricingJsonInternalType = 'childPricingJson___internal___type',
+  ChildMarkdownRemarkId = 'childMarkdownRemark___id',
+  ChildMarkdownRemarkFrontmatterAuthorName = 'childMarkdownRemark___frontmatter___author___name',
+  ChildMarkdownRemarkFrontmatterAuthorCompany = 'childMarkdownRemark___frontmatter___author___company',
+  ChildMarkdownRemarkFrontmatterAuthorTitle = 'childMarkdownRemark___frontmatter___author___title',
+  ChildMarkdownRemarkFrontmatterAuthorAvatar = 'childMarkdownRemark___frontmatter___author___avatar',
+  ChildMarkdownRemarkFrontmatterTitle = 'childMarkdownRemark___frontmatter___title',
+  ChildMarkdownRemarkFrontmatterSlug = 'childMarkdownRemark___frontmatter___slug',
+  ChildMarkdownRemarkFrontmatterDate = 'childMarkdownRemark___frontmatter___date',
+  ChildMarkdownRemarkFrontmatterFeaturedImage = 'childMarkdownRemark___frontmatter___featuredImage',
+  ChildMarkdownRemarkExcerpt = 'childMarkdownRemark___excerpt',
+  ChildMarkdownRemarkRawMarkdownBody = 'childMarkdownRemark___rawMarkdownBody',
+  ChildMarkdownRemarkFileAbsolutePath = 'childMarkdownRemark___fileAbsolutePath',
+  ChildMarkdownRemarkHtml = 'childMarkdownRemark___html',
+  ChildMarkdownRemarkHtmlAst = 'childMarkdownRemark___htmlAst',
+  ChildMarkdownRemarkExcerptAst = 'childMarkdownRemark___excerptAst',
+  ChildMarkdownRemarkHeadings = 'childMarkdownRemark___headings',
+  ChildMarkdownRemarkHeadingsId = 'childMarkdownRemark___headings___id',
+  ChildMarkdownRemarkHeadingsValue = 'childMarkdownRemark___headings___value',
+  ChildMarkdownRemarkHeadingsDepth = 'childMarkdownRemark___headings___depth',
+  ChildMarkdownRemarkTimeToRead = 'childMarkdownRemark___timeToRead',
+  ChildMarkdownRemarkTableOfContents = 'childMarkdownRemark___tableOfContents',
+  ChildMarkdownRemarkWordCountParagraphs = 'childMarkdownRemark___wordCount___paragraphs',
+  ChildMarkdownRemarkWordCountSentences = 'childMarkdownRemark___wordCount___sentences',
+  ChildMarkdownRemarkWordCountWords = 'childMarkdownRemark___wordCount___words',
+  ChildMarkdownRemarkParentId = 'childMarkdownRemark___parent___id',
+  ChildMarkdownRemarkParentParentId = 'childMarkdownRemark___parent___parent___id',
+  ChildMarkdownRemarkParentParentChildren = 'childMarkdownRemark___parent___parent___children',
+  ChildMarkdownRemarkParentChildren = 'childMarkdownRemark___parent___children',
+  ChildMarkdownRemarkParentChildrenId = 'childMarkdownRemark___parent___children___id',
+  ChildMarkdownRemarkParentChildrenChildren = 'childMarkdownRemark___parent___children___children',
+  ChildMarkdownRemarkParentInternalContent = 'childMarkdownRemark___parent___internal___content',
+  ChildMarkdownRemarkParentInternalContentDigest = 'childMarkdownRemark___parent___internal___contentDigest',
+  ChildMarkdownRemarkParentInternalDescription = 'childMarkdownRemark___parent___internal___description',
+  ChildMarkdownRemarkParentInternalFieldOwners = 'childMarkdownRemark___parent___internal___fieldOwners',
+  ChildMarkdownRemarkParentInternalIgnoreType = 'childMarkdownRemark___parent___internal___ignoreType',
+  ChildMarkdownRemarkParentInternalMediaType = 'childMarkdownRemark___parent___internal___mediaType',
+  ChildMarkdownRemarkParentInternalOwner = 'childMarkdownRemark___parent___internal___owner',
+  ChildMarkdownRemarkParentInternalType = 'childMarkdownRemark___parent___internal___type',
+  ChildMarkdownRemarkChildren = 'childMarkdownRemark___children',
+  ChildMarkdownRemarkChildrenId = 'childMarkdownRemark___children___id',
+  ChildMarkdownRemarkChildrenParentId = 'childMarkdownRemark___children___parent___id',
+  ChildMarkdownRemarkChildrenParentChildren = 'childMarkdownRemark___children___parent___children',
+  ChildMarkdownRemarkChildrenChildren = 'childMarkdownRemark___children___children',
+  ChildMarkdownRemarkChildrenChildrenId = 'childMarkdownRemark___children___children___id',
+  ChildMarkdownRemarkChildrenChildrenChildren = 'childMarkdownRemark___children___children___children',
+  ChildMarkdownRemarkChildrenInternalContent = 'childMarkdownRemark___children___internal___content',
+  ChildMarkdownRemarkChildrenInternalContentDigest = 'childMarkdownRemark___children___internal___contentDigest',
+  ChildMarkdownRemarkChildrenInternalDescription = 'childMarkdownRemark___children___internal___description',
+  ChildMarkdownRemarkChildrenInternalFieldOwners = 'childMarkdownRemark___children___internal___fieldOwners',
+  ChildMarkdownRemarkChildrenInternalIgnoreType = 'childMarkdownRemark___children___internal___ignoreType',
+  ChildMarkdownRemarkChildrenInternalMediaType = 'childMarkdownRemark___children___internal___mediaType',
+  ChildMarkdownRemarkChildrenInternalOwner = 'childMarkdownRemark___children___internal___owner',
+  ChildMarkdownRemarkChildrenInternalType = 'childMarkdownRemark___children___internal___type',
+  ChildMarkdownRemarkInternalContent = 'childMarkdownRemark___internal___content',
+  ChildMarkdownRemarkInternalContentDigest = 'childMarkdownRemark___internal___contentDigest',
+  ChildMarkdownRemarkInternalDescription = 'childMarkdownRemark___internal___description',
+  ChildMarkdownRemarkInternalFieldOwners = 'childMarkdownRemark___internal___fieldOwners',
+  ChildMarkdownRemarkInternalIgnoreType = 'childMarkdownRemark___internal___ignoreType',
+  ChildMarkdownRemarkInternalMediaType = 'childMarkdownRemark___internal___mediaType',
+  ChildMarkdownRemarkInternalOwner = 'childMarkdownRemark___internal___owner',
+  ChildMarkdownRemarkInternalType = 'childMarkdownRemark___internal___type'
 }
 
 export type FileFilterInput = {
@@ -1308,9 +1323,9 @@ export type FileFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
-  childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childPricingJson?: Maybe<PricingJsonFilterInput>;
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -1986,9 +2001,11 @@ export type MarkdownRemark = Node & {
   __typename?: 'MarkdownRemark';
   id: Scalars['ID'];
   frontmatter?: Maybe<MarkdownRemarkFrontmatter>;
+  excerpt?: Maybe<Scalars['String']>;
+  rawMarkdownBody?: Maybe<Scalars['String']>;
+  fileAbsolutePath?: Maybe<Scalars['String']>;
   html?: Maybe<Scalars['String']>;
   htmlAst?: Maybe<Scalars['JSON']>;
-  excerpt?: Maybe<Scalars['String']>;
   excerptAst?: Maybe<Scalars['JSON']>;
   headings?: Maybe<Array<Maybe<MarkdownHeading>>>;
   timeToRead?: Maybe<Scalars['Int']>;
@@ -2056,13 +2073,19 @@ export type MarkdownRemarkEdge = {
 
 export enum MarkdownRemarkFieldsEnum {
   Id = 'id',
+  FrontmatterAuthorName = 'frontmatter___author___name',
+  FrontmatterAuthorCompany = 'frontmatter___author___company',
+  FrontmatterAuthorTitle = 'frontmatter___author___title',
+  FrontmatterAuthorAvatar = 'frontmatter___author___avatar',
   FrontmatterTitle = 'frontmatter___title',
   FrontmatterSlug = 'frontmatter___slug',
   FrontmatterDate = 'frontmatter___date',
   FrontmatterFeaturedImage = 'frontmatter___featuredImage',
+  Excerpt = 'excerpt',
+  RawMarkdownBody = 'rawMarkdownBody',
+  FileAbsolutePath = 'fileAbsolutePath',
   Html = 'html',
   HtmlAst = 'htmlAst',
-  Excerpt = 'excerpt',
   ExcerptAst = 'excerptAst',
   Headings = 'headings',
   HeadingsId = 'headings___id',
@@ -2163,9 +2186,11 @@ export enum MarkdownRemarkFieldsEnum {
 export type MarkdownRemarkFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
+  fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
   html?: Maybe<StringQueryOperatorInput>;
   htmlAst?: Maybe<JsonQueryOperatorInput>;
-  excerpt?: Maybe<StringQueryOperatorInput>;
   excerptAst?: Maybe<JsonQueryOperatorInput>;
   headings?: Maybe<MarkdownHeadingFilterListInput>;
   timeToRead?: Maybe<IntQueryOperatorInput>;
@@ -2178,6 +2203,7 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
+  author?: Maybe<AttributedUser>;
   title: Scalars['String'];
   slug: Scalars['String'];
   date?: Maybe<Scalars['String']>;
@@ -2185,6 +2211,7 @@ export type MarkdownRemarkFrontmatter = {
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
+  author?: Maybe<AttributedUserFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<StringQueryOperatorInput>;
@@ -2541,9 +2568,9 @@ export type QueryFileArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
-  childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childPricingJson?: Maybe<PricingJsonFilterInput>;
+  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>;
 };
 
 
@@ -2637,6 +2664,7 @@ export type QuerySitePageArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -2654,9 +2682,11 @@ export type QueryAllSitePageArgs = {
 export type QueryMarkdownRemarkArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  rawMarkdownBody?: Maybe<StringQueryOperatorInput>;
+  fileAbsolutePath?: Maybe<StringQueryOperatorInput>;
   html?: Maybe<StringQueryOperatorInput>;
   htmlAst?: Maybe<JsonQueryOperatorInput>;
-  excerpt?: Maybe<StringQueryOperatorInput>;
   excerptAst?: Maybe<JsonQueryOperatorInput>;
   headings?: Maybe<MarkdownHeadingFilterListInput>;
   timeToRead?: Maybe<IntQueryOperatorInput>;
@@ -3162,6 +3192,7 @@ export type SitePage = Node & {
   children: Array<Node>;
   internal: Internal;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
@@ -3187,6 +3218,15 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: SitePageFieldsEnum;
+};
+
+export type SitePageContext = {
+  __typename?: 'SitePageContext';
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -3289,6 +3329,7 @@ export enum SitePageFieldsEnum {
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
   IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
+  ContextSlug = 'context___slug',
   PluginCreatorId = 'pluginCreator___id',
   PluginCreatorParentId = 'pluginCreator___parent___id',
   PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -3342,6 +3383,7 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsCheckSupportedExtensions = 'pluginCreator___pluginOptions___checkSupportedExtensions',
   PluginCreatorPluginOptionsExclude = 'pluginCreator___pluginOptions___exclude',
+  PluginCreatorPluginOptionsStylesProviderInjectFirst = 'pluginCreator___pluginOptions___stylesProvider___injectFirst',
   PluginCreatorPluginOptionsShortName = 'pluginCreator___pluginOptions___short_name',
   PluginCreatorPluginOptionsStartUrl = 'pluginCreator___pluginOptions___start_url',
   PluginCreatorPluginOptionsBackgroundColor = 'pluginCreator___pluginOptions___background_color',
@@ -3389,6 +3431,7 @@ export type SitePageFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -3557,6 +3600,7 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsCheckSupportedExtensions = 'pluginOptions___checkSupportedExtensions',
   PluginOptionsExclude = 'pluginOptions___exclude',
+  PluginOptionsStylesProviderInjectFirst = 'pluginOptions___stylesProvider___injectFirst',
   PluginOptionsShortName = 'pluginOptions___short_name',
   PluginOptionsStartUrl = 'pluginOptions___start_url',
   PluginOptionsBackgroundColor = 'pluginOptions___background_color',
@@ -3697,6 +3741,7 @@ export type SitePluginPluginOptions = {
   path?: Maybe<Scalars['String']>;
   checkSupportedExtensions?: Maybe<Scalars['Boolean']>;
   exclude?: Maybe<Array<Maybe<Scalars['String']>>>;
+  stylesProvider?: Maybe<SitePluginPluginOptionsStylesProvider>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -3718,6 +3763,7 @@ export type SitePluginPluginOptionsFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
   checkSupportedExtensions?: Maybe<BooleanQueryOperatorInput>;
   exclude?: Maybe<StringQueryOperatorInput>;
+  stylesProvider?: Maybe<SitePluginPluginOptionsStylesProviderFilterInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -3762,6 +3808,15 @@ export type SitePluginPluginOptionsPluginsFilterInput = {
 
 export type SitePluginPluginOptionsPluginsFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>;
+};
+
+export type SitePluginPluginOptionsStylesProvider = {
+  __typename?: 'SitePluginPluginOptionsStylesProvider';
+  injectFirst?: Maybe<Scalars['Boolean']>;
+};
+
+export type SitePluginPluginOptionsStylesProviderFilterInput = {
+  injectFirst?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -4151,7 +4206,7 @@ export type Unnamed_1_Query = (
         { __typename?: 'ImageSharp' }
         & { fixed?: Maybe<(
           { __typename?: 'ImageSharpFixed' }
-          & GatsbyImageSharpFixedFragment
+          & GatsbyImageSharpFixed_WithWebpFragment
         )> }
       )> }
     )> }
@@ -4172,7 +4227,7 @@ export type Unnamed_2_Query = (
         { __typename?: 'ImageSharp' }
         & { fluid?: Maybe<(
           { __typename?: 'ImageSharpFluid' }
-          & GatsbyImageSharpFluidFragment
+          & GatsbyImageSharpFluid_WithWebpFragment
         )> }
       )> }
     )> }
@@ -4205,6 +4260,27 @@ export type Unnamed_4_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_4_Query = (
   { __typename?: 'Query' }
+  & { allMarkdownRemark: (
+    { __typename?: 'MarkdownRemarkConnection' }
+    & { edges: Array<(
+      { __typename?: 'MarkdownRemarkEdge' }
+      & { node: (
+        { __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'id' | 'excerpt'>
+        & { frontmatter?: Maybe<(
+          { __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'slug' | 'title' | 'date' | 'featuredImage'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_5_Query = (
+  { __typename?: 'Query' }
   & { allDescriptionJson: (
     { __typename?: 'DescriptionJsonConnection' }
     & { edges: Array<(
@@ -4221,10 +4297,10 @@ export type Unnamed_4_Query = (
   ) }
 );
 
-export type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_5_Query = (
+export type Unnamed_6_Query = (
   { __typename?: 'Query' }
   & { allTestimonialsJson: (
     { __typename?: 'TestimonialsJsonConnection' }
@@ -4247,10 +4323,10 @@ export type Unnamed_5_Query = (
   ) }
 );
 
-export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_6_Query = (
+export type Unnamed_7_Query = (
   { __typename?: 'Query' }
   & { allPricingJson: (
     { __typename?: 'PricingJsonConnection' }
@@ -4265,7 +4341,10 @@ export type Unnamed_6_Query = (
         )>>, plans: Array<(
           { __typename?: 'Plan' }
           & Pick<Plan, 'level' | 'price' | 'type'>
-          & { features?: Maybe<Array<(
+          & { action?: Maybe<(
+            { __typename?: 'ActionOptions' }
+            & Pick<ActionOptions, 'actionContent' | 'href'>
+          )>, features?: Maybe<Array<(
             { __typename?: 'Feature' }
             & Pick<Feature, 'planLevel' | 'description'>
           )>>, image?: Maybe<(
@@ -4278,10 +4357,10 @@ export type Unnamed_6_Query = (
   ) }
 );
 
-export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_7_Query = (
+export type Unnamed_8_Query = (
   { __typename?: 'Query' }
   & { allTestimonialsJson: (
     { __typename?: 'TestimonialsJsonConnection' }
@@ -4303,10 +4382,10 @@ export type Unnamed_7_Query = (
   ) }
 );
 
-export type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_8_Query = (
+export type Unnamed_9_Query = (
   { __typename?: 'Query' }
   & { allFile: (
     { __typename?: 'FileConnection' }
@@ -4331,10 +4410,10 @@ export type SiteTitleQueryQuery = (
   )> }
 );
 
-export type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_10_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_9_Query = (
+export type Unnamed_10_Query = (
   { __typename?: 'Query' }
   & { site?: Maybe<(
     { __typename?: 'Site' }
@@ -4345,10 +4424,10 @@ export type Unnamed_9_Query = (
   )> }
 );
 
-export type Unnamed_10_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_11_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_10_Query = (
+export type Unnamed_11_Query = (
   { __typename?: 'Query' }
   & { allMarkdownRemark: (
     { __typename?: 'MarkdownRemarkConnection' }
@@ -4367,12 +4446,12 @@ export type Unnamed_10_Query = (
   ) }
 );
 
-export type Unnamed_11_QueryVariables = Exact<{
+export type Unnamed_12_QueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type Unnamed_11_Query = (
+export type Unnamed_12_Query = (
   { __typename?: 'Query' }
   & { allMarkdownRemark: (
     { __typename?: 'MarkdownRemarkConnection' }

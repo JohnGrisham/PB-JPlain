@@ -1,25 +1,17 @@
-import { Avatar, Card } from '@material-ui/core'
+import { Avatar } from '../../../../../avatar'
+import { Card } from '@material-ui/core'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
-
-export const AttributedUserAvatar = styled(Avatar)`
-	display: flex;
-	margin-right: 0.5em;
-
-	img {
-		margin-bottom: 0px;
-	}
-`
 
 export const AttributedUser = styled.div`
 	display: flex;
 	flex: 1;
 	margin: 0.5em;
+`
 
-	${AttributedUserAvatar} {
-		height: 65px;
-		width: 65px;
-	}
+export const AttributedUserAvatar = styled(Avatar)`
+	height: 65px;
+	width: 65px;
 `
 
 export const AttributedUserInformation = styled.div`
