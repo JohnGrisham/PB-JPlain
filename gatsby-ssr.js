@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const React = require('react')
+
 // Move Typography.js styles to the top of the head section so they're loaded first.
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
 	const headComponents = getHeadComponents()
@@ -9,5 +12,13 @@ exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
 		}
 		return 0
 	})
-	replaceHeadComponents([...headComponents])
+	replaceHeadComponents([
+		...headComponents,
+		<script
+			key="analytics"
+			async
+			defer
+			data-domain="echo-breaking-news.com"
+			src="https://plausible.io/js/plausible.js"></script>
+	])
 }
