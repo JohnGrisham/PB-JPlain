@@ -28,19 +28,23 @@ export const IntersectionObserver: React.FC<IntersectionObserverProps> = ({
 		[orientation]
 	)
 	// Workaround for: https://github.com/w3c/IntersectionObserver/issues/266
-	const shouldReplaceThreshold = React.useMemo(
+	const isDisabled = React.useMemo(
 		() => (isInLandscape && deviceType === DeviceType.Mobile) || (isInLandscape && deviceType === DeviceType.Tablet),
 		[deviceType, isInLandscape]
 	)
 
-	const intersection = useIntersection(intersectionRef, shouldReplaceThreshold ? { ...options, threshold: 0 } : options)
+	const intersection = useIntersection(intersectionRef, options)
 
 	React.useEffect(() => {
+		if (isDisabled) {
+			return setInThreshold(true)
+		}
+
 		if (!inThreshold || options.shouldResetIntersection) {
 			const isInThreshold = !!intersection && intersection.isIntersecting
 			return setInThreshold(isInThreshold)
 		}
-	}, [intersection, inThreshold, options])
+	}, [intersection, inThreshold, isDisabled, options])
 
 	return (
 		<IntersectionContext.Provider value={{ inThreshold }}>
