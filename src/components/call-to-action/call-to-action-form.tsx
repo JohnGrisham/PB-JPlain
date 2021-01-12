@@ -2,8 +2,7 @@ import * as React from 'react'
 import * as Styled from './styles'
 import * as Yup from 'yup'
 import { Button, TextField } from '@material-ui/core'
-import { Formik, FormikHelpers } from 'formik'
-import { FirebaseContext } from '../../services'
+import { Formik } from 'formik'
 
 interface CTAValue {
 	email: string
@@ -14,45 +13,17 @@ const formSchema = Yup.object().shape({
 })
 
 const CallToActionForm: React.FC = () => {
-	const { authToken, firebase, setAuthToken } = React.useContext(FirebaseContext)
-
-	const onSubmitCTA = React.useCallback(
-		async ({ email }: CTAValue, actions: FormikHelpers<CTAValue>) => {
-			try {
-				if (!firebase) {
-					return
-				}
-
-				const { user } = await firebase.auth().createUserWithEmailAndPassword(email, 'echo-break')
-
-				if (user) {
-					const { refreshToken } = user
-					setAuthToken(refreshToken)
-				}
-
-				actions.setStatus({ errors: [], success: true })
-				window.location.replace('/confirmation')
-			} catch (error) {
-				actions.setStatus({ errors: [error] })
-			} finally {
-				actions.setSubmitting(false)
-			}
-		},
-		[firebase, setAuthToken]
-	)
-
 	return (
 		<Formik<CTAValue>
 			initialValues={{ email: '' }}
 			initialStatus={{ errors: [], success: false }}
-			onSubmit={onSubmitCTA}
+			onSubmit={() => { console.log('Make me do something!')}}
 			validationSchema={formSchema}>
 			{({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, isValid, setStatus, status, touched }) => (
 				<Styled.CallToActionForm onSubmit={handleSubmit}>
 					<Styled.CallToActionInput>
 						<TextField
 							id="CTA"
-							disabled={!!authToken}
 							error={touched && errors?.email && !status.success ? true : false}
 							helperText={
 								touched && status.errors.length <= 0 && !status.success && errors?.email ? errors.email : undefined
@@ -69,7 +40,7 @@ const CallToActionForm: React.FC = () => {
 							required
 						/>
 						<Button
-							disabled={!!authToken || !isValid || isSubmitting}
+							disabled={!isValid || isSubmitting}
 							type="submit"
 							variant="contained"
 							color="primary">
@@ -79,7 +50,7 @@ const CallToActionForm: React.FC = () => {
 							status.errors.map((error: { message: string }, i: number) => (
 								<Styled.CallToActionError key={`cta-error-${i}`}>{error.message}</Styled.CallToActionError>
 							))}
-						{status.errors.length <= 0 && (status.success || !!authToken) && (
+						{status.errors.length <= 0 && status.success && (
 							<Styled.CallToActionSuccess>
 								Congratulations you&apos;re now on the waiting list!
 							</Styled.CallToActionSuccess>

@@ -35,7 +35,7 @@ export const SiteHeader = styled.header`
 	background: #4e2378;
 	color: white;
 	display: grid;
-	grid-template-columns: 5fr 0.5fr 0.5fr 0.5fr 0.5fr 1fr;
+	grid-template-columns: 5fr 0.5fr 0.5fr 0.5fr 1fr;
 	min-width: 420px;
 	padding: 1.45rem 1.0875rem;
 	position: fixed;

@@ -1,8 +1,6 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { Button, MenuItem } from '@material-ui/core'
-import { ConvertContext } from '../../contexts'
-import { FirebaseContext } from '../../services'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useWindowSize } from '../../utils'
@@ -17,21 +15,15 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 	const { width } = useWindowSize()
 
-	const { setIsOpen } = React.useContext(ConvertContext)
-	const { authToken } = React.useContext(FirebaseContext)
-
 	const menu = (
 		<>
 			<Styled.SiteLink to="/#description">About</Styled.SiteLink>
 			<Styled.SiteLink to="/#benefits">Benefits</Styled.SiteLink>
-			<Styled.SiteLink to="/#sources">Sources</Styled.SiteLink>
 			<Styled.SiteLink to="/#pricing">Pricing</Styled.SiteLink>
 			<Styled.SignupButton
-				disabled={!!authToken}
 				type="button"
 				variant="contained"
-				color="primary"
-				onClick={() => setIsOpen(true)}>
+				color="primary">
 				<h4>Signup</h4>
 			</Styled.SignupButton>
 		</>
@@ -51,8 +43,8 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 			<MenuItem>
 				<Styled.SiteLink to="/#pricing">Pricing</Styled.SiteLink>
 			</MenuItem>
-			<MenuItem disabled={!!authToken}>
-				<Styled.SignupButton type="button" variant="contained" color="primary" onClick={() => setIsOpen(true)}>
+			<MenuItem>
+				<Styled.SignupButton type="button" variant="contained" color="primary">
 					<h4>Signup</h4>
 				</Styled.SignupButton>
 			</MenuItem>

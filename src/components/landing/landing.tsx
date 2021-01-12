@@ -4,8 +4,6 @@ import { Benefits } from './benefits'
 import { Conversions } from './conversions'
 import { Description } from './description'
 import { Evaluations } from './evaluations'
-import { FirebaseContext } from '../../services'
-import { SourcesDrag } from '../sources-drag'
 
 export interface LandingProps {
 	callToAction?: string
@@ -14,14 +12,13 @@ export interface LandingProps {
 }
 
 const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) => {
-	const { authToken } = React.useContext(FirebaseContext)
 	return (
 		<Styled.Landing id="top">
 			<Styled.LandingImageWrapper>
 				{heading && <Styled.Heading>{heading}</Styled.Heading>}
 				{subHeading && <Styled.SubHeading>{subHeading}</Styled.SubHeading>}
 				{callToAction && (
-					<Styled.CallToAction disabled={!!authToken}>
+					<Styled.CallToAction>
 						<h4>{callToAction}</h4>
 					</Styled.CallToAction>
 				)}
@@ -30,7 +27,6 @@ const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) 
 			</Styled.LandingImageWrapper>
 			<Description />
 			<Benefits />
-			<SourcesDrag />
 			<Evaluations />
 			<Conversions />
 		</Styled.Landing>

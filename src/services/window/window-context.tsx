@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 export interface WindowContextData {
-	height: number
-	width: number
+	height: number | null
+	width: number | null
 }
 
 const WindowContext = React.createContext<WindowContextData>({

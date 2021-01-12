@@ -67,7 +67,3 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-# Test content posts
-src/content/posts/test.md
-# Test content testimonials
-src/content/landing/testimonials/*

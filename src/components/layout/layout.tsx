@@ -2,8 +2,6 @@ import 'minireset.css'
 import 'normalize.css'
 import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
-import { ConvertContext } from '../../contexts'
-import { ConvertModal } from '../convert-modal'
 import { Header } from '../header'
 import React from 'react'
 
@@ -24,13 +22,6 @@ const Layout: React.FC<LayoutProps> = ({ children, title, logo }) => {
 		}
 	`)
 
-	const { isOpen, setHasBeenDismissed, setIsOpen } = React.useContext(ConvertContext)
-
-	const onCloseConvertModal = React.useCallback(() => {
-		setIsOpen(false)
-		setHasBeenDismissed(true)
-	}, [setHasBeenDismissed, setIsOpen])
-
 	return (
 		<>
 			<Styled.GlobalStyle />
@@ -45,7 +36,6 @@ const Layout: React.FC<LayoutProps> = ({ children, title, logo }) => {
 					{` `}
 					<a href="https://www.gatsbyjs.com">Gatsby</a>
 				</footer>
-				<ConvertModal open={isOpen} onClose={onCloseConvertModal} />
 			</Styled.Layout>
 		</>
 	)
