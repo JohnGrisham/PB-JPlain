@@ -35,18 +35,6 @@ type ImageOptions {
 	width: Int!
 }
 
-type MarkdownRemarkFrontmatter {
-	author: AttributedUser
-	title: String!
-	slug: String!
-	date: String
-	featuredImage: String
-}
-
-type MarkdownRemark implements Node {
-	frontmatter: MarkdownRemarkFrontmatter
-}
-
 type Plan {
 	action: ActionOptions
 	image: ImageOptions

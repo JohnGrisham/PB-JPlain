@@ -23,9 +23,7 @@ const useIntersection = (
 				observer.disconnect()
 			}
 		}
-		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		return () => {}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ref.current, options.threshold, options.root, options.rootMargin, orientation.angle])
 
 	return intersectionObserverEntry
