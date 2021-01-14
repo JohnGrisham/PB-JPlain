@@ -1,7 +1,7 @@
 {
-  "name": "template-free",
+  "name": "pbj-template",
   "private": true,
-  "description": "Your project description",
+  "description": "They go together.",
   "version": "0.1.0",
   "author": "John Grisham",
   "dependencies": {
@@ -61,6 +61,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "refresh": "curl -X POST http://localhost:8001/__refresh",
     "generate-types": "graphql-codegen --config codegen.yml"
   }
 }

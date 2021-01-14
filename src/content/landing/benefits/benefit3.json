@@ -1,5 +1,5 @@
 {
-	"description": "News feeds divide us into conservative or liberal echo chambers. But you can improve your media literacy by reading both sides. Don't miss stories because they aren't headlining; stay informed and unbiased with our weekly curated newsletter.",
-	"image": { "height": 350, "src": "divide.png", "width": 350 },
+	"description": "Have your cake and eat it too. CMS tools like WIX and Wordpress are flexible but have sloppy codebases. This template uses a clean and customizable codebase by giving you only what you need.",
+	"image": { "height": 267, "src": "tart.png", "width": 267 },
 	"order": 3
 }

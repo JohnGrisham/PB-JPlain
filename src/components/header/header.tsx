@@ -19,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 		<>
 			<Styled.SiteLink to="/#description">About</Styled.SiteLink>
 			<Styled.SiteLink to="/#benefits">Benefits</Styled.SiteLink>
+			<Styled.SiteLink to="/#testimonials">Testimonials</Styled.SiteLink>
 			<Styled.SiteLink to="/#pricing">Pricing</Styled.SiteLink>
 			<Styled.SignupButton
 				type="button"

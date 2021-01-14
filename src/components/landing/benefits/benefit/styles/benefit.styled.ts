@@ -24,6 +24,7 @@ export const BenefitMotionText = styled(motion.div)`
 	flex-direction: column;
 	margin-left: 50%;
 	margin-top: 1em;
+	text-align: center;
 	width: 60%;
 
 	h2 {

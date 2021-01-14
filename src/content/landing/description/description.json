@@ -1,21 +1,21 @@
 {
-	"heading": "Media outlets are biased",
-	"subHeading": "But you don't have to be!",
+	"heading": "Gatsby and your landing page",
+	"subHeading": "The perfect combination",
 	"steps": [
 		{
-			"description": "Tell us your political leaning and some basic information about the type of content you typically read online. Do you follow conservative or liberal media outlets?",
-			"heading": "Tell us your viewpoint",
-			"icon": "eye"
+			"description": "Gatsby is fast, flexible, and easy to use for static sites.",
+			"heading": "Built for speed with Gatsby",
+			"icon": { "name": "tachometer-alt" }
 		},
 		{
-			"description": "Find new sources and articles in a curated newsletter each week. Discover less biased viewpoints from both sides instead of relying on the honesty of reporters.",
-			"heading": "Discover personalized news",
-			"icon": "newspaper"
+			"description": "Material UI is a react component library that pairs well with Gatsby, like PB&J they just go together.",
+			"heading": "Designed with Material UI components",
+			"icon": { "prefix": "fab", "name": "react" }
 		},
 		{
-			"description": "Improve your media literacy by getting your news from multiple media outlets. Don't be fooled by biased sources again!",
-			"heading": "Leave your echo chamber",
-			"icon": "door-open"
+			"description": "Styling just got easier with Styled components, CSS-IN-JS works great when styling Material UI components as well.",
+			"heading": "Styled with Styled Components",
+			"icon": { "name": "paint-brush" }
 		}
 	]
 }

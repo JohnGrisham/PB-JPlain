@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 export const CallToAction = styled(Button).attrs(() => ({
 	color: 'primary',
-	href: '#CTA',
 	type: 'button',
 	variant: 'contained'
 }))`

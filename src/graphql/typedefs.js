@@ -29,6 +29,11 @@ type Feature {
 	description: String!
 }
 
+type Icon {
+	prefix: String
+	name: String!
+}
+
 type ImageOptions {
 	src: String!
 	height: Int!
@@ -52,7 +57,7 @@ type PricingJson implements Node {
 }
 
 type Step {
-	icon: String
+	icon: Icon
 	heading: String!
 	description: String
 }

@@ -4,11 +4,11 @@ import { Landing, Layout, SEO } from '../components'
 const HomePage = () => {
 	return (
 		<Layout>
-			<SEO title="Break your Echo Chamber" />
+			<SEO title="They go together" />
 			<Landing
-				heading="News perspectives from both sides"
-				subHeading="Sign up to get early access"
-				callToAction="Sign up"
+				heading="Get the best of both worlds"
+				subHeading="fast and flexible template"
+				callToAction="Eat it!"
 			/>
 		</Layout>
 	)

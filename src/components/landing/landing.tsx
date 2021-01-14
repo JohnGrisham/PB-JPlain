@@ -7,18 +7,19 @@ import { Evaluations } from './evaluations'
 
 export interface LandingProps {
 	callToAction?: string
+	onClickCTA?: () => void
 	heading?: string
 	subHeading?: string
 }
 
-const Landing: React.FC<LandingProps> = ({ callToAction, heading, subHeading }) => {
+const Landing: React.FC<LandingProps> = ({ callToAction, onClickCTA, heading, subHeading }) => {
 	return (
 		<Styled.Landing id="top">
 			<Styled.LandingImageWrapper>
 				{heading && <Styled.Heading>{heading}</Styled.Heading>}
 				{subHeading && <Styled.SubHeading>{subHeading}</Styled.SubHeading>}
 				{callToAction && (
-					<Styled.CallToAction>
+					<Styled.CallToAction href={!onClickCTA ? "#CTA" : undefined} onClick={onClickCTA}>
 						<h4>{callToAction}</h4>
 					</Styled.CallToAction>
 				)}

@@ -20,7 +20,10 @@ const Description: React.FC = () => {
 							steps {
 								description
 								heading
-								icon
+								icon {
+									prefix
+									name
+								}
 							}
 						}
 					}
@@ -44,13 +47,15 @@ const Description: React.FC = () => {
 			return null
 		}
 
-		return description.steps.map(({ description, heading, icon }) => (
-			<>
-				<Styled.StepIcon>{icon && <FontAwesomeIcon icon={icon as IconProp} />}</Styled.StepIcon>
+		return description.steps.map(({ description, heading, icon }) => {
+			const stepIcon = icon ? icon.prefix ? [icon.prefix, icon.name] : icon.name : null
+
+			return (<>
+				<Styled.StepIcon>{stepIcon && <FontAwesomeIcon icon={stepIcon as IconProp} />}</Styled.StepIcon>
 				{heading && <Styled.StepHeading>{heading}</Styled.StepHeading>}
 				{description && <span>{description}</span>}
-			</>
-		))
+			</>)
+		})
 	}, [description])
 
 	if (!description) {

@@ -44,7 +44,7 @@ const CallToActionForm: React.FC = () => {
 							type="submit"
 							variant="contained"
 							color="primary">
-							Free Sign up
+							Yummy Updates
 						</Button>
 						{status.errors.length > 0 &&
 							status.errors.map((error: { message: string }, i: number) => (

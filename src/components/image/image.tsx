@@ -2,11 +2,12 @@
 import * as React from 'react'
 import ImageFixed from './image-fixed'
 import ImageFluid from './image-fluid'
+import { ImageType } from '../../enums'
 
 export interface ImageProps extends React.HTMLAttributes<HTMLImageElement> {
 	src: string
 	aspectRatio?: number
-	type?: 'fixed' | 'fluid'
+	type?: ImageType
 	height?: number
 	width?: number
 }
@@ -16,7 +17,7 @@ const Image: React.FC<ImageProps> = ({
 	src,
 	style,
 	className,
-	type = 'fixed',
+	type = ImageType.FIXED,
 	height = 25,
 	width = 25
 }) => {

@@ -3,20 +3,63 @@
 	"sharedFeatures": [
 		{
 			"planLevel": 0,
-			"description": "Weekly personalized newsletter"
+			"description": "landing page"
+		},
+		{
+			"planLevel": 0,
+			"description": "Theme support"
+		},
+		{
+			"planLevel": 0,
+			"description": "Typescript integration"
 		}
 	],
 	"plans": [
 		{
 			"level": 0,
-			"type": "Basic",
+			"type": "Plain",
 			"price": "Free",
 			"action": {
 				"actionContent": "Sign up",
 				"href": "#CTA"
 			},
 			"image": {
-				"src": "pen.svg",
+				"src": "milk.png",
+				"height": 300,
+				"width": 300
+			}
+		},
+		{
+			"level": 1,
+			"type": "Sliced Bread",
+			"price": "$5",
+			"action": {
+				"actionContent": "Sign up",
+				"href": "#CTA"
+			},
+			"features": [{
+				"planLevel": 1,
+				"description": "Blog page"
+			},
+			{
+				"planLevel": 1,
+				"description": "Post template"
+			},
+			{
+				"planLevel": 1,
+				"description": "Conversion Popup"
+			},
+			{
+				"planLevel": 1,
+				"description": "Jest testing integration"
+			},
+			{
+				"planLevel": 1,
+				"description": "Future updates"
+			}
+			],
+			"image": {
+				"src": "bread.png",
 				"height": 300,
 				"width": 300
 			}

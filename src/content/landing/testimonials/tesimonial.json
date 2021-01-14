@@ -1,0 +1,29 @@
+{
+	"heading": "Tasty Testimonials",
+	"testimonials": [
+		{
+			"attributedUser": {
+				"avatar": "bannans.png",
+				"name": "Bannana",
+				"company": "Buckwheat Boyz"
+			},
+			"quote": "WHAT TIME IS IT? Time to use this template."
+		},
+		{
+			"attributedUser": {
+				"avatar": "willy.jpg",
+				"company": "Willy Wonka Candy Company",
+				"title": "CEO",
+				"name": "Willy Wonka"
+			},
+			"quote": "Oh you've never used this template before? Tell me how that's working out for you."
+		},
+		{
+			"attributedUser": {
+				"avatar": "idiot-sandwich.jpg",
+				"name": "Idiot Sandwich"
+			},
+			"quote": "Don't be like me, use this template."
+		}
+	]
+}

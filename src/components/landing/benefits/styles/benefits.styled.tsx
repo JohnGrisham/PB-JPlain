@@ -6,7 +6,7 @@ export const Benefits = styled.div`
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	padding: 1em 0px 1em 0px;
+	padding: 7em 0px 7em 0px;
 `
 
 export const Intersection = styled(IntersectionObserver).attrs(() => ({

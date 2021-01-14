@@ -1,9 +1,8 @@
 import { Image } from '../../image'
 import styled from 'styled-components'
 
-export const CallToAction = styled.div.attrs({
-	className: `largeItem`
-})`
+export const CallToAction = styled.div`
+	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -24,12 +23,12 @@ export const CallToActionForm = styled.form`
 	justify-content: center;
 	margin-bottom: 50px;
 	margin-top: 15px;
+	padding: 0 10px 0 10px;
 	width: 100%;
 `
 
 export const CallToActionImage = styled(Image).attrs({
-	src: 'cta.jpg',
-	type: 'fluid'
+	src: 'cta.svg'
 })``
 
 export const CallToActionInput = styled.div`

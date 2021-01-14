@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://your-site-url.com`,
-    title: `Your Website Title`,
-    description: `Your website description.`,
+    siteUrl: `https://pb&j.com`,
+    title: `Peanut Butter & Jelly`,
+    description: `They go together.`,
     author: `John Grisham`,
-    logo: 'template-logo.png',
+    logo: 'pb&j.png',
   },
   plugins: [
     {
@@ -60,13 +60,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `your-website-name`,
-        short_name: `short website name`,
+        name: `Peanut Butter and Jelly template`,
+        short_name: `PB & J`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/template-logo.png`,
+        icon: `src/images/pb&j.png`,
       },
     },
   ],
