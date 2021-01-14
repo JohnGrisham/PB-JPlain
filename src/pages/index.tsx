@@ -7,7 +7,7 @@ const HomePage = () => {
 			<SEO title="They go together" />
 			<Landing
 				heading="Get the best of both worlds"
-				subHeading="fast and flexible template"
+				subHeading="Fast and flexible template"
 				callToAction="Eat it!"
 			/>
 		</Layout>

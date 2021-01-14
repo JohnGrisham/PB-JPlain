@@ -7,7 +7,7 @@ export const CallToAction = styled(Button).attrs(() => ({
 	type: 'button',
 	variant: 'contained'
 }))`
-	bottom: 15%;
+	bottom: 25%;
 	position: absolute;
 	z-index: 2;
 
@@ -30,11 +30,23 @@ export const Landing = styled.div`
 	flex-direction: column;
 `
 
-export const LandingImage = styled(Image).attrs(() => ({
+export const LandingBackground = styled(Image).attrs(() => ({
 	aspectRatio: 21 / 11,
-	src: 'landing.jpg',
+	src: 'landing-background.png',
 	type: 'fluid'
+}))`
+`
+
+export const LandingForgroundImage = styled(Image).attrs(() => ({
+	src: 'landing-forground.svg',
+	type: 'fixed'
 }))``
+
+export const LandingForgroundWrapper = styled.div`
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+`
 
 export const LandingImageWrapper = styled.div`
 	color: white;
@@ -54,5 +66,5 @@ export const SubHeading = styled.h2`
 export const GradientDrip = styled.div.attrs({
 	className: `drip dripBottom`
 })`
-	background: linear-gradient(to right, #882483, #782483 10%, #692381 25%, #372259, #221e46);
+	background: linear-gradient(to right, #840F86, #780E85 12%, #600D82 25%, #410E6A 40%, #310D5D 50%, #170C3D 75%, #0F0A33);
 `

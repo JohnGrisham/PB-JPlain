@@ -18,7 +18,7 @@ const CallToAction: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ classNam
 		}
 
 		return { height: 300, width: 300 }
-	}, [])
+	}, [CTAImageType, width])
 
 	return(
 	<Styled.CallToAction {...props} className={`${className} ${CTAImageType.valueOf() == ImageType.FLUID ? 'largeItem' : ''}`} >
