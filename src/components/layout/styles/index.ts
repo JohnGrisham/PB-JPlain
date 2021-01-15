@@ -1,2 +1,1 @@
-// export { layout } from './modules' // with modules
-export * from './layout.styled' // with styled components
+export * from './layout.styled'

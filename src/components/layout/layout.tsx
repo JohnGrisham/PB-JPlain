@@ -4,6 +4,7 @@ import * as Styled from './styles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Header } from '../header'
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
 
 export interface LayoutProps {
 	title?: string
@@ -23,7 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, logo }) => {
 	`)
 
 	return (
-		<>
+		<ThemeProvider theme={Styled.theme}>
 			<Styled.GlobalStyle />
 			<Header siteTitle={data.site.siteMetadata?.title || title} logo={data.site.siteMetadata?.logo || logo} />
 			<Styled.Layout>
@@ -37,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title, logo }) => {
 					<a href="https://www.gatsbyjs.com">Gatsby</a>
 				</footer>
 			</Styled.Layout>
-		</>
+		</ThemeProvider>
 	)
 }
 

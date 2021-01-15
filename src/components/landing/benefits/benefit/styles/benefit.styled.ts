@@ -18,7 +18,7 @@ export const BenefitMotionImage = styled(motion.div)`
 
 export const BenefitMotionText = styled(motion.div)`
 	align-items: center;
-	color: #383838;
+	color: ${({ theme }) => theme.colors.mediumGray};
 	display: flex;
 	flex: 1;
 	flex-direction: column;

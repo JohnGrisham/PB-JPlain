@@ -51,7 +51,7 @@ export const TestimonyMotion = styled(motion.div)`
 `
 
 export const Quote = styled.span`
-	color: #383838;
+	color: ${({ theme }) => theme.colors.mediumGray};
 	display: flex;
 	flex: 1;
 	margin-bottom: 1em;

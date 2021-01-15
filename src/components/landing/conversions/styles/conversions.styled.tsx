@@ -9,7 +9,7 @@ export const CallToActionWrapper = styled.div`
 
 export const Conversions = styled.div`
 	align-items: center;
-	background-color: #fff0cc;
+	background-color: ${({ theme }) => theme.colors.peanutButter};
 	display: flex;
 	flex-direction: column;
 	padding-top: 150px;

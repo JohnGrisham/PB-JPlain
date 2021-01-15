@@ -9,11 +9,11 @@ export const CallToAction = styled.div`
 `
 
 export const CallToActionError = styled.p`
-	color: red;
+	color: ${({ theme }) => theme.colors.warning};
 `
 
 export const CallToActionSuccess = styled.p`
-	color: green;
+	color: ${({ theme }) => theme.colors.success};
 `
 
 export const CallToActionForm = styled.form`
@@ -32,7 +32,7 @@ export const CallToActionImage = styled(Image).attrs({
 })``
 
 export const CallToActionInput = styled.div`
-	background-color: white;
+	background-color: ${({ theme }) => theme.colors.white};
 	display: flex;
 	position: relative;
 

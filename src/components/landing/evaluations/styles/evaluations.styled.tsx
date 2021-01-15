@@ -10,8 +10,8 @@ export const DripTop = styled.div.attrs({
 
 export const Evaluations = styled.div`
 	align-items: center;
-	background-color: #332379;
-	color: white;
+	background-color: ${({ theme }) => theme.colors.blue};
+	color: ${({ theme }) => theme.colors.white};
 	display: flex;
 	flex-direction: column;
 	overflow: visible;

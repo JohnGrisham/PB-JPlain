@@ -49,7 +49,7 @@ export const LandingForgroundWrapper = styled.div`
 `
 
 export const LandingImageWrapper = styled.div`
-	color: white;
+	color: ${({ theme }) => theme.colors.white};
 	display: flex;
 	justify-content: center;
 	position: relative;
@@ -66,5 +66,5 @@ export const SubHeading = styled.h2`
 export const GradientDrip = styled.div.attrs({
 	className: `drip dripBottom`
 })`
-	background: linear-gradient(to right, #840F86, #780E85 12%, #600D82 25%, #410E6A 40%, #310D5D 50%, #170C3D 75%, #0F0A33);
+	background: linear-gradient(to right, #840F86, #780E85 12%, #600D82 25%, #410E6A 40%, #310D5D 50%, #170C3D 75%, #0F0A33) !important;
 `

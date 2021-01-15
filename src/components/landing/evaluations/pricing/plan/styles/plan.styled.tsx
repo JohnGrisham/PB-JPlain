@@ -16,10 +16,10 @@ export const FeatureList = styled.ul`
 	}
 `
 
-export const FeatureIcon = styled(FontAwesomeIcon).attrs({
-	color: '#4e2378',
+export const FeatureIcon = styled(FontAwesomeIcon).attrs(({ theme }) => ({
+	color: theme.colors.jelly,
 	icon: faPlus
-})`
+}))`
 	margin-right: 0.5em;
 `
 
@@ -27,7 +27,7 @@ export const Plan = styled(Card).attrs({
 	raised: true
 })`
 	align-items: center;
-	background-color: white;
+	background-color: ${({ theme }) => theme.colors.white};
 	display: flex;
 	flex: 1;
 	flex-direction: column;

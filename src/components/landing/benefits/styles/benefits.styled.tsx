@@ -2,7 +2,7 @@ import { IntersectionObserver } from '../../../intersection-observer'
 import styled from 'styled-components'
 
 export const Benefits = styled.div`
-	background-color: #fff0cc;
+	background-color: ${({ theme }) => theme.colors.peanutButter};
 	display: flex;
 	flex: 1;
 	flex-direction: column;

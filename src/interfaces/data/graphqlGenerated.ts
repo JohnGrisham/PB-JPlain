@@ -775,8 +775,8 @@ export type File = Node & {
   internal: Internal;
   childBenefitsJson?: Maybe<BenefitsJson>;
   childDescriptionJson?: Maybe<DescriptionJson>;
-  childPricingJson?: Maybe<PricingJson>;
   childTestimonialsJson?: Maybe<TestimonialsJson>;
+  childPricingJson?: Maybe<PricingJson>;
 };
 
 
@@ -1166,6 +1166,52 @@ export enum FileFieldsEnum {
   ChildDescriptionJsonInternalMediaType = 'childDescriptionJson___internal___mediaType',
   ChildDescriptionJsonInternalOwner = 'childDescriptionJson___internal___owner',
   ChildDescriptionJsonInternalType = 'childDescriptionJson___internal___type',
+  ChildTestimonialsJsonHeading = 'childTestimonialsJson___heading',
+  ChildTestimonialsJsonSubHeading = 'childTestimonialsJson___subHeading',
+  ChildTestimonialsJsonTestimonials = 'childTestimonialsJson___testimonials',
+  ChildTestimonialsJsonTestimonialsAttributedUserName = 'childTestimonialsJson___testimonials___attributedUser___name',
+  ChildTestimonialsJsonTestimonialsAttributedUserCompany = 'childTestimonialsJson___testimonials___attributedUser___company',
+  ChildTestimonialsJsonTestimonialsAttributedUserTitle = 'childTestimonialsJson___testimonials___attributedUser___title',
+  ChildTestimonialsJsonTestimonialsAttributedUserAvatar = 'childTestimonialsJson___testimonials___attributedUser___avatar',
+  ChildTestimonialsJsonTestimonialsQuote = 'childTestimonialsJson___testimonials___quote',
+  ChildTestimonialsJsonId = 'childTestimonialsJson___id',
+  ChildTestimonialsJsonParentId = 'childTestimonialsJson___parent___id',
+  ChildTestimonialsJsonParentParentId = 'childTestimonialsJson___parent___parent___id',
+  ChildTestimonialsJsonParentParentChildren = 'childTestimonialsJson___parent___parent___children',
+  ChildTestimonialsJsonParentChildren = 'childTestimonialsJson___parent___children',
+  ChildTestimonialsJsonParentChildrenId = 'childTestimonialsJson___parent___children___id',
+  ChildTestimonialsJsonParentChildrenChildren = 'childTestimonialsJson___parent___children___children',
+  ChildTestimonialsJsonParentInternalContent = 'childTestimonialsJson___parent___internal___content',
+  ChildTestimonialsJsonParentInternalContentDigest = 'childTestimonialsJson___parent___internal___contentDigest',
+  ChildTestimonialsJsonParentInternalDescription = 'childTestimonialsJson___parent___internal___description',
+  ChildTestimonialsJsonParentInternalFieldOwners = 'childTestimonialsJson___parent___internal___fieldOwners',
+  ChildTestimonialsJsonParentInternalIgnoreType = 'childTestimonialsJson___parent___internal___ignoreType',
+  ChildTestimonialsJsonParentInternalMediaType = 'childTestimonialsJson___parent___internal___mediaType',
+  ChildTestimonialsJsonParentInternalOwner = 'childTestimonialsJson___parent___internal___owner',
+  ChildTestimonialsJsonParentInternalType = 'childTestimonialsJson___parent___internal___type',
+  ChildTestimonialsJsonChildren = 'childTestimonialsJson___children',
+  ChildTestimonialsJsonChildrenId = 'childTestimonialsJson___children___id',
+  ChildTestimonialsJsonChildrenParentId = 'childTestimonialsJson___children___parent___id',
+  ChildTestimonialsJsonChildrenParentChildren = 'childTestimonialsJson___children___parent___children',
+  ChildTestimonialsJsonChildrenChildren = 'childTestimonialsJson___children___children',
+  ChildTestimonialsJsonChildrenChildrenId = 'childTestimonialsJson___children___children___id',
+  ChildTestimonialsJsonChildrenChildrenChildren = 'childTestimonialsJson___children___children___children',
+  ChildTestimonialsJsonChildrenInternalContent = 'childTestimonialsJson___children___internal___content',
+  ChildTestimonialsJsonChildrenInternalContentDigest = 'childTestimonialsJson___children___internal___contentDigest',
+  ChildTestimonialsJsonChildrenInternalDescription = 'childTestimonialsJson___children___internal___description',
+  ChildTestimonialsJsonChildrenInternalFieldOwners = 'childTestimonialsJson___children___internal___fieldOwners',
+  ChildTestimonialsJsonChildrenInternalIgnoreType = 'childTestimonialsJson___children___internal___ignoreType',
+  ChildTestimonialsJsonChildrenInternalMediaType = 'childTestimonialsJson___children___internal___mediaType',
+  ChildTestimonialsJsonChildrenInternalOwner = 'childTestimonialsJson___children___internal___owner',
+  ChildTestimonialsJsonChildrenInternalType = 'childTestimonialsJson___children___internal___type',
+  ChildTestimonialsJsonInternalContent = 'childTestimonialsJson___internal___content',
+  ChildTestimonialsJsonInternalContentDigest = 'childTestimonialsJson___internal___contentDigest',
+  ChildTestimonialsJsonInternalDescription = 'childTestimonialsJson___internal___description',
+  ChildTestimonialsJsonInternalFieldOwners = 'childTestimonialsJson___internal___fieldOwners',
+  ChildTestimonialsJsonInternalIgnoreType = 'childTestimonialsJson___internal___ignoreType',
+  ChildTestimonialsJsonInternalMediaType = 'childTestimonialsJson___internal___mediaType',
+  ChildTestimonialsJsonInternalOwner = 'childTestimonialsJson___internal___owner',
+  ChildTestimonialsJsonInternalType = 'childTestimonialsJson___internal___type',
   ChildPricingJsonHeading = 'childPricingJson___heading',
   ChildPricingJsonSubHeading = 'childPricingJson___subHeading',
   ChildPricingJsonPlans = 'childPricingJson___plans',
@@ -1220,53 +1266,7 @@ export enum FileFieldsEnum {
   ChildPricingJsonInternalIgnoreType = 'childPricingJson___internal___ignoreType',
   ChildPricingJsonInternalMediaType = 'childPricingJson___internal___mediaType',
   ChildPricingJsonInternalOwner = 'childPricingJson___internal___owner',
-  ChildPricingJsonInternalType = 'childPricingJson___internal___type',
-  ChildTestimonialsJsonHeading = 'childTestimonialsJson___heading',
-  ChildTestimonialsJsonSubHeading = 'childTestimonialsJson___subHeading',
-  ChildTestimonialsJsonTestimonials = 'childTestimonialsJson___testimonials',
-  ChildTestimonialsJsonTestimonialsAttributedUserName = 'childTestimonialsJson___testimonials___attributedUser___name',
-  ChildTestimonialsJsonTestimonialsAttributedUserCompany = 'childTestimonialsJson___testimonials___attributedUser___company',
-  ChildTestimonialsJsonTestimonialsAttributedUserTitle = 'childTestimonialsJson___testimonials___attributedUser___title',
-  ChildTestimonialsJsonTestimonialsAttributedUserAvatar = 'childTestimonialsJson___testimonials___attributedUser___avatar',
-  ChildTestimonialsJsonTestimonialsQuote = 'childTestimonialsJson___testimonials___quote',
-  ChildTestimonialsJsonId = 'childTestimonialsJson___id',
-  ChildTestimonialsJsonParentId = 'childTestimonialsJson___parent___id',
-  ChildTestimonialsJsonParentParentId = 'childTestimonialsJson___parent___parent___id',
-  ChildTestimonialsJsonParentParentChildren = 'childTestimonialsJson___parent___parent___children',
-  ChildTestimonialsJsonParentChildren = 'childTestimonialsJson___parent___children',
-  ChildTestimonialsJsonParentChildrenId = 'childTestimonialsJson___parent___children___id',
-  ChildTestimonialsJsonParentChildrenChildren = 'childTestimonialsJson___parent___children___children',
-  ChildTestimonialsJsonParentInternalContent = 'childTestimonialsJson___parent___internal___content',
-  ChildTestimonialsJsonParentInternalContentDigest = 'childTestimonialsJson___parent___internal___contentDigest',
-  ChildTestimonialsJsonParentInternalDescription = 'childTestimonialsJson___parent___internal___description',
-  ChildTestimonialsJsonParentInternalFieldOwners = 'childTestimonialsJson___parent___internal___fieldOwners',
-  ChildTestimonialsJsonParentInternalIgnoreType = 'childTestimonialsJson___parent___internal___ignoreType',
-  ChildTestimonialsJsonParentInternalMediaType = 'childTestimonialsJson___parent___internal___mediaType',
-  ChildTestimonialsJsonParentInternalOwner = 'childTestimonialsJson___parent___internal___owner',
-  ChildTestimonialsJsonParentInternalType = 'childTestimonialsJson___parent___internal___type',
-  ChildTestimonialsJsonChildren = 'childTestimonialsJson___children',
-  ChildTestimonialsJsonChildrenId = 'childTestimonialsJson___children___id',
-  ChildTestimonialsJsonChildrenParentId = 'childTestimonialsJson___children___parent___id',
-  ChildTestimonialsJsonChildrenParentChildren = 'childTestimonialsJson___children___parent___children',
-  ChildTestimonialsJsonChildrenChildren = 'childTestimonialsJson___children___children',
-  ChildTestimonialsJsonChildrenChildrenId = 'childTestimonialsJson___children___children___id',
-  ChildTestimonialsJsonChildrenChildrenChildren = 'childTestimonialsJson___children___children___children',
-  ChildTestimonialsJsonChildrenInternalContent = 'childTestimonialsJson___children___internal___content',
-  ChildTestimonialsJsonChildrenInternalContentDigest = 'childTestimonialsJson___children___internal___contentDigest',
-  ChildTestimonialsJsonChildrenInternalDescription = 'childTestimonialsJson___children___internal___description',
-  ChildTestimonialsJsonChildrenInternalFieldOwners = 'childTestimonialsJson___children___internal___fieldOwners',
-  ChildTestimonialsJsonChildrenInternalIgnoreType = 'childTestimonialsJson___children___internal___ignoreType',
-  ChildTestimonialsJsonChildrenInternalMediaType = 'childTestimonialsJson___children___internal___mediaType',
-  ChildTestimonialsJsonChildrenInternalOwner = 'childTestimonialsJson___children___internal___owner',
-  ChildTestimonialsJsonChildrenInternalType = 'childTestimonialsJson___children___internal___type',
-  ChildTestimonialsJsonInternalContent = 'childTestimonialsJson___internal___content',
-  ChildTestimonialsJsonInternalContentDigest = 'childTestimonialsJson___internal___contentDigest',
-  ChildTestimonialsJsonInternalDescription = 'childTestimonialsJson___internal___description',
-  ChildTestimonialsJsonInternalFieldOwners = 'childTestimonialsJson___internal___fieldOwners',
-  ChildTestimonialsJsonInternalIgnoreType = 'childTestimonialsJson___internal___ignoreType',
-  ChildTestimonialsJsonInternalMediaType = 'childTestimonialsJson___internal___mediaType',
-  ChildTestimonialsJsonInternalOwner = 'childTestimonialsJson___internal___owner',
-  ChildTestimonialsJsonInternalType = 'childTestimonialsJson___internal___type'
+  ChildPricingJsonInternalType = 'childPricingJson___internal___type'
 }
 
 export type FileFilterInput = {
@@ -1311,8 +1311,8 @@ export type FileFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
-  childPricingJson?: Maybe<PricingJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -2284,8 +2284,8 @@ export type QueryFileArgs = {
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
-  childPricingJson?: Maybe<PricingJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
 };
 
 

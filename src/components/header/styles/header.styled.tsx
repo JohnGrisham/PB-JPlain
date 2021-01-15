@@ -13,7 +13,7 @@ export const MobileMenu = styled(Menu)`
 
 	.MuiMenu-paper,
 	.MuiMenu-list {
-		background: #4e2378 !important;
+		background: ${({ theme }) => theme.colors.jelly} !important;
 		height: 100%;
 		max-height: 100%;
 		max-width: 100%;
@@ -32,8 +32,8 @@ export const SiteContext = styled.div`
 
 export const SiteHeader = styled.header`
 	align-items: center;
-	background: #4e2378;
-	color: white;
+	background: ${({ theme }) => theme.colors.jelly};
+	color: ${({ theme }) => theme.colors.white};
 	display: grid;
 	grid-template-columns: 5fr 0.5fr 0.5fr 0.6fr 0.5fr 1fr;
 	min-width: 420px;
@@ -49,7 +49,7 @@ export const SiteHeader = styled.header`
 `
 
 export const SiteLink = styled(AnchorLink)`
-	color: white;
+	color: ${({ theme }) => theme.colors.white};
 	margin: 0;
 	text-decoration: none;
 `
