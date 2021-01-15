@@ -5,7 +5,11 @@ import { Pricing } from './pricing'
 import { Query } from '../../../interfaces'
 import { Testimonials } from './testimonials'
 
-const Evaluations: React.FC = () => {
+interface EvalutationProps {
+	planAction?: () => void
+}
+
+const Evaluations: React.FC<EvalutationProps> = ({ planAction }) => {
 	const {
 		allTestimonialsJson: { edges: testimonialEdges },
 		allPricingJson: { edges: pricingEdges }
@@ -54,7 +58,7 @@ const Evaluations: React.FC = () => {
 			<Testimonials
 				style={evaluations.pricing ? { borderBottom: '2px solid white', paddingBottom: '3em' } : undefined}
 			/>
-			<Pricing style={evaluations.testimonials ? { paddingTop: '3em' } : undefined} />
+			<Pricing planAction={planAction} style={evaluations.testimonials ? { paddingTop: '3em' } : undefined} />
 			<Styled.DripBottom />
 		</Styled.Evaluations>
 	)

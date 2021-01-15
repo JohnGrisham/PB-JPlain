@@ -6,6 +6,7 @@ import { IntersectionContext } from '../../../../intersection-observer'
 
 interface PlanProps extends PlanType {
 	sharedFeatures?: Feature[]
+	planAction?: () => void
 }
 
 const planVariants = {
@@ -17,7 +18,7 @@ const planVariants = {
 	}
 }
 
-const Plan: React.FC<PlanProps> = ({ action, features, image, price, sharedFeatures = [], type }) => {
+const Plan: React.FC<PlanProps> = ({ action, features, image, planAction, price, sharedFeatures = [], type }) => {
 	const { inThreshold } = React.useContext(IntersectionContext)
 
 	const motionProps = React.useMemo(
@@ -47,7 +48,7 @@ const Plan: React.FC<PlanProps> = ({ action, features, image, price, sharedFeatu
 						</li>
 					))}
 				</Styled.FeatureList>
-				{action && <Styled.PlanAction href={action.href || undefined}>{action.actionContent}</Styled.PlanAction>}
+				{action && <Styled.PlanAction href={action.href && !planAction ? action.href : undefined}>{action.actionContent}</Styled.PlanAction>}
 			</Styled.Plan>
 		</Styled.PlanMotion>
 	)

@@ -20,7 +20,7 @@
 			"type": "Plain",
 			"price": "Free",
 			"action": {
-				"actionContent": "Sign up",
+				"actionContent": "Eat it!",
 				"href": "#CTA"
 			},
 			"image": {
@@ -34,7 +34,7 @@
 			"type": "Sliced Bread",
 			"price": "$5",
 			"action": {
-				"actionContent": "Sign up",
+				"actionContent": "Eat it!",
 				"href": "#CTA"
 			},
 			"features": [{

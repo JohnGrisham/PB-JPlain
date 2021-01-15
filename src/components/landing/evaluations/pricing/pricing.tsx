@@ -5,7 +5,11 @@ import { Grid } from '../../../grid'
 import { Plan } from './plan'
 import { Query } from '../../../../interfaces'
 
-const Pricing: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ style }) => {
+interface PricingProps extends React.HTMLAttributes<HTMLDivElement> {
+	planAction?: () => void
+}
+
+const Pricing: React.FC<PricingProps> = ({ planAction, style }) => {
 	const {
 		allPricingJson: { edges }
 	} = useStaticQuery<{
