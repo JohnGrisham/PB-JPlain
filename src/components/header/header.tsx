@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle, logo }) => {
 				<Styled.SiteLink to="/#benefits">Benefits</Styled.SiteLink>
 			</MenuItem>
 			<MenuItem>
-				<Styled.SiteLink to="/#sources">Sources</Styled.SiteLink>
+				<Styled.SiteLink to="/#testimonials">Testimonials</Styled.SiteLink>
 			</MenuItem>
 			<MenuItem>
 				<Styled.SiteLink to="/#pricing">Pricing</Styled.SiteLink>
