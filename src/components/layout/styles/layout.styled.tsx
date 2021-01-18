@@ -68,19 +68,19 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	@media all and (max-width: 700px) {
-		:global(.largeItem) {
+		.largeItem {
 			width: 100%;
 		}
 	}
 
 	@media all and (min-width: 700px) and (max-width: 950px) {
-		:global(.largeItem) {
+		.largeItem {
 			width: 80%;
 		}
 	}
 
 	@media all and (min-width: 950px) and (max-width: 1200px) {
-		:global(.largeItem) {
+		.largeItem {
 			width: 65%;
 		}
 	}
