@@ -716,11 +716,13 @@ export type DuotoneGradient = {
 
 export type Feature = {
   __typename?: 'Feature';
+  included?: Maybe<Scalars['Boolean']>;
   planLevel: Scalars['Int'];
   description: Scalars['String'];
 };
 
 export type FeatureFilterInput = {
+  included?: Maybe<BooleanQueryOperatorInput>;
   planLevel?: Maybe<IntQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
 };
@@ -773,8 +775,8 @@ export type File = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
-  childBenefitsJson?: Maybe<BenefitsJson>;
   childDescriptionJson?: Maybe<DescriptionJson>;
+  childBenefitsJson?: Maybe<BenefitsJson>;
   childTestimonialsJson?: Maybe<TestimonialsJson>;
   childPricingJson?: Maybe<PricingJson>;
 };
@@ -1077,50 +1079,6 @@ export enum FileFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
-  ChildBenefitsJsonHeading = 'childBenefitsJson___heading',
-  ChildBenefitsJsonDescription = 'childBenefitsJson___description',
-  ChildBenefitsJsonImageSrc = 'childBenefitsJson___image___src',
-  ChildBenefitsJsonImageHeight = 'childBenefitsJson___image___height',
-  ChildBenefitsJsonImageWidth = 'childBenefitsJson___image___width',
-  ChildBenefitsJsonOrder = 'childBenefitsJson___order',
-  ChildBenefitsJsonId = 'childBenefitsJson___id',
-  ChildBenefitsJsonParentId = 'childBenefitsJson___parent___id',
-  ChildBenefitsJsonParentParentId = 'childBenefitsJson___parent___parent___id',
-  ChildBenefitsJsonParentParentChildren = 'childBenefitsJson___parent___parent___children',
-  ChildBenefitsJsonParentChildren = 'childBenefitsJson___parent___children',
-  ChildBenefitsJsonParentChildrenId = 'childBenefitsJson___parent___children___id',
-  ChildBenefitsJsonParentChildrenChildren = 'childBenefitsJson___parent___children___children',
-  ChildBenefitsJsonParentInternalContent = 'childBenefitsJson___parent___internal___content',
-  ChildBenefitsJsonParentInternalContentDigest = 'childBenefitsJson___parent___internal___contentDigest',
-  ChildBenefitsJsonParentInternalDescription = 'childBenefitsJson___parent___internal___description',
-  ChildBenefitsJsonParentInternalFieldOwners = 'childBenefitsJson___parent___internal___fieldOwners',
-  ChildBenefitsJsonParentInternalIgnoreType = 'childBenefitsJson___parent___internal___ignoreType',
-  ChildBenefitsJsonParentInternalMediaType = 'childBenefitsJson___parent___internal___mediaType',
-  ChildBenefitsJsonParentInternalOwner = 'childBenefitsJson___parent___internal___owner',
-  ChildBenefitsJsonParentInternalType = 'childBenefitsJson___parent___internal___type',
-  ChildBenefitsJsonChildren = 'childBenefitsJson___children',
-  ChildBenefitsJsonChildrenId = 'childBenefitsJson___children___id',
-  ChildBenefitsJsonChildrenParentId = 'childBenefitsJson___children___parent___id',
-  ChildBenefitsJsonChildrenParentChildren = 'childBenefitsJson___children___parent___children',
-  ChildBenefitsJsonChildrenChildren = 'childBenefitsJson___children___children',
-  ChildBenefitsJsonChildrenChildrenId = 'childBenefitsJson___children___children___id',
-  ChildBenefitsJsonChildrenChildrenChildren = 'childBenefitsJson___children___children___children',
-  ChildBenefitsJsonChildrenInternalContent = 'childBenefitsJson___children___internal___content',
-  ChildBenefitsJsonChildrenInternalContentDigest = 'childBenefitsJson___children___internal___contentDigest',
-  ChildBenefitsJsonChildrenInternalDescription = 'childBenefitsJson___children___internal___description',
-  ChildBenefitsJsonChildrenInternalFieldOwners = 'childBenefitsJson___children___internal___fieldOwners',
-  ChildBenefitsJsonChildrenInternalIgnoreType = 'childBenefitsJson___children___internal___ignoreType',
-  ChildBenefitsJsonChildrenInternalMediaType = 'childBenefitsJson___children___internal___mediaType',
-  ChildBenefitsJsonChildrenInternalOwner = 'childBenefitsJson___children___internal___owner',
-  ChildBenefitsJsonChildrenInternalType = 'childBenefitsJson___children___internal___type',
-  ChildBenefitsJsonInternalContent = 'childBenefitsJson___internal___content',
-  ChildBenefitsJsonInternalContentDigest = 'childBenefitsJson___internal___contentDigest',
-  ChildBenefitsJsonInternalDescription = 'childBenefitsJson___internal___description',
-  ChildBenefitsJsonInternalFieldOwners = 'childBenefitsJson___internal___fieldOwners',
-  ChildBenefitsJsonInternalIgnoreType = 'childBenefitsJson___internal___ignoreType',
-  ChildBenefitsJsonInternalMediaType = 'childBenefitsJson___internal___mediaType',
-  ChildBenefitsJsonInternalOwner = 'childBenefitsJson___internal___owner',
-  ChildBenefitsJsonInternalType = 'childBenefitsJson___internal___type',
   ChildDescriptionJsonHeading = 'childDescriptionJson___heading',
   ChildDescriptionJsonSubHeading = 'childDescriptionJson___subHeading',
   ChildDescriptionJsonSteps = 'childDescriptionJson___steps',
@@ -1166,6 +1124,50 @@ export enum FileFieldsEnum {
   ChildDescriptionJsonInternalMediaType = 'childDescriptionJson___internal___mediaType',
   ChildDescriptionJsonInternalOwner = 'childDescriptionJson___internal___owner',
   ChildDescriptionJsonInternalType = 'childDescriptionJson___internal___type',
+  ChildBenefitsJsonHeading = 'childBenefitsJson___heading',
+  ChildBenefitsJsonDescription = 'childBenefitsJson___description',
+  ChildBenefitsJsonImageSrc = 'childBenefitsJson___image___src',
+  ChildBenefitsJsonImageHeight = 'childBenefitsJson___image___height',
+  ChildBenefitsJsonImageWidth = 'childBenefitsJson___image___width',
+  ChildBenefitsJsonOrder = 'childBenefitsJson___order',
+  ChildBenefitsJsonId = 'childBenefitsJson___id',
+  ChildBenefitsJsonParentId = 'childBenefitsJson___parent___id',
+  ChildBenefitsJsonParentParentId = 'childBenefitsJson___parent___parent___id',
+  ChildBenefitsJsonParentParentChildren = 'childBenefitsJson___parent___parent___children',
+  ChildBenefitsJsonParentChildren = 'childBenefitsJson___parent___children',
+  ChildBenefitsJsonParentChildrenId = 'childBenefitsJson___parent___children___id',
+  ChildBenefitsJsonParentChildrenChildren = 'childBenefitsJson___parent___children___children',
+  ChildBenefitsJsonParentInternalContent = 'childBenefitsJson___parent___internal___content',
+  ChildBenefitsJsonParentInternalContentDigest = 'childBenefitsJson___parent___internal___contentDigest',
+  ChildBenefitsJsonParentInternalDescription = 'childBenefitsJson___parent___internal___description',
+  ChildBenefitsJsonParentInternalFieldOwners = 'childBenefitsJson___parent___internal___fieldOwners',
+  ChildBenefitsJsonParentInternalIgnoreType = 'childBenefitsJson___parent___internal___ignoreType',
+  ChildBenefitsJsonParentInternalMediaType = 'childBenefitsJson___parent___internal___mediaType',
+  ChildBenefitsJsonParentInternalOwner = 'childBenefitsJson___parent___internal___owner',
+  ChildBenefitsJsonParentInternalType = 'childBenefitsJson___parent___internal___type',
+  ChildBenefitsJsonChildren = 'childBenefitsJson___children',
+  ChildBenefitsJsonChildrenId = 'childBenefitsJson___children___id',
+  ChildBenefitsJsonChildrenParentId = 'childBenefitsJson___children___parent___id',
+  ChildBenefitsJsonChildrenParentChildren = 'childBenefitsJson___children___parent___children',
+  ChildBenefitsJsonChildrenChildren = 'childBenefitsJson___children___children',
+  ChildBenefitsJsonChildrenChildrenId = 'childBenefitsJson___children___children___id',
+  ChildBenefitsJsonChildrenChildrenChildren = 'childBenefitsJson___children___children___children',
+  ChildBenefitsJsonChildrenInternalContent = 'childBenefitsJson___children___internal___content',
+  ChildBenefitsJsonChildrenInternalContentDigest = 'childBenefitsJson___children___internal___contentDigest',
+  ChildBenefitsJsonChildrenInternalDescription = 'childBenefitsJson___children___internal___description',
+  ChildBenefitsJsonChildrenInternalFieldOwners = 'childBenefitsJson___children___internal___fieldOwners',
+  ChildBenefitsJsonChildrenInternalIgnoreType = 'childBenefitsJson___children___internal___ignoreType',
+  ChildBenefitsJsonChildrenInternalMediaType = 'childBenefitsJson___children___internal___mediaType',
+  ChildBenefitsJsonChildrenInternalOwner = 'childBenefitsJson___children___internal___owner',
+  ChildBenefitsJsonChildrenInternalType = 'childBenefitsJson___children___internal___type',
+  ChildBenefitsJsonInternalContent = 'childBenefitsJson___internal___content',
+  ChildBenefitsJsonInternalContentDigest = 'childBenefitsJson___internal___contentDigest',
+  ChildBenefitsJsonInternalDescription = 'childBenefitsJson___internal___description',
+  ChildBenefitsJsonInternalFieldOwners = 'childBenefitsJson___internal___fieldOwners',
+  ChildBenefitsJsonInternalIgnoreType = 'childBenefitsJson___internal___ignoreType',
+  ChildBenefitsJsonInternalMediaType = 'childBenefitsJson___internal___mediaType',
+  ChildBenefitsJsonInternalOwner = 'childBenefitsJson___internal___owner',
+  ChildBenefitsJsonInternalType = 'childBenefitsJson___internal___type',
   ChildTestimonialsJsonHeading = 'childTestimonialsJson___heading',
   ChildTestimonialsJsonSubHeading = 'childTestimonialsJson___subHeading',
   ChildTestimonialsJsonTestimonials = 'childTestimonialsJson___testimonials',
@@ -1223,10 +1225,12 @@ export enum FileFieldsEnum {
   ChildPricingJsonPlansLevel = 'childPricingJson___plans___level',
   ChildPricingJsonPlansPrice = 'childPricingJson___plans___price',
   ChildPricingJsonPlansFeatures = 'childPricingJson___plans___features',
+  ChildPricingJsonPlansFeaturesIncluded = 'childPricingJson___plans___features___included',
   ChildPricingJsonPlansFeaturesPlanLevel = 'childPricingJson___plans___features___planLevel',
   ChildPricingJsonPlansFeaturesDescription = 'childPricingJson___plans___features___description',
   ChildPricingJsonPlansType = 'childPricingJson___plans___type',
   ChildPricingJsonSharedFeatures = 'childPricingJson___sharedFeatures',
+  ChildPricingJsonSharedFeaturesIncluded = 'childPricingJson___sharedFeatures___included',
   ChildPricingJsonSharedFeaturesPlanLevel = 'childPricingJson___sharedFeatures___planLevel',
   ChildPricingJsonSharedFeaturesDescription = 'childPricingJson___sharedFeatures___description',
   ChildPricingJsonId = 'childPricingJson___id',
@@ -1309,8 +1313,8 @@ export type FileFilterInput = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
+  childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
   childPricingJson?: Maybe<PricingJsonFilterInput>;
 };
@@ -2095,10 +2099,12 @@ export enum PricingJsonFieldsEnum {
   PlansLevel = 'plans___level',
   PlansPrice = 'plans___price',
   PlansFeatures = 'plans___features',
+  PlansFeaturesIncluded = 'plans___features___included',
   PlansFeaturesPlanLevel = 'plans___features___planLevel',
   PlansFeaturesDescription = 'plans___features___description',
   PlansType = 'plans___type',
   SharedFeatures = 'sharedFeatures',
+  SharedFeaturesIncluded = 'sharedFeatures___included',
   SharedFeaturesPlanLevel = 'sharedFeatures___planLevel',
   SharedFeaturesDescription = 'sharedFeatures___description',
   Id = 'id',
@@ -2282,8 +2288,8 @@ export type QueryFileArgs = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
-  childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
+  childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
   childPricingJson?: Maybe<PricingJsonFilterInput>;
 };

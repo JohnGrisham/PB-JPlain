@@ -25,6 +25,7 @@ type DescriptionJson implements Node {
 }
 
 type Feature {
+	included: Boolean
 	planLevel: Int!
 	description: String!
 }

@@ -2,14 +2,17 @@
 	"heading": "Pricing",
 	"sharedFeatures": [
 		{
+			"included": true,
 			"planLevel": 0,
 			"description": "landing page"
 		},
 		{
+			"included": true,
 			"planLevel": 0,
 			"description": "Theme support"
 		},
 		{
+			"included": true,
 			"planLevel": 0,
 			"description": "Typescript integration"
 		}
@@ -23,6 +26,31 @@
 				"actionContent": "Eat it!",
 				"href": "#CTA"
 			},
+			"features": [{
+				"included": false,
+				"planLevel": 1,
+				"description": "Blog page"
+			},
+			{
+				"included": false,
+				"planLevel": 1,
+				"description": "Post template"
+			},
+			{
+				"included": false,
+				"planLevel": 1,
+				"description": "Conversion Popup"
+			},
+			{
+				"included": false,
+				"planLevel": 1,
+				"description": "Jest testing integration"
+			},
+			{
+				"included": false,
+				"planLevel": 1,
+				"description": "Future updates"
+			}],
 			"image": {
 				"src": "milk.png",
 				"height": 300,
@@ -37,23 +65,29 @@
 				"actionContent": "Eat it!",
 				"href": "#CTA"
 			},
-			"features": [{
+			"features": [
+			{
+				"included": true,
 				"planLevel": 1,
 				"description": "Blog page"
 			},
 			{
+				"included": true,
 				"planLevel": 1,
 				"description": "Post template"
 			},
 			{
+				"included": true,
 				"planLevel": 1,
 				"description": "Conversion Popup"
 			},
 			{
+				"included": true,
 				"planLevel": 1,
 				"description": "Jest testing integration"
 			},
 			{
+				"included": true,
 				"planLevel": 1,
 				"description": "Future updates"
 			}

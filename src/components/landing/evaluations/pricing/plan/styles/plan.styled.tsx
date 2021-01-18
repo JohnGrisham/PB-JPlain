@@ -1,6 +1,5 @@
 import { Button, Card } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
@@ -17,8 +16,7 @@ export const FeatureList = styled.ul`
 `
 
 export const FeatureIcon = styled(FontAwesomeIcon).attrs(({ theme }) => ({
-	color: theme.colors.jelly,
-	icon: faPlus
+	color: theme.colors.jelly
 }))`
 	margin-right: 0.5em;
 `

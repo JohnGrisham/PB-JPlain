@@ -6,10 +6,10 @@ import { Plan } from './plan'
 import { Query } from '../../../../interfaces'
 
 interface PricingProps extends React.HTMLAttributes<HTMLDivElement> {
-	planAction?: () => void
+	planActions?: Array<{ action: () => void, level: number }>
 }
 
-const Pricing: React.FC<PricingProps> = ({ planAction, style }) => {
+const Pricing: React.FC<PricingProps> = ({ planActions, style }) => {
 	const {
 		allPricingJson: { edges }
 	} = useStaticQuery<{
@@ -23,6 +23,7 @@ const Pricing: React.FC<PricingProps> = ({ planAction, style }) => {
 							heading
 							subHeading
 							sharedFeatures {
+								included
 								description
 								planLevel
 							}
@@ -35,6 +36,7 @@ const Pricing: React.FC<PricingProps> = ({ planAction, style }) => {
 								price
 								type
 								features {
+									included
 									planLevel
 									description
 								}
@@ -68,10 +70,11 @@ const Pricing: React.FC<PricingProps> = ({ planAction, style }) => {
 
 		return pricing.plans.map((plan, i) => {
 			const sharedFeatures = pricing.sharedFeatures?.filter(({ planLevel }) => plan.level >= planLevel)
+			const planAction = planActions ? planActions.find(({ level }) => level === plan.level) : undefined
 
 			return (
 				<Styled.Intersection key={`plan-${i}`}>
-					<Plan sharedFeatures={sharedFeatures} {...plan} />
+					<Plan onAction={planAction?.action} sharedFeatures={sharedFeatures} {...plan} />
 				</Styled.Intersection>
 			)
 		})

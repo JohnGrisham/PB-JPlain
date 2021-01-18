@@ -1,12 +1,13 @@
 import * as React from 'react'
 import * as Styled from './styles'
 import { Feature, Plan as PlanType } from '../../../../../interfaces'
+import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Image } from '../../../../image'
 import { IntersectionContext } from '../../../../intersection-observer'
 
 interface PlanProps extends PlanType {
+	onAction?: () => void
 	sharedFeatures?: Feature[]
-	planAction?: () => void
 }
 
 const planVariants = {
@@ -18,7 +19,7 @@ const planVariants = {
 	}
 }
 
-const Plan: React.FC<PlanProps> = ({ action, features, image, planAction, price, sharedFeatures = [], type }) => {
+const Plan: React.FC<PlanProps> = ({ action, features, image, onAction, price, sharedFeatures = [], type }) => {
 	const { inThreshold } = React.useContext(IntersectionContext)
 
 	const motionProps = React.useMemo(
@@ -42,13 +43,13 @@ const Plan: React.FC<PlanProps> = ({ action, features, image, planAction, price,
 				<h1>{price}</h1>
 				<Styled.FeatureList>
 					{[...sharedFeatures, ...(features || [])].map((feature, i) => (
-						<li key={`level-${feature.planLevel}-${i}`}>
-							<Styled.FeatureIcon />
+						<li key={`level-${feature.planLevel}-${i}`} style={!feature.included ? { opacity: 0.6 } : undefined}>
+							<Styled.FeatureIcon icon={feature.included ? faPlus : faTimes} />
 							{feature.description}
 						</li>
 					))}
 				</Styled.FeatureList>
-				{action && <Styled.PlanAction href={action.href && !planAction ? action.href : undefined}>{action.actionContent}</Styled.PlanAction>}
+				{action && <Styled.PlanAction href={action.href && !onAction ? action.href : undefined} onClick={onAction}>{action.actionContent}</Styled.PlanAction>}
 			</Styled.Plan>
 		</Styled.PlanMotion>
 	)

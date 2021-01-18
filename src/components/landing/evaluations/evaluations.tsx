@@ -6,10 +6,10 @@ import { Query } from '../../../interfaces'
 import { Testimonials } from './testimonials'
 
 interface EvalutationProps {
-	planAction?: () => void
+	planActions?: Array<{ action: () => void, level: number }>
 }
 
-const Evaluations: React.FC<EvalutationProps> = ({ planAction }) => {
+const Evaluations: React.FC<EvalutationProps> = ({ planActions }) => {
 	const {
 		allTestimonialsJson: { edges: testimonialEdges },
 		allPricingJson: { edges: pricingEdges }
@@ -58,7 +58,7 @@ const Evaluations: React.FC<EvalutationProps> = ({ planAction }) => {
 			<Testimonials
 				style={evaluations.pricing ? { borderBottom: '2px solid white', paddingBottom: '3em' } : undefined}
 			/>
-			<Pricing planAction={planAction} style={evaluations.testimonials ? { paddingTop: '3em' } : undefined} />
+			<Pricing planActions={planActions} style={evaluations.testimonials ? { paddingTop: '3em' } : undefined} />
 			<Styled.DripBottom />
 		</Styled.Evaluations>
 	)
