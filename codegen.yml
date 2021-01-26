@@ -1,4 +1,7 @@
 schema: http://localhost:8000/___graphql
+config:
+  namingConvention:
+    enumValues: keep
 documents:
   - ./src/**/*.{ts,tsx}
   - node_modules/gatsby-transformer-sharp/!(node_modules)/**/*.js

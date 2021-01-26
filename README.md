@@ -160,7 +160,7 @@ This should cause Gatsby's developement layer to update with any changes, but wh
 
 This template uses graphql codegen to generate Typescript types from the graphql schema. These templates include the output types needed initially. However if you make any changes to the graphql schema or need to add a type you will have to do this yourself.
 
-After making a change to the graphql schema run:
+After making a change to the graphql schema; make sure you have the development process started and in a different terminal run:
 ```
 yarn generate-types
 ```

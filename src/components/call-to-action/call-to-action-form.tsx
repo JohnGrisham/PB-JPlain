@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as Styled from './styles'
 import * as Yup from 'yup'
 import { Button, TextField } from '@material-ui/core'
-import { Formik } from 'formik'
+import { Formik, FormikHelpers } from 'formik'
 
 interface CTAValue {
 	email: string
@@ -13,11 +13,25 @@ const formSchema = Yup.object().shape({
 })
 
 const CallToActionForm: React.FC = () => {
+	const onSubmitCTA = React.useCallback(
+		async ({ email }: CTAValue, actions: FormikHelpers<CTAValue>) => {
+			try {
+				console.log(`Email: ${email} submitted! Now time to do something with it...`)
+				actions.setStatus({ errors: [], success: true })
+			} catch (error) {
+				actions.setStatus({ errors: [error] })
+			} finally {
+				actions.setSubmitting(false)
+			}
+		},
+		[]
+	)
+
 	return (
 		<Formik<CTAValue>
 			initialValues={{ email: '' }}
 			initialStatus={{ errors: [], success: false }}
-			onSubmit={() => { console.log('Make me do something!')}}
+			onSubmit={onSubmitCTA}
 			validationSchema={formSchema}>
 			{({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, isValid, setStatus, status, touched }) => (
 				<Styled.CallToActionForm onSubmit={handleSubmit}>

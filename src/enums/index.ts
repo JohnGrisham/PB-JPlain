@@ -1,1 +1,1 @@
-export { ImageType } from './imageType'
+export { ImageType } from './ImageType'
