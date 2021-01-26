@@ -18,8 +18,12 @@ const Landing: React.FC<LandingProps> = ({ callToAction, includeLandingForground
 	const { width } = useWindowSize()
 
 	const landingForgroundSize = React.useMemo(() => {
-		if(!includeLandingForground || !width) {
+		if(!includeLandingForground) {
 			return { height: undefined, width: undefined }
+		}
+
+		if(!width) {
+			return { height: 0, width: 0 }
 		}
 
 		if(width > 1200) {
