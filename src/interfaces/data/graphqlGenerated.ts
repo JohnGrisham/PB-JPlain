@@ -776,9 +776,9 @@ export type File = Node & {
   children: Array<Node>;
   internal: Internal;
   childBenefitsJson?: Maybe<BenefitsJson>;
+  childPricingJson?: Maybe<PricingJson>;
   childDescriptionJson?: Maybe<DescriptionJson>;
   childTestimonialsJson?: Maybe<TestimonialsJson>;
-  childPricingJson?: Maybe<PricingJson>;
 };
 
 
@@ -1123,6 +1123,63 @@ export enum FileFieldsEnum {
   childBenefitsJson___internal___mediaType = 'childBenefitsJson___internal___mediaType',
   childBenefitsJson___internal___owner = 'childBenefitsJson___internal___owner',
   childBenefitsJson___internal___type = 'childBenefitsJson___internal___type',
+  childPricingJson___heading = 'childPricingJson___heading',
+  childPricingJson___subHeading = 'childPricingJson___subHeading',
+  childPricingJson___plans = 'childPricingJson___plans',
+  childPricingJson___plans___action___actionContent = 'childPricingJson___plans___action___actionContent',
+  childPricingJson___plans___action___href = 'childPricingJson___plans___action___href',
+  childPricingJson___plans___image___src = 'childPricingJson___plans___image___src',
+  childPricingJson___plans___image___height = 'childPricingJson___plans___image___height',
+  childPricingJson___plans___image___width = 'childPricingJson___plans___image___width',
+  childPricingJson___plans___level = 'childPricingJson___plans___level',
+  childPricingJson___plans___price = 'childPricingJson___plans___price',
+  childPricingJson___plans___features = 'childPricingJson___plans___features',
+  childPricingJson___plans___features___included = 'childPricingJson___plans___features___included',
+  childPricingJson___plans___features___planLevel = 'childPricingJson___plans___features___planLevel',
+  childPricingJson___plans___features___description = 'childPricingJson___plans___features___description',
+  childPricingJson___plans___type = 'childPricingJson___plans___type',
+  childPricingJson___sharedFeatures = 'childPricingJson___sharedFeatures',
+  childPricingJson___sharedFeatures___included = 'childPricingJson___sharedFeatures___included',
+  childPricingJson___sharedFeatures___planLevel = 'childPricingJson___sharedFeatures___planLevel',
+  childPricingJson___sharedFeatures___description = 'childPricingJson___sharedFeatures___description',
+  childPricingJson___id = 'childPricingJson___id',
+  childPricingJson___parent___id = 'childPricingJson___parent___id',
+  childPricingJson___parent___parent___id = 'childPricingJson___parent___parent___id',
+  childPricingJson___parent___parent___children = 'childPricingJson___parent___parent___children',
+  childPricingJson___parent___children = 'childPricingJson___parent___children',
+  childPricingJson___parent___children___id = 'childPricingJson___parent___children___id',
+  childPricingJson___parent___children___children = 'childPricingJson___parent___children___children',
+  childPricingJson___parent___internal___content = 'childPricingJson___parent___internal___content',
+  childPricingJson___parent___internal___contentDigest = 'childPricingJson___parent___internal___contentDigest',
+  childPricingJson___parent___internal___description = 'childPricingJson___parent___internal___description',
+  childPricingJson___parent___internal___fieldOwners = 'childPricingJson___parent___internal___fieldOwners',
+  childPricingJson___parent___internal___ignoreType = 'childPricingJson___parent___internal___ignoreType',
+  childPricingJson___parent___internal___mediaType = 'childPricingJson___parent___internal___mediaType',
+  childPricingJson___parent___internal___owner = 'childPricingJson___parent___internal___owner',
+  childPricingJson___parent___internal___type = 'childPricingJson___parent___internal___type',
+  childPricingJson___children = 'childPricingJson___children',
+  childPricingJson___children___id = 'childPricingJson___children___id',
+  childPricingJson___children___parent___id = 'childPricingJson___children___parent___id',
+  childPricingJson___children___parent___children = 'childPricingJson___children___parent___children',
+  childPricingJson___children___children = 'childPricingJson___children___children',
+  childPricingJson___children___children___id = 'childPricingJson___children___children___id',
+  childPricingJson___children___children___children = 'childPricingJson___children___children___children',
+  childPricingJson___children___internal___content = 'childPricingJson___children___internal___content',
+  childPricingJson___children___internal___contentDigest = 'childPricingJson___children___internal___contentDigest',
+  childPricingJson___children___internal___description = 'childPricingJson___children___internal___description',
+  childPricingJson___children___internal___fieldOwners = 'childPricingJson___children___internal___fieldOwners',
+  childPricingJson___children___internal___ignoreType = 'childPricingJson___children___internal___ignoreType',
+  childPricingJson___children___internal___mediaType = 'childPricingJson___children___internal___mediaType',
+  childPricingJson___children___internal___owner = 'childPricingJson___children___internal___owner',
+  childPricingJson___children___internal___type = 'childPricingJson___children___internal___type',
+  childPricingJson___internal___content = 'childPricingJson___internal___content',
+  childPricingJson___internal___contentDigest = 'childPricingJson___internal___contentDigest',
+  childPricingJson___internal___description = 'childPricingJson___internal___description',
+  childPricingJson___internal___fieldOwners = 'childPricingJson___internal___fieldOwners',
+  childPricingJson___internal___ignoreType = 'childPricingJson___internal___ignoreType',
+  childPricingJson___internal___mediaType = 'childPricingJson___internal___mediaType',
+  childPricingJson___internal___owner = 'childPricingJson___internal___owner',
+  childPricingJson___internal___type = 'childPricingJson___internal___type',
   childDescriptionJson___heading = 'childDescriptionJson___heading',
   childDescriptionJson___subHeading = 'childDescriptionJson___subHeading',
   childDescriptionJson___steps = 'childDescriptionJson___steps',
@@ -1213,64 +1270,7 @@ export enum FileFieldsEnum {
   childTestimonialsJson___internal___ignoreType = 'childTestimonialsJson___internal___ignoreType',
   childTestimonialsJson___internal___mediaType = 'childTestimonialsJson___internal___mediaType',
   childTestimonialsJson___internal___owner = 'childTestimonialsJson___internal___owner',
-  childTestimonialsJson___internal___type = 'childTestimonialsJson___internal___type',
-  childPricingJson___heading = 'childPricingJson___heading',
-  childPricingJson___subHeading = 'childPricingJson___subHeading',
-  childPricingJson___plans = 'childPricingJson___plans',
-  childPricingJson___plans___action___actionContent = 'childPricingJson___plans___action___actionContent',
-  childPricingJson___plans___action___href = 'childPricingJson___plans___action___href',
-  childPricingJson___plans___image___src = 'childPricingJson___plans___image___src',
-  childPricingJson___plans___image___height = 'childPricingJson___plans___image___height',
-  childPricingJson___plans___image___width = 'childPricingJson___plans___image___width',
-  childPricingJson___plans___level = 'childPricingJson___plans___level',
-  childPricingJson___plans___price = 'childPricingJson___plans___price',
-  childPricingJson___plans___features = 'childPricingJson___plans___features',
-  childPricingJson___plans___features___included = 'childPricingJson___plans___features___included',
-  childPricingJson___plans___features___planLevel = 'childPricingJson___plans___features___planLevel',
-  childPricingJson___plans___features___description = 'childPricingJson___plans___features___description',
-  childPricingJson___plans___type = 'childPricingJson___plans___type',
-  childPricingJson___sharedFeatures = 'childPricingJson___sharedFeatures',
-  childPricingJson___sharedFeatures___included = 'childPricingJson___sharedFeatures___included',
-  childPricingJson___sharedFeatures___planLevel = 'childPricingJson___sharedFeatures___planLevel',
-  childPricingJson___sharedFeatures___description = 'childPricingJson___sharedFeatures___description',
-  childPricingJson___id = 'childPricingJson___id',
-  childPricingJson___parent___id = 'childPricingJson___parent___id',
-  childPricingJson___parent___parent___id = 'childPricingJson___parent___parent___id',
-  childPricingJson___parent___parent___children = 'childPricingJson___parent___parent___children',
-  childPricingJson___parent___children = 'childPricingJson___parent___children',
-  childPricingJson___parent___children___id = 'childPricingJson___parent___children___id',
-  childPricingJson___parent___children___children = 'childPricingJson___parent___children___children',
-  childPricingJson___parent___internal___content = 'childPricingJson___parent___internal___content',
-  childPricingJson___parent___internal___contentDigest = 'childPricingJson___parent___internal___contentDigest',
-  childPricingJson___parent___internal___description = 'childPricingJson___parent___internal___description',
-  childPricingJson___parent___internal___fieldOwners = 'childPricingJson___parent___internal___fieldOwners',
-  childPricingJson___parent___internal___ignoreType = 'childPricingJson___parent___internal___ignoreType',
-  childPricingJson___parent___internal___mediaType = 'childPricingJson___parent___internal___mediaType',
-  childPricingJson___parent___internal___owner = 'childPricingJson___parent___internal___owner',
-  childPricingJson___parent___internal___type = 'childPricingJson___parent___internal___type',
-  childPricingJson___children = 'childPricingJson___children',
-  childPricingJson___children___id = 'childPricingJson___children___id',
-  childPricingJson___children___parent___id = 'childPricingJson___children___parent___id',
-  childPricingJson___children___parent___children = 'childPricingJson___children___parent___children',
-  childPricingJson___children___children = 'childPricingJson___children___children',
-  childPricingJson___children___children___id = 'childPricingJson___children___children___id',
-  childPricingJson___children___children___children = 'childPricingJson___children___children___children',
-  childPricingJson___children___internal___content = 'childPricingJson___children___internal___content',
-  childPricingJson___children___internal___contentDigest = 'childPricingJson___children___internal___contentDigest',
-  childPricingJson___children___internal___description = 'childPricingJson___children___internal___description',
-  childPricingJson___children___internal___fieldOwners = 'childPricingJson___children___internal___fieldOwners',
-  childPricingJson___children___internal___ignoreType = 'childPricingJson___children___internal___ignoreType',
-  childPricingJson___children___internal___mediaType = 'childPricingJson___children___internal___mediaType',
-  childPricingJson___children___internal___owner = 'childPricingJson___children___internal___owner',
-  childPricingJson___children___internal___type = 'childPricingJson___children___internal___type',
-  childPricingJson___internal___content = 'childPricingJson___internal___content',
-  childPricingJson___internal___contentDigest = 'childPricingJson___internal___contentDigest',
-  childPricingJson___internal___description = 'childPricingJson___internal___description',
-  childPricingJson___internal___fieldOwners = 'childPricingJson___internal___fieldOwners',
-  childPricingJson___internal___ignoreType = 'childPricingJson___internal___ignoreType',
-  childPricingJson___internal___mediaType = 'childPricingJson___internal___mediaType',
-  childPricingJson___internal___owner = 'childPricingJson___internal___owner',
-  childPricingJson___internal___type = 'childPricingJson___internal___type'
+  childTestimonialsJson___internal___type = 'childTestimonialsJson___internal___type'
 }
 
 export type FileFilterInput = {
@@ -1314,9 +1314,9 @@ export type FileFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
-  childPricingJson?: Maybe<PricingJsonFilterInput>;
 };
 
 export type FileGroupConnection = {
@@ -1967,6 +1967,281 @@ export type JsonQueryOperatorInput = {
   glob?: Maybe<Scalars['JSON']>;
 };
 
+export enum MarkdownExcerptFormats {
+  PLAIN = 'PLAIN',
+  HTML = 'HTML',
+  MARKDOWN = 'MARKDOWN'
+}
+
+export type MarkdownHeading = {
+  __typename?: 'MarkdownHeading';
+  id?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+  depth?: Maybe<Scalars['Int']>;
+};
+
+export type MarkdownHeadingFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+  depth?: Maybe<IntQueryOperatorInput>;
+};
+
+export type MarkdownHeadingFilterListInput = {
+  elemMatch?: Maybe<MarkdownHeadingFilterInput>;
+};
+
+export enum MarkdownHeadingLevels {
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+  h6 = 'h6'
+}
+
+export type MarkdownRemark = Node & {
+  __typename?: 'MarkdownRemark';
+  id: Scalars['ID'];
+  frontmatter?: Maybe<MarkdownRemarkFrontmatter>;
+  html?: Maybe<Scalars['String']>;
+  htmlAst?: Maybe<Scalars['JSON']>;
+  excerpt?: Maybe<Scalars['String']>;
+  excerptAst?: Maybe<Scalars['JSON']>;
+  headings?: Maybe<Array<Maybe<MarkdownHeading>>>;
+  timeToRead?: Maybe<Scalars['Int']>;
+  tableOfContents?: Maybe<Scalars['String']>;
+  wordCount?: Maybe<MarkdownWordCount>;
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+
+export type MarkdownRemarkExcerptArgs = {
+  pruneLength?: Maybe<Scalars['Int']>;
+  truncate?: Maybe<Scalars['Boolean']>;
+  format?: Maybe<MarkdownExcerptFormats>;
+};
+
+
+export type MarkdownRemarkExcerptAstArgs = {
+  pruneLength?: Maybe<Scalars['Int']>;
+  truncate?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type MarkdownRemarkHeadingsArgs = {
+  depth?: Maybe<MarkdownHeadingLevels>;
+};
+
+
+export type MarkdownRemarkTableOfContentsArgs = {
+  absolute?: Maybe<Scalars['Boolean']>;
+  pathToSlugField?: Maybe<Scalars['String']>;
+  maxDepth?: Maybe<Scalars['Int']>;
+  heading?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkConnection = {
+  __typename?: 'MarkdownRemarkConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<MarkdownRemarkEdge>;
+  nodes: Array<MarkdownRemark>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<MarkdownRemarkGroupConnection>;
+};
+
+
+export type MarkdownRemarkConnectionDistinctArgs = {
+  field: MarkdownRemarkFieldsEnum;
+};
+
+
+export type MarkdownRemarkConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: MarkdownRemarkFieldsEnum;
+};
+
+export type MarkdownRemarkEdge = {
+  __typename?: 'MarkdownRemarkEdge';
+  next?: Maybe<MarkdownRemark>;
+  node: MarkdownRemark;
+  previous?: Maybe<MarkdownRemark>;
+};
+
+export enum MarkdownRemarkFieldsEnum {
+  id = 'id',
+  frontmatter___author___name = 'frontmatter___author___name',
+  frontmatter___author___company = 'frontmatter___author___company',
+  frontmatter___author___title = 'frontmatter___author___title',
+  frontmatter___author___avatar = 'frontmatter___author___avatar',
+  frontmatter___title = 'frontmatter___title',
+  frontmatter___slug = 'frontmatter___slug',
+  frontmatter___date = 'frontmatter___date',
+  frontmatter___featuredImage = 'frontmatter___featuredImage',
+  html = 'html',
+  htmlAst = 'htmlAst',
+  excerpt = 'excerpt',
+  excerptAst = 'excerptAst',
+  headings = 'headings',
+  headings___id = 'headings___id',
+  headings___value = 'headings___value',
+  headings___depth = 'headings___depth',
+  timeToRead = 'timeToRead',
+  tableOfContents = 'tableOfContents',
+  wordCount___paragraphs = 'wordCount___paragraphs',
+  wordCount___sentences = 'wordCount___sentences',
+  wordCount___words = 'wordCount___words',
+  parent___id = 'parent___id',
+  parent___parent___id = 'parent___parent___id',
+  parent___parent___parent___id = 'parent___parent___parent___id',
+  parent___parent___parent___children = 'parent___parent___parent___children',
+  parent___parent___children = 'parent___parent___children',
+  parent___parent___children___id = 'parent___parent___children___id',
+  parent___parent___children___children = 'parent___parent___children___children',
+  parent___parent___internal___content = 'parent___parent___internal___content',
+  parent___parent___internal___contentDigest = 'parent___parent___internal___contentDigest',
+  parent___parent___internal___description = 'parent___parent___internal___description',
+  parent___parent___internal___fieldOwners = 'parent___parent___internal___fieldOwners',
+  parent___parent___internal___ignoreType = 'parent___parent___internal___ignoreType',
+  parent___parent___internal___mediaType = 'parent___parent___internal___mediaType',
+  parent___parent___internal___owner = 'parent___parent___internal___owner',
+  parent___parent___internal___type = 'parent___parent___internal___type',
+  parent___children = 'parent___children',
+  parent___children___id = 'parent___children___id',
+  parent___children___parent___id = 'parent___children___parent___id',
+  parent___children___parent___children = 'parent___children___parent___children',
+  parent___children___children = 'parent___children___children',
+  parent___children___children___id = 'parent___children___children___id',
+  parent___children___children___children = 'parent___children___children___children',
+  parent___children___internal___content = 'parent___children___internal___content',
+  parent___children___internal___contentDigest = 'parent___children___internal___contentDigest',
+  parent___children___internal___description = 'parent___children___internal___description',
+  parent___children___internal___fieldOwners = 'parent___children___internal___fieldOwners',
+  parent___children___internal___ignoreType = 'parent___children___internal___ignoreType',
+  parent___children___internal___mediaType = 'parent___children___internal___mediaType',
+  parent___children___internal___owner = 'parent___children___internal___owner',
+  parent___children___internal___type = 'parent___children___internal___type',
+  parent___internal___content = 'parent___internal___content',
+  parent___internal___contentDigest = 'parent___internal___contentDigest',
+  parent___internal___description = 'parent___internal___description',
+  parent___internal___fieldOwners = 'parent___internal___fieldOwners',
+  parent___internal___ignoreType = 'parent___internal___ignoreType',
+  parent___internal___mediaType = 'parent___internal___mediaType',
+  parent___internal___owner = 'parent___internal___owner',
+  parent___internal___type = 'parent___internal___type',
+  children = 'children',
+  children___id = 'children___id',
+  children___parent___id = 'children___parent___id',
+  children___parent___parent___id = 'children___parent___parent___id',
+  children___parent___parent___children = 'children___parent___parent___children',
+  children___parent___children = 'children___parent___children',
+  children___parent___children___id = 'children___parent___children___id',
+  children___parent___children___children = 'children___parent___children___children',
+  children___parent___internal___content = 'children___parent___internal___content',
+  children___parent___internal___contentDigest = 'children___parent___internal___contentDigest',
+  children___parent___internal___description = 'children___parent___internal___description',
+  children___parent___internal___fieldOwners = 'children___parent___internal___fieldOwners',
+  children___parent___internal___ignoreType = 'children___parent___internal___ignoreType',
+  children___parent___internal___mediaType = 'children___parent___internal___mediaType',
+  children___parent___internal___owner = 'children___parent___internal___owner',
+  children___parent___internal___type = 'children___parent___internal___type',
+  children___children = 'children___children',
+  children___children___id = 'children___children___id',
+  children___children___parent___id = 'children___children___parent___id',
+  children___children___parent___children = 'children___children___parent___children',
+  children___children___children = 'children___children___children',
+  children___children___children___id = 'children___children___children___id',
+  children___children___children___children = 'children___children___children___children',
+  children___children___internal___content = 'children___children___internal___content',
+  children___children___internal___contentDigest = 'children___children___internal___contentDigest',
+  children___children___internal___description = 'children___children___internal___description',
+  children___children___internal___fieldOwners = 'children___children___internal___fieldOwners',
+  children___children___internal___ignoreType = 'children___children___internal___ignoreType',
+  children___children___internal___mediaType = 'children___children___internal___mediaType',
+  children___children___internal___owner = 'children___children___internal___owner',
+  children___children___internal___type = 'children___children___internal___type',
+  children___internal___content = 'children___internal___content',
+  children___internal___contentDigest = 'children___internal___contentDigest',
+  children___internal___description = 'children___internal___description',
+  children___internal___fieldOwners = 'children___internal___fieldOwners',
+  children___internal___ignoreType = 'children___internal___ignoreType',
+  children___internal___mediaType = 'children___internal___mediaType',
+  children___internal___owner = 'children___internal___owner',
+  children___internal___type = 'children___internal___type',
+  internal___content = 'internal___content',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___description = 'internal___description',
+  internal___fieldOwners = 'internal___fieldOwners',
+  internal___ignoreType = 'internal___ignoreType',
+  internal___mediaType = 'internal___mediaType',
+  internal___owner = 'internal___owner',
+  internal___type = 'internal___type'
+}
+
+export type MarkdownRemarkFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  htmlAst?: Maybe<JsonQueryOperatorInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  excerptAst?: Maybe<JsonQueryOperatorInput>;
+  headings?: Maybe<MarkdownHeadingFilterListInput>;
+  timeToRead?: Maybe<IntQueryOperatorInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  wordCount?: Maybe<MarkdownWordCountFilterInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatter = {
+  __typename?: 'MarkdownRemarkFrontmatter';
+  author?: Maybe<AttributedUser>;
+  title: Scalars['String'];
+  slug: Scalars['String'];
+  date?: Maybe<Scalars['String']>;
+  featuredImage?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterFilterInput = {
+  author?: Maybe<AttributedUserFilterInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  slug?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<StringQueryOperatorInput>;
+  featuredImage?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkGroupConnection = {
+  __typename?: 'MarkdownRemarkGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<MarkdownRemarkEdge>;
+  nodes: Array<MarkdownRemark>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkSortInput = {
+  fields?: Maybe<Array<Maybe<MarkdownRemarkFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type MarkdownWordCount = {
+  __typename?: 'MarkdownWordCount';
+  paragraphs?: Maybe<Scalars['Int']>;
+  sentences?: Maybe<Scalars['Int']>;
+  words?: Maybe<Scalars['Int']>;
+};
+
+export type MarkdownWordCountFilterInput = {
+  paragraphs?: Maybe<IntQueryOperatorInput>;
+  sentences?: Maybe<IntQueryOperatorInput>;
+  words?: Maybe<IntQueryOperatorInput>;
+};
+
 /** Node Interface */
 export type Node = {
   id: Scalars['ID'];
@@ -2231,6 +2506,8 @@ export type Query = {
   allSite: SiteConnection;
   sitePage?: Maybe<SitePage>;
   allSitePage: SitePageConnection;
+  markdownRemark?: Maybe<MarkdownRemark>;
+  allMarkdownRemark: MarkdownRemarkConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
   benefitsJson?: Maybe<BenefitsJson>;
@@ -2289,9 +2566,9 @@ export type QueryFileArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   childBenefitsJson?: Maybe<BenefitsJsonFilterInput>;
+  childPricingJson?: Maybe<PricingJsonFilterInput>;
   childDescriptionJson?: Maybe<DescriptionJsonFilterInput>;
   childTestimonialsJson?: Maybe<TestimonialsJsonFilterInput>;
-  childPricingJson?: Maybe<PricingJsonFilterInput>;
 };
 
 
@@ -2394,6 +2671,31 @@ export type QuerySitePageArgs = {
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryMarkdownRemarkArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  htmlAst?: Maybe<JsonQueryOperatorInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  excerptAst?: Maybe<JsonQueryOperatorInput>;
+  headings?: Maybe<MarkdownHeadingFilterListInput>;
+  timeToRead?: Maybe<IntQueryOperatorInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  wordCount?: Maybe<MarkdownWordCountFilterInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllMarkdownRemarkArgs = {
+  filter?: Maybe<MarkdownRemarkFilterInput>;
+  sort?: Maybe<MarkdownRemarkSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
