@@ -4,6 +4,7 @@ import dripMask from '../../../images/drip.svg'
 
 export const theme: DefaultTheme = {
     colors: {
+		black: '#000000',
 		blue: '#332379',
 		darkBlue: '#10152d',
 		jelly: '#4e2378',

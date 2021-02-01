@@ -8,7 +8,7 @@ export const FeatureList = styled.ul`
 	flex-direction: column;
 
 	li {
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid ${({ theme }) => theme.colors.black};
 		text-align: left;
 		padding: 0.5em;
 		white-space: nowrap;

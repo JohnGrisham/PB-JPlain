@@ -41,5 +41,5 @@ export const StepIcon = styled(Paper)`
 export const DripBottom = styled.div.attrs({
 	className: `drip dripBottom`
 })`
-	background: white;
+	background: ${({ theme }) => theme.colors.white};
 `
