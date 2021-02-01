@@ -5,12 +5,13 @@ import React from 'react'
 export interface SEOProps {
 	title: string
 	description?: string
+	previewImage?: { src?: string; width?: number }
 	lang?: string
 	meta?: []
 }
 
-const SEO: React.FC<SEOProps> = ({ description = '', lang = 'en', meta = [], title }) => {
-	const { site } = useStaticQuery(
+const SEO: React.FC<SEOProps> = ({ description = '', lang = 'en', meta = [], previewImage, title }) => {
+	const { allFile, site } = useStaticQuery(
 		graphql`
 			query {
 				site {
@@ -18,6 +19,13 @@ const SEO: React.FC<SEOProps> = ({ description = '', lang = 'en', meta = [], tit
 						title
 						description
 						author
+						logo
+					}
+				}
+				allFile(filter: { internal: { mediaType: { regex: "/image/" } } }) {
+					nodes {
+						relativePath
+						publicURL
 					}
 				}
 			}
@@ -26,6 +34,19 @@ const SEO: React.FC<SEOProps> = ({ description = '', lang = 'en', meta = [], tit
 
 	const metaDescription = description || site.siteMetadata.description
 	const defaultTitle = site.siteMetadata?.title
+	const metaPreview = site.siteMetadata?.logo || previewImage?.src
+
+	const previewImagePath = React.useMemo(() => {
+		if (!metaPreview) {
+			return ''
+		}
+
+		const match = allFile.nodes.find(({ relativePath }: { relativePath: string }) => metaPreview === relativePath)
+
+		if (match && match.publicURL) {
+			return `${match.publicURL}${previewImage?.width ? `?w=${previewImage.width}` : ''}`
+		}
+	}, [allFile, metaPreview, previewImage])
 
 	return (
 		<Helmet
@@ -46,6 +67,10 @@ const SEO: React.FC<SEOProps> = ({ description = '', lang = 'en', meta = [], tit
 				{
 					content: metaDescription,
 					property: `og:description`
+				},
+				{
+					content: previewImagePath,
+					property: `og:image`
 				},
 				{
 					content: `website`,
