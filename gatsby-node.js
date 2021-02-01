@@ -22,7 +22,6 @@ exports.createPages = async ({ actions: { createPage }, graphql })   => {
 		}
   `)
   if (!allMarkdownRemark || errors) {
-  // eslint-disable-next-line no-console
   console.log('Error retrieving data', errors || 'No data could be found for this query!')
   return
   }

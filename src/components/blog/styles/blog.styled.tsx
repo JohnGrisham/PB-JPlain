@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 export const Blog = styled.div`
    align-items: center;
-   background-color: white;
+   background-color: ${({ theme }) => theme.colors.white};
    display: flex;
    justify-content: center;
    min-height: 100vh;

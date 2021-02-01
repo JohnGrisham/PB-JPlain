@@ -1,7 +1,7 @@
 // article-template.styled.tsx
 import styled from 'styled-components'
 export const Article = styled.article`
-   background-color: white;
+   background-color: ${({ theme }) => theme.colors.white};
    color: ${({ theme }) => theme.colors.mediumGray};
    display: flex;
    flex-direction: column;
